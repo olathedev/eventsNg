@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Nav() {
     return (
@@ -38,7 +39,7 @@ export default function Nav() {
                     </ul>
                 </div>
                 <div className='hidden md:flex items-center gap-4'>
-                        <button className="bg-primary py-3 px-6 font-poppins text-white rounded">Login</button>
+                            <Link to={'/login'}><button className="bg-primary py-3 px-6 font-poppins text-white rounded">Login</button></Link>
                         <button className="bg-gray-200 py-3 px-6 font-poppins text-black rounded">Sign     up</button>
 
                         {/* <button className="bg-primary py-2 px-4">Login</button> */}

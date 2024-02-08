@@ -1,5 +1,6 @@
 import React from 'react'
 import heroImg from '../../assets/homepage.png'
+import { Link } from 'react-router-dom'
 
 export default function Hero() {
     return (
@@ -24,13 +25,13 @@ export default function Hero() {
 
                 <div className='flex gap-3 mt-4'>
                     <button className="bg-primary py-3 px-2 md:py-4 md:px-10 font-monteserat text-white md:text-lg rounded-md">Find your next Event</button>
-                    <button className="bg-gray-200 px-2 py-3 md:py-4 md:px-10 font-raleway font-semibold text-black md:text-lg rounded-md">Create an event</button>
+                    <Link to='/login'> <button className="bg-gray-200 px-2 py-3 md:py-4 md:px-10 font-raleway font-semibold text-black md:text-lg rounded-md">Create an event</button></Link>
 
                 </div>
 
 
                 <div className="img">
-                    <img src={heroImg} alt="" srcset="" />
+                    <img src={heroImg} alt="" />
                 </div>
             </div>
         </section>
