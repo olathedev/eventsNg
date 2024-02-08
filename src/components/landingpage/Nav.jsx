@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Nav() {
 
-    const [navOpen, setNavOpen] = useState(true)
+    const [navOpen, setNavOpen] = useState(false)
 
     const handlenav = () => {
         setNavOpen(!navOpen)
