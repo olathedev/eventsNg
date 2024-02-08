@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&family=Raleway&family=Roboto:wght@300;400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sub-nav {
+    @apply hover:text-primary hover:translate-x-2 transition ease-in-out duration-200
+}
+
+.nav-items {
+    @apply  border-b-2 border-transparent hover:border-primary transition-colors duration-300 hover:ease-in-out cursor-pointer py-3
+}
