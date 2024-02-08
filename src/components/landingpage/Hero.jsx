@@ -13,19 +13,19 @@ export default function Hero() {
                     </svg>
 
                 </div>
-                <div className="flex justify-center items-center md:mt-4">
-                    <h1 className='text-slate-900 text-4xl md:text-6xl md:max-w-[70%] text-center font-raleway font-extrabold md:leading-normal'> Event listing and ticketing  made easy
+                <div className="flex justify-center items-center mt-2 md:mt-4">
+                    <h1 className='text-slate-900 text-4xl md:text-6xl md:max-w-[70%] text-center font-raleway font-extrabold md:leading-[4.5rem]'> Event listing and ticketing  made easy
                         for creators</h1>
                 </div>
 
-                <div className='font-poppins text-gray-700 mt-4 md:w-[60%] text-center md:text-xl'>
+                <div className='font-monteserat text-gray-700 mt-4 md:w-[60%] text-center md:text-xl'>
                     <p>Events.ng is an event ticketing platform for experiences in Nigeria.
                         Create live or virtual events, sell tickets and collect payments on the go.</p>
                 </div>
 
-                <div className='flex gap-3 mt-4'>
+                <div className='flex gap-2 md:gap-4 mt-4'>
                     <button className="bg-primary py-3 px-2 md:py-4 md:px-10 font-monteserat text-white md:text-lg rounded-md">Find your next Event</button>
-                    <Link to='/login'> <button className="bg-gray-200 px-2 py-3 md:py-4 md:px-10 font-raleway font-semibold text-black md:text-lg rounded-md">Create an event</button></Link>
+                    <Link to='/login'> <button className="bg-gray-200 px-2 py-4 md:py-4 md:px-10 font-raleway font-semibold text-black md:text-lg rounded-md">Create an event</button></Link>
 
                 </div>
 
