@@ -45,7 +45,7 @@ export default function Login() {
 
                             <div className="w-full md:w-[60%] password">
 
-                                <label htmlFor="password" className=''>Password <span className='text-red-600 text-xl'>*</span> </label>
+                                <label htmlFor="password" className=''>Passwordd <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
                                     <input className='w-full py-3 px-4 border border-gray-700 rounded focus:outline-none font-raleway font-lg' placeholder='Password' type="password" name="" id="" />
 
