@@ -46,7 +46,7 @@ export default function Nav() {
                 </div>
                 <div className='hidden md:flex items-center gap-4'>
                     <Link to={'/login'}><button className="bg-primary py-3 px-6 font-poppins text-white rounded">Login</button></Link>
-                    <button className="bg-gray-200 py-3 px-6 font-poppins text-black rounded">Sign up</button>
+                    <Link to={'/register'}>   <button className="bg-gray-200 py-3 px-6 font-poppins text-black rounded">Sign up</button> </Link>
 
                     {/* <button className="bg-primary py-2 px-4">Login</button> */}
 
@@ -85,7 +85,7 @@ export default function Nav() {
 
                     <div className='flex items-center gap-4 mt-4'>
                     <Link to={'/login'}><button className="bg-primary py-3 px-8 font-poppins text-white rounded">Login</button></Link>
-                    <button className="bg-gray-200 py-3 px-8 font-poppins text-black rounded">Sign up</button>
+                   <Link to={'/register'}> <button className="bg-gray-200 py-3 px-8 font-poppins text-black rounded">Sign up</button></Link>
 
                     {/* <button className="bg-primary py-2 px-4">Login</button> */}
 
