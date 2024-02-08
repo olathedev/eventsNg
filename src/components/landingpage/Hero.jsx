@@ -14,8 +14,8 @@ export default function Hero() {
 
                 </div>
                 <div className="flex justify-center items-center md:mt-4">
-                    <h1 className='text-slate-900 text-4xl md:text-6xl md:max-w-[70%] text-center font-raleway font-extrabold md:leading-normal'> Event Listing and Ticketing  Made Easy
-                        for Creators</h1>
+                    <h1 className='text-slate-900 text-4xl md:text-6xl md:max-w-[70%] text-center font-raleway font-extrabold md:leading-normal'> Event listing and ticketing  made easy
+                        for creators</h1>
                 </div>
 
                 <div className='font-poppins text-gray-700 mt-4 md:w-[60%] text-center md:text-xl'>
