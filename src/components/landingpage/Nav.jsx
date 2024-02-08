@@ -3,11 +3,11 @@ import React from 'react'
 export default function Nav() {
     return (
 
-        <nav className='py-4 md:pt-8 md:pb-4'>
+        <nav className='py-6 px-6 md:pt-8 md:pb-4'>
             <div className="container mx-auto flex justify-between items-center">
                 <div className="nav-brand font-raleway text-2xl font-semibold">Events<span className='text-primary font-bold'>.ng</span></div>
 
-                <div>
+                <div className='hidden md:block'>
                     <ul className='flex items-center gap-4 font-poppins'>
                         <li className='nav-items'>Home</li>
 
@@ -37,7 +37,7 @@ export default function Nav() {
 
                     </ul>
                 </div>
-                <div className='flex items-center gap-4'>
+                <div className='hidden md:flex items-center gap-4'>
                         <button className="bg-primary py-3 px-6 font-poppins text-white rounded">Login</button>
                         <button className="bg-gray-200 py-3 px-6 font-poppins text-black rounded">Sign     up</button>
 
@@ -45,6 +45,12 @@ export default function Nav() {
 
                 </div>
 
+                <div className="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+</svg>
+
+                </div>
             </div>
         </nav>
 
