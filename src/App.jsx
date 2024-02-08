@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Home from './pages/Home'
 import { Route, Routes } from 'react-router-dom'
 import Login from './pages/Login'
-import Register from './pages/Register.Jsx'
+import Register from './pages/Register.jsx'
 
 function App() {
   return (
