@@ -15,12 +15,12 @@ export default function Login() {
                     </nav>
 
                     <div className='flex flex-col pt-[6rem] items-center'>
-                        <header className='w-full px-10 md:w-[60%] font-raleway mb-3'>
+                        <header className='w-full px-6 md:w-[60%] font-raleway mb-3'>
                             <p className='mt-4 text-lg md:text-xl'>Resume your journey</p>
                             <h2 className='text-2xl md:text-3xl mt-2 font-bold text-primary'>Sign in to your Account</h2>
                         </header>
 
-                        <form className='mt-4 px-10 md:px-2  w-full flex flex-col gap-4 items-center font-raleway'>
+                        <form className='mt-4 px-6 md:px-2  w-full flex flex-col gap-4 items-center font-raleway'>
 
                            
 
