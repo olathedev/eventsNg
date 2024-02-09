@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import image from '../assets/asake1.jpg'
 import google from '../assets/google.png'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import * as yup from "yup"
 import { yupResolver } from '@hookform/resolvers/yup';
+import authRequest from '../utils/axiosConfig.js'
 
 const schema = yup.object({
 
@@ -16,6 +17,10 @@ const schema = yup.object({
 }).required()
 
 export default function Signup() {
+
+    const [isPending, setIsPending] = useState(false)
+    const [error, setError] = useState({})
+
     const {register, handleSubmit, formState: {errors}} = useForm({
         resolver: yupResolver(schema),
         defaultValues: {
@@ -28,7 +33,34 @@ export default function Signup() {
     })
 
 
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = async (data) => {
+
+        setError({})
+        setIsPending(true)
+
+        const user = {
+            fullname: data.fullname,
+            email: data.email,
+            password: data.password
+        }
+
+        setIsPending(true)
+        try {
+            const res = await authRequest.post('/signup', {
+                ...user
+            })
+            setIsPending(false)
+            console.log(res.data);
+            
+        } catch (error) {
+            setIsPending(false)
+            const {message} = error.response.data
+            if(message.includes('email')) {
+                setError({email: message})
+            }
+        }
+        
+    }
     
     return (
         <div className='w-full h-screen max-h-screen'>
@@ -93,6 +125,9 @@ export default function Signup() {
                                 {errors.email && (
                                     <span className='text-sm font-poppins text-[#FF9494]'>{errors.email.message}</span>
                                 )}
+                                {error.email && (
+                                    <span className='text-sm font-poppins text-[#FF9494]'>{error.email}</span>
+                                )}
                             </div>
 
 
@@ -146,10 +181,12 @@ export default function Signup() {
 
 
                             <div className='w-full md:w-[60%]'>
-                                <button className='w-full py-3 px-4 text-xl font-semibold  text-white bg-primary rounded'>Sign up</button>
+                                <button className='w-full py-3 px-4 text-xl font-semibold  text-white bg-primary rounded' disabled={isPending}>
+                                     {isPending ? "Submiting..." : "Sign up"}
+                                </button>
                             </div>
 
-                            <button className="w-full md:w-[60%] py-3 px-4 bg-gray-300 rounded flex items-center justify-center gap-4">
+                            <button type='button' className="w-full md:w-[60%] py-3 px-4 bg-gray-300 rounded flex items-center justify-center gap-4">
                                 <img src={google} className='h-6' alt="" />
 
                                 Sign up with Google

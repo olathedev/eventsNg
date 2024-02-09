@@ -10,8 +10,7 @@ export default function Register() {
     const { register, handleSubmit } = useForm()
     console.log(register);
     const onSubmit = (data, e) => {
-        e.preventDefault()
-        console.log(data);
+       
     }
 
     return (
