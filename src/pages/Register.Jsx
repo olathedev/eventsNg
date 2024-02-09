@@ -1,10 +1,19 @@
 import React from 'react'
 import image from '../assets/asake1.jpg'
 import google from '../assets/google.png'
+import { Link, json } from 'react-router-dom'
+import { useForm } from 'react-hook-form';
 
-import { Link } from 'react-router-dom'
 
 export default function Register() {
+
+    const { register, handleSubmit } = useForm()
+    console.log(register);
+    const onSubmit = (data, e) => {
+        e.preventDefault()
+        console.log(data);
+    }
+
     return (
         <div className='w-full h-screen max-h-screen'>
 
@@ -19,18 +28,16 @@ export default function Register() {
                     <div className='flex flex-col pt-[2rem] items-center'>
                         <header className='w-full px-6 md:px-1 md:w-[60%] font-raleway mb-3'>
                             <p className='mt-4 text-lg md:text-xl'>Hey, Welcome</p>
-                            <h2 className='text-2xl md:text-3xl mt-2 font-bold text-primary'>Create a new Account</h2>
+                            <h2 className='text-2xl md:text-3xl mt-2 font-bold text-primary'>Create a new </h2>
                         </header>
 
-                        <form className='mt-4 px-6 md:px-2  w-full flex flex-col gap-4 items-center font-raleway'>
-
-
+                        <form className='mt-4 px-6 md:px-2  w-full flex flex-col gap-4 items-center font-raleway' onSubmit={handleSubmit(onSubmit)}>
 
                             <div className="w-full md:w-[60%] fullname">
 
-                                <label htmlFor="fullname" className=''>Full Name <span className='text-red-600 text-xl'>*</span> </label>
+                                <label className=''>Full Name <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='auth-form-input' placeholder='Chukwuma Adekunle' type="text" name="" id="" />
+                                    <input className='auth-form-input' placeholder='Chukwuma Adekunle' type="text" {...register("fullname")} />
 
                                     <span className='absolute right-3 top-3'>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -51,7 +58,7 @@ export default function Register() {
 
                             <div className="w-full md:w-[60%] Email">
 
-                                <label htmlFor="password" className=''>Email <span className='text-red-600 text-xl'>*</span> </label>
+                                <label className=''>Email <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
                                     <input className='auth-form-input' placeholder='Enter your Email' type="email" name="" id="" />
 
@@ -68,9 +75,9 @@ export default function Register() {
 
                             <div className="w-full md:w-[60%] password">
 
-                                <label htmlFor="password" className=''>Password <span className='text-red-600 text-xl'>*</span> </label>
+                                <label className=''>Password <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='auth-form-input' placeholder='Password' type="password" name="" id="" />
+                                    <input className='auth-form-input' placeholder='Password' type="password" {...register("paassword")} />
 
                                     <span className='absolute right-3 top-3 cursor-pointer'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -83,16 +90,16 @@ export default function Register() {
 
                                     </span>
                                 </div>
-                            
+
                             </div>
 
 
 
                             <div className="w-full md:w-[60%] Confirmrd">
 
-                                <label htmlFor="confirmpassword" className=''>Confirm Password <span className='text-red-600 text-xl'>*</span> </label>
+                                <label className=''>Confirm Password <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='auth-form-input' placeholder='Confirm your Password' type="password" name="" id="" />
+                                    <input className='auth-form-input' placeholder='Confirm your Password' type="password" {...register("confirmPassowrd")} />
 
                                     <span className='absolute right-3 top-3 cursor-pointer'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">

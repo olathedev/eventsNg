@@ -1,16 +1,41 @@
 import React from 'react'
 import image from '../assets/asake1.jpg'
 import google from '../assets/google.png'
-
 import { Link } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+import * as yup from "yup"
+import { yupResolver } from '@hookform/resolvers/yup';
+
+const schema = yup.object({
+
+    fullname: yup.string().required("Please provide your fullname").min(4, "fullname cannot be less than 4 chararcters"),
+    email: yup.string().email("Provide a valid email").required("please provide an email"),
+    password: yup.string().required("Please provide a password").min(6, "password cannot be less than 6 characters"),
+    confirmpassword: yup.string().oneOf([yup.ref('password')], 'Passwords must match')
+
+}).required()
 
 export default function Signup() {
+    const {register, handleSubmit, formState: {errors}} = useForm({
+        resolver: yupResolver(schema),
+        defaultValues: {
+            fullname: "",
+            email: "",
+            password: "",
+            confirmpassword: "" 
+        }
+
+    })
+
+
+    const onSubmit = (data) => console.log(data);
+    
     return (
         <div className='w-full h-screen max-h-screen'>
 
 
             <section className='w-full md:flex h-screen max-h-screen'>
-                <div className='w-full md:w-1/2  overflow-y-auto'>
+                <div className='w-full md:w-1/2 pb-8  overflow-y-auto'>
 
                     <nav className='pt-6 px-6'>
                         <Link to="/"> <h1 className='text-2xl font-semibold font-raleway text-primary cursor-pointer'>Events.ng</h1></Link>
@@ -22,25 +47,26 @@ export default function Signup() {
                             <h2 className='text-2xl md:text-3xl mt-2 font-bold text-primary'>Create a new Account</h2>
                         </header>
 
-                        <form className='mt-4 px-6 md:px-2  w-full flex flex-col gap-4 items-center font-raleway'>
+                        <form className='mt-4 px-6 md:px-2  w-full flex flex-col gap-4 items-center font-raleway' onSubmit={handleSubmit(onSubmit)}>
 
 
 
                             <div className="w-full md:w-[60%] fullname">
 
-                                <label htmlFor="fullname" className=''>Full Name <span className='text-red-600 text-xl'>*</span> </label>
+                                <label className=''>Full Name <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='auth-formInput' placeholder='Chukwuma Adekunle' type="text" name="" id="" />
+                                    <input className='auth-formInput' placeholder='Chukwuma Adekunle' type="text" {...register('fullname')} />
 
                                     <span className='absolute right-3 top-3'>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                         </svg>
-
-
-
                                     </span>
                                 </div>
+
+                                {errors.fullname && (
+                                    <span className='text-sm font-poppins text-[#eb4747]'>{errors.fullname.message}</span>
+                                )}
                             </div>
 
 
@@ -51,9 +77,9 @@ export default function Signup() {
 
                             <div className="w-full md:w-[60%] Email">
 
-                                <label htmlFor="password" className=''>Email <span className='text-red-600 text-xl'>*</span> </label>
+                                <label className=''>Email <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='auth-formInput' placeholder='Enter your Email' type="email" name="" id="" />
+                                    <input className='auth-formInput' placeholder='Enter your Email' type="email" {...register('email')} />
 
                                     <span className='absolute right-3 top-3'>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -63,14 +89,18 @@ export default function Signup() {
 
                                     </span>
                                 </div>
+
+                                {errors.email && (
+                                    <span className='text-sm font-poppins text-[#eb4747]'>{errors.email.message}</span>
+                                )}
                             </div>
 
 
                             <div className="w-full md:w-[60%] password">
 
-                                <label htmlFor="password" className=''>Password <span className='text-red-600 text-xl'>*</span> </label>
+                                <label className=''>Password <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='auth-formInput' placeholder='Password' type="password" name="" id="" />
+                                    <input className='auth-formInput' placeholder='Password' type="password"{...register('password')} />
 
                                     <span className='absolute right-3 top-3 cursor-pointer'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -83,16 +113,18 @@ export default function Signup() {
 
                                     </span>
                                 </div>
-                            
+                                {errors.password && (
+                                    <span className='text-sm font-poppins text-[#eb4747]'>{errors.password.message}</span>
+                                )}
                             </div>
 
 
 
-                            <div className="w-full md:w-[60%] Confirmrd">
+                            <div className="w-full md:w-[60%] confirm">
 
-                                <label htmlFor="confirmpassword" className=''>Confirm Password <span className='text-red-600 text-xl'>*</span> </label>
+                                <label className=''>Confirm Password <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='auth-formInput' placeholder='Confirm your Password' type="password" name="" id="" />
+                                    <input className='auth-formInput' placeholder='Confirm your Password' type="password"{...register('confirmpassword')} />
 
                                     <span className='absolute right-3 top-3 cursor-pointer'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -104,6 +136,9 @@ export default function Signup() {
 
 
                                     </span>
+                                    {errors.confirmpassword && (
+                                    <span className='text-sm font-poppins text-[#eb4747]'>{errors.confirmpassword.message}</span>
+                                )}
                                 </div>
                                 <p className='flex justify-end font-poppins text-primary cursor-pointer'>Forgoten Password?</p>
 
