@@ -65,7 +65,7 @@ export default function Signup() {
                                 </div>
 
                                 {errors.fullname && (
-                                    <span className='text-sm font-poppins text-[#eb4747]'>{errors.fullname.message}</span>
+                                    <span className='text-sm font-poppins text-[#FF9494]'>{errors.fullname.message}</span>
                                 )}
                             </div>
 
@@ -91,7 +91,7 @@ export default function Signup() {
                                 </div>
 
                                 {errors.email && (
-                                    <span className='text-sm font-poppins text-[#eb4747]'>{errors.email.message}</span>
+                                    <span className='text-sm font-poppins text-[#FF9494]'>{errors.email.message}</span>
                                 )}
                             </div>
 
@@ -114,7 +114,7 @@ export default function Signup() {
                                     </span>
                                 </div>
                                 {errors.password && (
-                                    <span className='text-sm font-poppins text-[#eb4747]'>{errors.password.message}</span>
+                                    <span className='text-sm font-poppins text-[#FF9494]'>{errors.password.message}</span>
                                 )}
                             </div>
 
@@ -137,7 +137,7 @@ export default function Signup() {
 
                                     </span>
                                     {errors.confirmpassword && (
-                                    <span className='text-sm font-poppins text-[#eb4747]'>{errors.confirmpassword.message}</span>
+                                    <span className='text-sm font-poppins text-[#FF9494]'>{errors.confirmpassword.message}</span>
                                 )}
                                 </div>
                                 <p className='flex justify-end font-poppins text-primary cursor-pointer'>Forgoten Password?</p>
