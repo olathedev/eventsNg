@@ -10,7 +10,7 @@ export default function Nav() {
     }
     return (
 
-        <nav className='py-6 md:pt-8 md:pb-4'>
+        <nav className='sticky top-0 z-20 bg-opacity-25 backdrop-blur-xl bg-white py-6 md:pt-8 md:pb-4'>
             <div className="container px-6  mx-auto flex justify-between items-center">
                 <div className="nav-brand font-raleway text-2xl font-semibold">Events<span className='text-primary font-bold'>.ng</span></div>
 
@@ -26,8 +26,8 @@ export default function Nav() {
                                 </svg>
 
                                 <nav className="hidden absolute group-hover:md:flex w-[208px] -left-8 top-full py-4 px-5 flex-col gap-3 bg-white shadow-md">
-                                    <div className='sub-nav'>Discover events</div>
-                                    <div className='sub-nav'>Discover events</div>
+                                    <div className='sub-nav'>All Events</div>
+                                    <div className='sub-nav'>Events around you</div>
                                     <div className='sub-nav'>Discover events</div>
                                     <div className='sub-nav'>Discover events</div>
 
@@ -73,7 +73,7 @@ export default function Nav() {
             </div>
 
             <section className="absolute bg-white w-full mobile-nav md:hidden" onClick={() => setNavOpen(false)}>
-            <div className={`container mx-auto py-6 px-8 font-pop shadow-md transition-all ease-in-out duration-200 ${navOpen ? 'opacity-100' : 'opacity-0 hidden'} `}>
+            <div className={`container mx-auto py-6 px-8 font-pop shadow-md transition-all ease-in-out duration-200 ${navOpen ? 'opacity-100 bg-opacity-25' : 'opacity-0 hidden'} `}>
                     <ul className='flex flex-col gap-4 font-poppins'>
                         <li className=''>Home</li>
                         <li className=''>Discover</li>

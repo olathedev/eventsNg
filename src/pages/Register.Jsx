@@ -30,7 +30,7 @@ export default function Register() {
 
                                 <label htmlFor="fullname" className=''>Full Name <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='w-full py-3 px-4 border border-gray-700 rounded focus:outline-none font-raleway font-lg' placeholder='Chukwuma Adekunle' type="text" name="" id="" />
+                                    <input className='auth-form-input' placeholder='Chukwuma Adekunle' type="text" name="" id="" />
 
                                     <span className='absolute right-3 top-3'>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -53,7 +53,7 @@ export default function Register() {
 
                                 <label htmlFor="password" className=''>Email <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='w-full py-3 px-4 border border-gray-700 rounded focus:outline-none font-raleway font-lg' placeholder='Enter your Email' type="email" name="" id="" />
+                                    <input className='auth-form-input' placeholder='Enter your Email' type="email" name="" id="" />
 
                                     <span className='absolute right-3 top-3'>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -70,7 +70,7 @@ export default function Register() {
 
                                 <label htmlFor="password" className=''>Password <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='w-full py-3 px-4 border border-gray-700 rounded focus:outline-none font-raleway font-lg' placeholder='Password' type="password" name="" id="" />
+                                    <input className='auth-form-input' placeholder='Password' type="password" name="" id="" />
 
                                     <span className='absolute right-3 top-3 cursor-pointer'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -92,7 +92,7 @@ export default function Register() {
 
                                 <label htmlFor="confirmpassword" className=''>Confirm Password <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='w-full py-3 px-4 border border-gray-700 rounded focus:outline-none font-raleway font-lg' placeholder='Confirm your Password' type="password" name="" id="" />
+                                    <input className='auth-form-input' placeholder='Confirm your Password' type="password" name="" id="" />
 
                                     <span className='absolute right-3 top-3 cursor-pointer'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">

@@ -11,3 +11,7 @@
 .nav-items {
     @apply  border-b-2 border-transparent hover:border-primary transition-colors duration-300 hover:ease-in-out cursor-pointer py-3
 }
+
+.auth-formInput {
+    @apply w-full py-3 px-4 border border-gray-700 rounded focus:outline-none font-raleway focus:border-primary
+}

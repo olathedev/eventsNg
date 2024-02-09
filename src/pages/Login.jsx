@@ -30,7 +30,7 @@ export default function Login() {
 
                                 <label htmlFor="password" className=''>Email <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='w-full py-3 px-4 border border-gray-700 rounded focus:outline-none font-raleway font-lg' placeholder='Email' type="text" name="" id="" />
+                                    <input className='auth-formInput' placeholder='Email' type="text" name="" id="" />
 
                                     <span className='absolute right-3 top-3'>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -47,7 +47,7 @@ export default function Login() {
 
                                 <label htmlFor="password" className=''>Passwordd <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='w-full py-3 px-4 border border-gray-700 rounded focus:outline-none font-raleway font-lg' placeholder='Password' type="password" name="" id="" />
+                                    <input className='auth-formInput' placeholder='Password' type="password" name="" id="" />
 
                                     <span className='absolute right-3 top-3 cursor-pointer'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
