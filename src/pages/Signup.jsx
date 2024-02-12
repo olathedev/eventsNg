@@ -83,7 +83,7 @@ export default function Signup() {
                             <h2 className='text-2xl md:text-2xl mt-2 font-bold text-primary'>Create a new Account</h2>
                         </header>
 
-                        <form className={` mt-4 w-full flex-col gap-4 items-center font-raleway`} onSubmit={handleSubmit(onSubmit)}>
+                        <form className={` mt-4 w-full flex flex-col gap-4 items-center font-raleway`} onSubmit={handleSubmit(onSubmit)}>
 
 
 
@@ -101,7 +101,7 @@ export default function Signup() {
                                 </div>
 
                                 {errors.fullname && (
-                                    <span className='text-sm font-poppins text-[#FF9494]'>{errors.fullname.message}</span>
+                                    <span className='text-sm font-poppins text-red-700'>{errors.fullname.message}</span>
                                 )}
                             </div>
 
@@ -127,10 +127,10 @@ export default function Signup() {
                                 </div>
 
                                 {errors.email && (
-                                    <span className='text-sm font-poppins text-[#FF9494]'>{errors.email.message}</span>
+                                    <span className='text-sm font-poppins text-red-700'>{errors.email.message}</span>
                                 )}
                                 {error.email && (
-                                    <span className='text-sm font-poppins text-[#FF9494]'>{error.email}</span>
+                                    <span className='text-sm font-poppins text-red-700'>{error.email}</span>
                                 )}
                             </div>
 
@@ -153,7 +153,7 @@ export default function Signup() {
                                     </span>
                                 </div>
                                 {errors.password && (
-                                    <span className='text-sm font-poppins text-[#FF9494]'>{errors.password.message}</span>
+                                    <span className='text-sm font-poppins text-red-700'>{errors.password.message}</span>
                                 )}
                             </div>
 
@@ -176,7 +176,7 @@ export default function Signup() {
 
                                     </span>
                                     {errors.confirmpassword && (
-                                    <span className='text-sm font-poppins text-[#FF9494]'>{errors.confirmpassword.message}</span>
+                                    <span className='text-sm font-poppins text-red-700'>{errors.confirmpassword.message}</span>
                                 )}
                                 </div>
                                 <p className='flex justify-end font-poppins text-primary cursor-pointer'>Forgoten Password?</p>
