@@ -24,7 +24,7 @@ export default function Signup() {
 
     const [isPending, setIsPending] = useState(false)
     const [error, setError] = useState({})
-    const [success, setSuccess] = useState(true)
+    const [success, setSuccess] = useState(false)
 
     const {register, handleSubmit, formState: {errors}} = useForm({
         resolver: yupResolver(schema),
