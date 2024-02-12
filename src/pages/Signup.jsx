@@ -24,7 +24,7 @@ export default function Signup() {
 
     const [isPending, setIsPending] = useState(false)
     const [error, setError] = useState({})
-    const [success, setSuccess] = useState(false)
+    const [success, setSuccess] = useState(true)
 
     const {register, handleSubmit, formState: {errors}} = useForm({
         resolver: yupResolver(schema),
@@ -51,15 +51,14 @@ export default function Signup() {
         setIsPending(true)
 
         try {
-            const res = await axios.post('/auth/signup', {
-                ...user
-            })
+            const res = await axios.post('/auth/signup', user)
             setIsPending(false)
             console.log(res.data);
             setSuccess(true)
         } catch (error) {
             setIsPending(false)
             const {message} = error.response.data
+            console.log(error.response)
             if(message.includes('email')) {
                 setError({email: message})
             }
@@ -71,20 +70,20 @@ export default function Signup() {
         <div className='w-full h-screen max-h-screen'>
 
 
-            <section className='w-full md:flex h-screen max-h-screen'>
+            <section className='w-full mx-auto md:flex h-screen max-h-screen'>
                 <div className='w-full md:w-1/2 pb-8  overflow-y-auto'>
 
                     <nav className='pt-6 px-6'>
-                        <Link to="/"> <h1 className='text-2xl font-semibold font-raleway text-primary cursor-pointer'>Events.ng</h1></Link>
+                        <Link to="/"> <h1 className='text-xl font-semibold font-raleway text-primary cursor-pointer'>Events.ng</h1></Link>
                     </nav>
 
-                    <div className='flex px-6 md:px-1 flex-col pt-[2rem] items-center'>
+                    <div className={`${success ? 'hidden' : 'flex'} px-6 md:px-1 flex-col pt-[2rem] items-center`}>
                         <header className='w-full md:w-[60%] font-raleway mb-3'>
                             <p className='mt-4 md:text-xl '>Hey, Welcome</p>
-                            <h2 className='text-2xl md:text-3xl mt-2 font-bold text-primary'>Create a new Account</h2>
+                            <h2 className='text-2xl md:text-2xl mt-2 font-bold text-primary'>Create a new Account</h2>
                         </header>
 
-                        <form className={`${success ? 'hidden' : 'flex'} mt-4 w-full flex-col gap-4 items-center font-raleway`} onSubmit={handleSubmit(onSubmit)}>
+                        <form className={` mt-4 w-full flex-col gap-4 items-center font-raleway`} onSubmit={handleSubmit(onSubmit)}>
 
 
 
@@ -193,18 +192,20 @@ export default function Signup() {
 
                             <button type='button' className="w-full md:w-[60%] py-3 px-4 bg-gray-300 rounded flex items-center justify-center gap-4">
                                 <img src={google} className='h-6' alt="" />
-
                                 Sign up with Google
                             </button>
                             <p className='font-semibold'>Already have an account? <Link to="/login" className='text-primary underline'>Sign in</Link> </p>
                         </form>
 
-                        <SucessReg success={success} />
 
                     </div>
 
+                    <div className='container flex items-center justify-center mt-[8rem] text-center'>
+                        <SucessReg success={success} />
+                    </div>
+
                 </div>
-                <div className='hidden md:flex md:w-1/2 bg-green-700 max-h-screen  overflow-hidden'>
+                <div className='hidden md:flex md:w-1/2 max-h-screen  overflow-hidden'>
                     <img src={image} className='h-screen w-full object-cover' alt="" />
                 </div>
             </section>
