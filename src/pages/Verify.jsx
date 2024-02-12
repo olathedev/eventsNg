@@ -20,13 +20,13 @@ export default function Verify() {
   const verifyToken = async () => {
     setIsPending(true)
     try {
-      const response = await axios.get(`/verify?token=${token}`)
+      const response = await axios.get(`/auth/verify?token=${token}`)
       setIsPending(false)
       setError(null)
       setSuccess(true)
       // Dispatch login action here
 
-      
+
       navigate('/dashboard')
       console.log((response));
     } catch (error) {

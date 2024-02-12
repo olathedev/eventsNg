@@ -4,9 +4,10 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Verify from './pages/Verify'
 import axios from 'axios'
+import Dashboard from './pages/dashboard/Dashboard'
 
 
-axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng/auth"
+axios.defaults.baseURL = "https://eventsng-v1.onrender.com/api/v1/eventsng"
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path='/register' element={<Signup />} />
           <Route path='/verify' element={<Verify />} />
           <Route path='/verify-account/:token' element={<Verify />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+
           
       </Routes>
     </div>

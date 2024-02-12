@@ -51,7 +51,7 @@ export default function Signup() {
         setIsPending(true)
 
         try {
-            const res = await axios.post('/signup', {
+            const res = await axios.post('/auth/signup', {
                 ...user
             })
             setIsPending(false)
