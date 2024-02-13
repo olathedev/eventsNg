@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
-import image from '../assets/asake1.jpg'
-import google from '../assets/google.png'
+import image from '../../assets/asake1.jpg'
+import google from '../../assets/google.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import * as yup from "yup"
 import { yupResolver } from '@hookform/resolvers/yup';
-import authRequest from '../utils/axiosConfig.js'
 import axios from 'axios'
-import SucessReg from '../components/landingpage/Sucess-reg.jsx'
+import SucessReg from '../../components/landingpage/Sucess-reg.jsx'
 
 const schema = yup.object({
 

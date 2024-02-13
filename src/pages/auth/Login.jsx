@@ -1,6 +1,6 @@
 import React from 'react'
-import image from '../assets/asake2.jpg'
-import google from '../assets/google.png'
+import image from '../../assets/asake2.jpg'
+import google from '../../assets/google.png'
 
 import { Link } from 'react-router-dom'
 

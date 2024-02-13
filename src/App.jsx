@@ -1,14 +1,14 @@
 import Home from './pages/Home'
 import { Route, Routes } from 'react-router-dom'
-import Login from './pages/Login'
-import Signup from './pages/Signup'
-import Verify from './pages/Verify'
+import Login from './pages/auth/Login'
+import Signup from './pages/auth/Signup'
+import Verify from './pages/auth/Verify'
 import axios from 'axios'
 import Dashboard from './pages/dashboard/Dashboard'
 
 
-// axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng"
-axios.defaults.baseURL = "https://eventsng-v1.onrender.com/api/v1/eventsng"
+axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng"
+// axios.defaults.baseURL = "https://eventsng-v1.onrender.com/api/v1/eventsng"
 
 
 function App() {
