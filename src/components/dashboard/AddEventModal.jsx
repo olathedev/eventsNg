@@ -3,8 +3,8 @@ import React from 'react'
 export default function AddEventModal({handleModal}) {
     return (
         <div className={`fixed inset-0 flex justify-center items-center bg-black bg-opacity-20`}>
-            <div className="bg-white w-[30%] -mt-24 rounded md:-mr-10 border-b-2 border-b-primary transition-all duration-200 ease-in-out">
-                <div className="modal-header flex justify-between items-center px-4 py-4 border-b-2">
+            <div className="bg-white md:w-[30%] -mt-24 rounded md:-mr-10 border-b-2 border-b-primary transition-all duration-200 ease-in-out">
+                <div className="modal-header flex gap-5 justify-between items-center px-4 py-4 border-b-2">
 
                     <div>
                         <h2 className="text-lg font-poppins">Add new event</h2>
