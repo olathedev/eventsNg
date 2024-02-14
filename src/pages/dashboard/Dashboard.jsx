@@ -25,7 +25,7 @@ export default function Dashboard() {
         <Sidebar />
 
         </div>
-        <div className='md:w-[80%]  max-h-screen overflow-auto'>
+        <div className='w-full md:w-[80%]  max-h-screen overflow-auto'>
           <Nav />
 
           <div className="container mx-auto h-screen px-2 md:px-6 mt-6">
