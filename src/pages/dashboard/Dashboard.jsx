@@ -28,7 +28,7 @@ export default function Dashboard() {
         <div className='w-full md:w-[80%]  max-h-screen overflow-auto'>
           <Nav />
 
-          <div className="container mx-auto h-screen px-2 md:px-6 mt-6">
+          <div className="container mx-auto h-screen px-4 md:px-6 mt-6">
               <StatCards />
 
               <section className='w-full mt-4 grid grid-cols-1 md:grid-cols-2 gap-4'>
