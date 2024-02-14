@@ -51,7 +51,7 @@ export default function DashboardChart() {
     ];
 
     return (
-        <div className='bg-white shadow rounded h-[20rem] py-6 px-2'>
+        <div className='bg-white shadow h-[20rem] py-6 px-2'>
              <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={500}
@@ -59,8 +59,8 @@ export default function DashboardChart() {
           data={data}
           margin={{
             top: 5,
-            right: 30,
-            left: 20,
+            right: 10,
+            left: 10,
             bottom: 5,
           }}
         >
