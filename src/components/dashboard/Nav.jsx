@@ -9,7 +9,7 @@ function Nav() {
             <div className="container mx-auto flex justify-between py-2">
                 <div className="navbrand text-xl font-raleway font-semibold flex w-full gap-5 justify-between items-center">
 
-                    <h2 className='hidden md:flex'>Welcome back oborovorio Johnstone</h2>
+                    <h2 className='hidden md:flex'>Dashboard</h2>
 
                     <div className="flex gap-3 items-center md:hidden">
 
@@ -22,7 +22,7 @@ function Nav() {
                     </div>
 
 
-                    <div className='flex items-center'>
+                    <div className='flex items-center gap-1 cursor-pointer'>
                         <div className='bg-primary p-4 rounded-full'>
                         </div>
 

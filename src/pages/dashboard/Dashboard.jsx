@@ -1,21 +1,19 @@
 import React from 'react'
-import Nav from './Nav'
-import Sidebar from './Sidebar'
+import Nav from '../../components/dashboard/Nav'
+import Sidebar from '../../components/dashboard/Sidebar'
 import StatCards from '../../components/dashboard/StatCards'
 import DashboardDt from '../../components/dashboard/DashboardDt'
 import DashboardChart from '../../components/dashboard/DashboardChart'
+import { Route, Router, Routes } from 'react-router-dom'
+import Home from './Home'
+import EventManagement from './EventManagement'
+import TicketManagement from './TicketManagement'
+import EventBookings from './EventBookings'
+import PaymentManagement from './PaymentManagement'
 
 export default function Dashboard() {
 
-  const sideBarItems = [
-    { title: "Dashboard", route: "/dasboard", icon: "" },
-    { title: "Attendees Management", route: "/dasboard", icon: "" },
-    { title: "Event Management", route: "/dasboard", icon: "" },
-    { title: "Ticket Management", route: "/dasboard", icon: "" },
-    { title: "Dashboard", route: "/dasboard", icon: "" }
-
-
-  ]
+ 
 
   return (
     <div className='w-full h-screen min-h-screen  bg-[#eee] font-poppins'>
@@ -28,15 +26,17 @@ export default function Dashboard() {
         <div className='w-full md:w-[80%]  max-h-screen overflow-auto'>
           <Nav />
 
-          <div className="container mx-auto h-screen px-4 md:px-6 mt-6">
-              <StatCards />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/events' element={<EventManagement />} />
+            <Route path='/ticketing' element={<TicketManagement /> } />
+            <Route path='/bookings' element={<EventBookings />} />
+            <Route path='/payment' element={<PaymentManagement />} />
+           
 
-              <section className='w-full mt-4 grid grid-cols-1 md:grid-cols-2 gap-4'>
-                  <DashboardDt />
-                  <DashboardChart />
+            
 
-              </section>
-          </div>
+          </Routes>
         </div>
       </div>
 

@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function StatCards() {
     return (
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
-            <div className='p-6 bg-white shadow-sm rounded-md border border-stroke'>
+        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3'>
+            <div className='p-6 bg-white shadow-sm rounded border-2 border-b-primary'>
                 <div className="flex flex-col">
 
 
@@ -27,16 +27,16 @@ export default function StatCards() {
             </div>
 
 
-            <div className='p-6 bg-white shadow-sm rounded-md border border-stroke'>
+            <div className='p-6 bg-white shadow-sm rounded border-2 border-b-primary'>
                 <div className="flex flex-col">
 
 
-
+                    
                     <h4 className='font-poppins'>Total Bookings</h4>
-                    <h1 className='font-raleway text-3xl font-extrabold'>200</h1>
+                    <h1 className='text-3xl font-extrabold '>10</h1>
 
                     <div className="flex mt-2 justify-between items-center">
-                        <div className='text-primary font-semibold'>open</div>
+                        <div className='text-primary font-semibold'></div>
 
                         <div className="flex bg-green-700 bg-opacity-30 p-3 rounded-md">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -51,7 +51,7 @@ export default function StatCards() {
                 </div>
             </div>
 
-            <div className='p-6 bg-white shadow-sm rounded-md border border-stroke'>
+            <div className='p-6 bg-white shadow-sm rounded border-2 border-b-primary'>
                 <div className="flex flex-col">
 
 
@@ -63,6 +63,30 @@ export default function StatCards() {
                         <div className='text-primary font-semibold'>open</div>
 
                         <div className="flex bg-black bg-opacity-30 p-3 rounded-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" />
+                            </svg>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div className='p-6 bg-white shadow-sm rounded border-2 border-b-primary'>
+                <div className="flex flex-col">
+
+
+
+                    <h4 className='font-poppins'>Tickets created</h4>
+                    <h1 className='font-raleway text-3xl font-extrabold'>20</h1>
+
+                    <div className="flex mt-2 justify-between items-center">
+                        <div className='text-primary font-semibold'>open</div>
+
+                        <div className="flex bg-purple-900 bg-opacity-30 p-3 rounded-md">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" />
                             </svg>

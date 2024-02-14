@@ -22,7 +22,7 @@ function App() {
           <Route path='/register' element={<Signup />} />
           <Route path='/verify' element={<Verify />} />
           <Route path='/verify-account/:token' element={<Verify />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/dashboard/*' element={<Dashboard />} />
 
           
       </Routes>
