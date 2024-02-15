@@ -15,5 +15,5 @@
 }
 
 .side-bar-item {
-    @apply text-lg flex gap-2 cursor-pointer hover:translate-x-2 transition duration-200 ease-in-out hover:p-1 hover:bg-primary rounded
+    @apply flex gap-2 cursor-pointer hover:translate-x-2 transition duration-200 ease-in-out hover:p-1 hover:bg-primary rounded
 }

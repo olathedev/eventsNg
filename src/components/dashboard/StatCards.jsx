@@ -3,7 +3,7 @@ import React from 'react'
 export default function StatCards() {
     return (
         <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3'>
-            <div className='p-6 bg-white shadow-sm rounded border-2 border-b-primary'>
+            <div className='p-6 bg-white shadow-sm rounded'>
                 <div className="flex flex-col">
 
 
@@ -27,7 +27,7 @@ export default function StatCards() {
             </div>
 
 
-            <div className='p-6 bg-white shadow-sm rounded border-2 border-b-primary'>
+            <div className='p-6 bg-white shadow-sm rounded'>
                 <div className="flex flex-col">
 
 
@@ -51,7 +51,7 @@ export default function StatCards() {
                 </div>
             </div>
 
-            <div className='p-6 bg-white shadow-sm rounded border-2 border-b-primary'>
+            <div className='p-6 bg-white shadow-sm rounded'>
                 <div className="flex flex-col">
 
 
@@ -75,7 +75,7 @@ export default function StatCards() {
                 </div>
             </div>
 
-            <div className='p-6 bg-white shadow-sm rounded border-2 border-b-primary'>
+            <div className='p-6 bg-white shadow-sm rounded'>
                 <div className="flex flex-col">
 
 

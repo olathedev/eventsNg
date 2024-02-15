@@ -10,6 +10,9 @@ import EventManagement from './EventManagement'
 import TicketManagement from './TicketManagement'
 import EventBookings from './EventBookings'
 import PaymentManagement from './PaymentManagement'
+import MerchStore from './MerchStore'
+import Footer from '../../components/dashboard/Footer'
+import NotFound from './NotFound'
 
 export default function Dashboard() {
 
@@ -32,11 +35,17 @@ export default function Dashboard() {
             <Route path='/ticketing' element={<TicketManagement /> } />
             <Route path='/bookings' element={<EventBookings />} />
             <Route path='/payment' element={<PaymentManagement />} />
+            <Route path='/merch' element={<MerchStore />} />
+            <Route path='*' element={<NotFound />} />
+
+
            
 
             
 
           </Routes>
+
+          <Footer />
         </div>
       </div>
 

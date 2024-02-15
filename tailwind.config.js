@@ -13,7 +13,8 @@ export default {
       fontFamily: {
         monteserat: ['Montserrat', 'sans-serif'],
         raleway: ['Raleway', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif']
+        poppins: ['Poppins', 'sans-serif'],
+        quicksand: ['Quicksand', 'sans-serif']
       }
     },
   },
