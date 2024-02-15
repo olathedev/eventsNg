@@ -27,7 +27,7 @@ export default function EventsTable({ handleModal }) {
                     </form>
                 </div>
             </div>
-            <div className="w-full max-w-full overflow-x-auto mx-auto">
+            <div className="w-full max-w-full overflow-x-auto mx-auto flex flex-col gap-6">
 
                 <table className='mt-10 w-full table-auto font-raleway'>
                     <thead className=''>
@@ -184,7 +184,14 @@ export default function EventsTable({ handleModal }) {
                     </tfoot>
 
                 </table>
+                    
+                <button className='md:hidden bg-primary py-3 px-3 text-white rounded-md flex justify-center items-center gap-2' onClick={handleModal}>
+                    Create Event
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
 
+                </button>
             </div>
         </div>
     )
