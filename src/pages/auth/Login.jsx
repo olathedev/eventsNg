@@ -1,10 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 import image from '../../assets/asake2.jpg'
 import google from '../../assets/google.png'
+import * as yup from "yup"
 
 import { Link } from 'react-router-dom'
+import { useAuthContext } from '../../hooks/useAuthContext'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import axios from 'axios'
+
+const schema = yup.object ({
+    email: yup.string().email("Provide a valid email").required("please provide an email"),
+    password: yup.string().required("Please provide a password").min(6, "Invalid password"),
+})
 
 export default function Login() {
+
+    const {dispatch} = useAuthContext()
+
+    const [isPending, setIsPending] = useState(false)
+
+    const {register, handleSubmit, formState: {errors}} = useForm({
+        resolver: yupResolver(schema),
+        defaultValues: {
+            email: "",
+            password: ""
+        }
+    })
+    const onSubmit = async (data) => {
+        setIsPending(true)
+        try {
+            const {data: response} = await axios.post('/auth/signin', data)
+            console.log(response)
+            dispatch({type: 'LOGIN', payload: response})
+            localStorage.setItem('user', JSON.stringify(response.token))
+            setIsPending(false)
+        } catch (error) {
+            console.log(error);
+            setIsPending(false)
+        }
+    }
+
+
     return (
         <div className='w-full max-h-screen overflow-hidden'>
 
@@ -22,7 +59,7 @@ export default function Login() {
                             <h2 className='text-2xl md:text-3xl mt-2 font-bold text-primary'>Sign in to your Account</h2>
                         </header>
 
-                        <form className='mt-4 px-6 md:px-2  w-full flex flex-col gap-4 items-center font-raleway'>
+                        <form className='mt-4 px-6 md:px-2  w-full flex flex-col gap-4 items-center font-raleway' onSubmit={handleSubmit(onSubmit)}>
 
 
 
@@ -30,7 +67,7 @@ export default function Login() {
 
                                 <label htmlFor="password" className=''>Email <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='auth-formInput' placeholder='Email' type="text" name="" id="" />
+                                    <input className='auth-formInput' placeholder='Email' type="text" {...register('email')} />
 
                                     <span className='absolute right-3 top-3'>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -40,14 +77,18 @@ export default function Login() {
 
                                     </span>
                                 </div>
+
+                                {errors.email && (
+                                    <span className='text-sm font-poppins text-red-500'>{errors.email.message}</span>
+                                )}
                             </div>
 
 
                             <div className="w-full md:w-[60%] password">
 
-                                <label htmlFor="password" className=''>Passwordd <span className='text-red-600 text-xl'>*</span> </label>
+                                <label htmlFor="password" className=''>Password <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='auth-formInput' placeholder='Password' type="password" name="" id="" />
+                                    <input className='auth-formInput' placeholder='Password' type="password"  {...register('password')}  />
 
                                     <span className='absolute right-3 top-3 cursor-pointer'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -60,6 +101,9 @@ export default function Login() {
 
                                     </span>
                                 </div>
+                                {errors.password && (
+                                    <span className='text-sm font-poppins text-red-500'>{errors.password.message}</span>
+                                )}
                                 <p className='flex justify-end font-poppins text-primary cursor-pointer'>Forgoten Password?</p>
 
                             </div>
