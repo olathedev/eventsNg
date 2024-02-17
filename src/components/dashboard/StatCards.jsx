@@ -9,7 +9,7 @@ export default function StatCards() {
 
 
                     <h4 className='font-poppins'>Total Events</h4>
-                    <h1 className='font-raleway text-3xl font-extrabold'>200</h1>
+                    <h1 className='font-raleway text-2x font-bold'>200</h1>
 
                     <div className="flex mt-2 justify-between items-center">
                         <div className='text-primary font-semibold'>open</div>
@@ -33,7 +33,7 @@ export default function StatCards() {
 
                     
                     <h4 className='font-poppins'>Total Bookings</h4>
-                    <h1 className='text-3xl font-extrabold '>10</h1>
+                    <h1 className='text-2x font-bold '>10</h1>
 
                     <div className="flex mt-2 justify-between items-center">
                         <div className='text-primary font-semibold'></div>
@@ -57,7 +57,7 @@ export default function StatCards() {
 
 
                     <h4 className='font-poppins'>Tickets created</h4>
-                    <h1 className='font-raleway text-3xl font-extrabold'>20</h1>
+                    <h1 className='font-raleway text-2x font-bold'>20</h1>
 
                     <div className="flex mt-2 justify-between items-center">
                         <div className='text-primary font-semibold'>open</div>
@@ -81,7 +81,7 @@ export default function StatCards() {
 
 
                     <h4 className='font-poppins'>Tickets created</h4>
-                    <h1 className='font-raleway text-3xl font-extrabold'>20</h1>
+                    <h1 className='font-raleway text-2x font-bold'>20</h1>
 
                     <div className="flex mt-2 justify-between items-center">
                         <div className='text-primary font-semibold'>open</div>
