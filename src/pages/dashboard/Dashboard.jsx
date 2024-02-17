@@ -13,17 +13,33 @@ import PaymentManagement from './PaymentManagement'
 import MerchStore from './MerchStore'
 import Footer from '../../components/dashboard/Footer'
 import NotFound from './NotFound'
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
+import { useAuthContext } from '../../hooks/useAuthContext'
 
 export default function Dashboard() {
 
- 
+    const {user} = useAuthContext()
+    
+    const {data} = useQuery({
+      queryKey: ['Get Events'],
+      queryFn: async () => {
+        const response = await axios.get('/events', {
+          headers: {
+            'Authorization': `Bearer ${user}`
+          }
+        })
+        return response.data
+       
+      }
+    })
 
   return (
     <div className='w-full h-screen min-h-screen  bg-[#eee] font-poppins'>
       <div className="flex w-full  h-full">
 
         <div className='hidden md:w-[20%] md:flex h-screen max-h-screen overflow-hidden'>
-        <Sidebar />
+          <Sidebar />
 
         </div>
         <div className='w-full md:w-[80%]  max-h-screen overflow-auto'>
@@ -32,16 +48,16 @@ export default function Dashboard() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/events' element={<EventManagement />} />
-            <Route path='/ticketing' element={<TicketManagement /> } />
+            <Route path='/ticketing' element={<TicketManagement />} />
             <Route path='/bookings' element={<EventBookings />} />
             <Route path='/payment' element={<PaymentManagement />} />
             <Route path='/merch' element={<MerchStore />} />
             <Route path='*' element={<NotFound />} />
 
 
-           
 
-            
+
+
 
           </Routes>
 
