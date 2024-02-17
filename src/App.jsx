@@ -1,10 +1,11 @@
 import Home from './pages/Home'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import Login from './pages/auth/Login'
 import Signup from './pages/auth/Signup'
 import Verify from './pages/auth/Verify'
 import axios from 'axios'
 import Dashboard from './pages/dashboard/Dashboard'
+import { useAuthContext } from './hooks/useAuthContext'
 
 
 axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng"
@@ -12,17 +13,17 @@ axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng"
 
 
 function App() {
+  const {user} = useAuthContext()
   return (
     <div className="">
     
       <Routes>
 
           <Route index element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Signup />} />
+          <Route path='/login' element={!user ? <Login /> : <Navigate to="/dashboard" />} />
+          <Route path='/register' element={!user ? <Signup /> : <Navigate to="/dashboard" />} />
           <Route path='/verify' element={<Verify />} />
-          <Route path='/verify-account/:token' element={<Verify />} />
-          <Route path='/dashboard/*' element={<Dashboard />} />
+          <Route path='/dashboard/*' element={user ? <Dashboard /> : <Navigate to="/login" />} />
 
           
       </Routes>

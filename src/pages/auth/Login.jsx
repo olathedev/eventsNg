@@ -3,7 +3,7 @@ import image from '../../assets/asake2.jpg'
 import google from '../../assets/google.png'
 import * as yup from "yup"
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -17,8 +17,9 @@ const schema = yup.object ({
 export default function Login() {
 
     const {dispatch} = useAuthContext()
-
+    const navigate = useNavigate()
     const [isPending, setIsPending] = useState(false)
+
 
     const {register, handleSubmit, formState: {errors}} = useForm({
         resolver: yupResolver(schema),
@@ -35,6 +36,7 @@ export default function Login() {
             dispatch({type: 'LOGIN', payload: response})
             localStorage.setItem('user', JSON.stringify(response.token))
             setIsPending(false)
+            navigate('/dashboard/')
         } catch (error) {
             console.log(error);
             setIsPending(false)
@@ -112,7 +114,7 @@ export default function Login() {
 
 
                             <div className='w-full md:w-[60%]'>
-                                <button className='w-full py-3 px-4 text-xl font-semibold  text-white bg-primary rounded'>Sign in</button>
+                                <button className='w-full py-3 px-4 text-xl font-semibold  text-white bg-primary rounded' disabled={isPending}>{!isPending ? "Sign in" : "Signing in..."}</button>
                             </div>
 
                             <button className="w-full md:w-[60%] py-3 px-4 bg-gray-300 rounded flex items-center justify-center gap-4">
