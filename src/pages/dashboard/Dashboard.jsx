@@ -24,16 +24,17 @@ export default function Dashboard() {
     const {data} = useQuery({
       queryKey: ['Get Events'],
       queryFn: async () => {
-        const response = await axios.get('/events', {
+        const response = await axios.get('/events/stats', {
           headers: {
             'Authorization': `Bearer ${user}`
           }
         })
         return response.data
-       
+        
       }
     })
 
+    console.log(data);
   return (
     <div className='w-full h-screen min-h-screen  bg-[#eee] font-poppins'>
       <div className="flex w-full  h-full">
@@ -46,7 +47,7 @@ export default function Dashboard() {
           <Nav />
 
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Home stats={data?.defaultStats}  />} />
             <Route path='/events' element={<EventManagement />} />
             <Route path='/ticketing' element={<TicketManagement />} />
             <Route path='/bookings' element={<EventBookings />} />
@@ -60,9 +61,10 @@ export default function Dashboard() {
 
 
           </Routes>
+          {/* <Footer /> */}
 
-          <Footer />
         </div>
+
       </div>
 
 

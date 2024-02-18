@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function StatCards() {
+export default function StatCards({stats}) {
     return (
         <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3'>
             <div className='p-6 bg-white shadow-sm rounded'>
@@ -9,7 +9,7 @@ export default function StatCards() {
 
 
                     <h4 className='font-poppins'>Total Events</h4>
-                    <h1 className='font-raleway text-2xl font-bold'>200</h1>
+                    <h1 className='font-raleway text-2xl font-bold'>{stats?.isActive + stats?.notActive}</h1>
 
                     <div className="flex mt-2 justify-between items-center">
                         <div className='text-primary font-semibold'>open</div>
@@ -32,8 +32,8 @@ export default function StatCards() {
 
 
                     
-                    <h4 className='font-poppins'>Total Bookings</h4>
-                    <h1 className='text-2xl font-bold '>10</h1>
+                    <h4 className='font-poppins'>Active events</h4>
+                    <h1 className='text-2xl font-bold '>{stats?.isActive}</h1>
 
                     <div className="flex mt-2 justify-between items-center">
                         <div className='text-primary font-semibold'></div>
