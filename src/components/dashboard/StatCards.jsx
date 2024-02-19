@@ -6,10 +6,8 @@ export default function StatCards({stats}) {
             <div className='py-4 px-5 bg-white shadow-sm rounded'>
                 <div className="flex flex-col">
 
-
-
                     <h4 className='font-poppins'>Total Events</h4>
-                    <h1 className='font-raleway text-2xl font-bold'>{21}</h1>
+                    <h1 className='font-raleway text-2xl font-bold'>21</h1>
 
                     <div className="flex mt-2 justify-between items-center">
                         <div className='text-primary font-semibold'></div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import AddEventModal from '../../components/dashboard/AddEventModal'
 import event from "../../assets/event.jpg"
 import EventsTable from '../../components/dashboard/EventsTable'
-import Events from '../../components/dashboard/events'
+import Events from '../../components/dashboard/Events'
 import event1 from '../../assets/events/event1.png'
 
 export default function EventManagement() {
