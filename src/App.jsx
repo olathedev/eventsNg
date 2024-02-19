@@ -24,6 +24,8 @@ function App() {
           <Route path='/register' element={!user ? <Signup /> : <Navigate to="/dashboard" />} />
           <Route path='/verify' element={<Verify />} />
           <Route path='/dashboard/*' element={user ? <Dashboard /> : <Navigate to="/login" />} />
+          <Route path='/dashboard/*' element={ <Dashboard /> } />
+
 
           
       </Routes>
