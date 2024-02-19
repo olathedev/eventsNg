@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import image from '../../assets/authImage.jpg'
 import google from '../../assets/google.png'
+import paper from '../../assets/paper.svg'
+
 import * as yup from "yup"
 
 import { Link, useNavigate } from 'react-router-dom'
@@ -19,6 +21,8 @@ export default function Login() {
     const {dispatch} = useAuthContext()
     const navigate = useNavigate()
     const [isPending, setIsPending] = useState(false)
+    const [error, setError] = useState({email: '', password: ''})
+
 
 
     const {register, handleSubmit, formState: {errors}} = useForm({
@@ -29,6 +33,7 @@ export default function Login() {
         }
     })
     const onSubmit = async (data) => {
+        setError({email: '', password: ''})
         setIsPending(true)
         try {
             const {data: response} = await axios.post('/auth/signin', data)
@@ -40,6 +45,16 @@ export default function Login() {
         } catch (error) {
             console.log(error);
             setIsPending(false)
+            setIsPending(false)
+            const {message} = error.response.data
+            console.log(error.response)
+            if(message.includes('Email')) {
+                setError({email: message})
+            }
+            if(message.includes('password')) {
+                setError({password: message})
+            }
+            
         }
     }
 
@@ -47,18 +62,18 @@ export default function Login() {
     return (
         <div className='w-full max-h-screen overflow-hidden'>
 
-
-            <section className='w-full md:flex'>
+            <img src={paper} alt="" className='h-[13rem] absolute top-[10rem] left-[37rem] z-10' />
+            <section className='w-full md:flex relative'>
                 <div className='w-full md:w-1/2 '>
 
                     <nav className='pt-6 px-6'>
-                        <Link to="/"> <h1 className='text-2xl font-semibold font-raleway text-primary cursor-pointer'>Events.ng</h1></Link>
+                        <Link to="/"> <h1 className='text-xl font-semibold font-raleway text-primary cursor-pointer'>Events.ng</h1></Link>
                     </nav>
 
                     <div className='flex flex-col pt-[4rem] items-center'>
                         <header className='w-full px-6 md:px-1 md:w-[60%] font-raleway mb-3'>
-                            <p className='mt-4 md:text-lg  font-quicksand'>Resume your journey</p>
-                            <h2 className='text-2xl md:text-3xl mt-2 font-bold text-primary'>Sign in to your Account</h2>
+                            <p className='mt-4 font-quicksand'>Resume your journey</p>
+                            <h2 className='text-2xl md:text-2xl mt-2 font-bold text-primary'>Sign in to your Account</h2>
                         </header>
 
                         <form className='mt-4 px-6 md:px-2  w-full flex flex-col gap-4 items-center font-quicksand' onSubmit={handleSubmit(onSubmit)}>
@@ -69,7 +84,8 @@ export default function Login() {
 
                                 <label htmlFor="password" className=''>Email <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='auth-formInput' placeholder='Email' type="text" {...register('email')} />
+                                    <input className='auth-formInput' placeholder='Email' type="text" {...register('email')} onClick={() => setError({email: '', password: ''})
+} />
 
                                     <span className='absolute right-3 top-3'>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -83,6 +99,9 @@ export default function Login() {
                                 {errors.email && (
                                     <span className='text-sm font-poppins text-red-500'>{errors.email.message}</span>
                                 )}
+                                {error.email && (
+                                    <span className={`${errors.email ? 'hidden' : 'flex'} text-sm font-poppins text-red-500`}>{error.email}</span>
+                                )}
                             </div>
 
 
@@ -90,7 +109,7 @@ export default function Login() {
 
                                 <label htmlFor="password" className=''>Password <span className='text-red-600 text-xl'>*</span> </label>
                                 <div className="relative w-full">
-                                    <input className='auth-formInput' placeholder='Password' type="password"  {...register('password')}  />
+                                    <input className='auth-formInput' placeholder='Password' type="password"  {...register('password')} onClick={() => setError({email: '', password: ''})}  />
 
                                     <span className='absolute right-3 top-3 cursor-pointer'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -106,6 +125,9 @@ export default function Login() {
                                 {errors.password && (
                                     <span className='text-sm font-poppins text-red-500'>{errors.password.message}</span>
                                 )}
+                                {error.password && (
+                                    <span className='text-sm font-poppins text-red-500'>{error.password}</span>
+                                )}
                                 <p className='flex justify-end font-poppins text-primary cursor-pointer'>Forgoten Password?</p>
 
                             </div>
@@ -114,10 +136,10 @@ export default function Login() {
 
 
                             <div className='w-full md:w-[60%]'>
-                                <button className='w-full py-3 px-4 text-xl font-semibold  text-white bg-primary rounded' disabled={isPending}>{!isPending ? "Sign in" : "Signing in..."}</button>
+                                <button className='auth-button bg-primary text-white' disabled={isPending}>{!isPending ? "Sign in" : "Signing in..."}</button>
                             </div>
 
-                            <button className="w-full md:w-[60%] py-3 px-4 bg-primary bg-opacity-25 rounded flex items-center justify-center gap-4">
+                            <button className="auth-button w-full text-secondary md:w-[60%] bg-primary bg-opacity-25 rounded flex items-center justify-center gap-4">
                                 <img src={google} className='h-6' alt="" />
 
                                 Sign in with Google

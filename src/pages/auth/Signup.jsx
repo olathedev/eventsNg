@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import image from '../../assets/authImage.jpg'
 import google from '../../assets/google.png'
+import paper from '../../assets/paper.svg'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import * as yup from "yup"
@@ -25,13 +26,13 @@ export default function Signup() {
     const [error, setError] = useState({})
     const [success, setSuccess] = useState(false)
 
-    const {register, handleSubmit, formState: {errors}} = useForm({
+    const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
         defaultValues: {
             fullname: "",
             email: "",
             password: "",
-            confirmpassword: "" 
+            confirmpassword: ""
         }
 
     })
@@ -56,18 +57,18 @@ export default function Signup() {
             setSuccess(true)
         } catch (error) {
             setIsPending(false)
-            const {message} = error.response.data
+            const { message } = error.response.data
             console.log(error.response)
-            if(message.includes('email')) {
-                setError({email: message})
+            if (message.includes('email')) {
+                setError({ email: message })
             }
         }
-        
+
     }
-    
+
     return (
         <div className='w-full h-screen max-h-screen'>
-
+            <img src={paper} alt="" className='h-[13rem] absolute top-[10rem] left-[37rem] z-10' />
 
             <section className='w-full mx-auto md:flex h-screen max-h-screen'>
                 <div className='w-full md:w-1/2 pb-8  overflow-y-auto'>
@@ -77,12 +78,12 @@ export default function Signup() {
                     </nav>
 
                     <div className={`${success ? 'hidden' : 'flex'} px-6 md:px-1 flex-col pt-[2rem] items-center`}>
-                        <header className='w-full md:w-[60%] font-raleway mb-3'>
+                        <header className='w-full md:w-[60%] font-raleway mb-2'>
                             <p className='mt-4 md:text-lg font-quicksand'>Hey, Welcome</p>
                             <h2 className='text-2xl md:text-2xl mt-2 font-bold text-primary'>Create a new Account</h2>
                         </header>
 
-                        <form className={` mt-4 w-full flex flex-col gap-4 items-center font-raleway`} onSubmit={handleSubmit(onSubmit)}>
+                        <form className={` mt-4 w-full flex flex-col gap-3 items-center font-raleway`} onSubmit={handleSubmit(onSubmit)}>
 
 
 
@@ -175,8 +176,8 @@ export default function Signup() {
 
                                     </span>
                                     {errors.confirmpassword && (
-                                    <span className='text-sm font-poppins text-red-700'>{errors.confirmpassword.message}</span>
-                                )}
+                                        <span className='text-sm font-poppins text-red-700'>{errors.confirmpassword.message}</span>
+                                    )}
                                 </div>
                                 <p className='flex justify-end font-poppins text-primary cursor-pointer'>Forgoten Password?</p>
 
@@ -184,12 +185,12 @@ export default function Signup() {
 
 
                             <div className='w-full md:w-[60%]'>
-                                <button className='w-full py-3 px-4 text-xl font-semibold  text-white bg-primary rounded' disabled={isPending}>
-                                     {isPending ? "Submiting..." : "Sign up"}
+                                <button className='auth-button bg-primary text-white' disabled={isPending}>
+                                    {isPending ? "Submiting..." : "Sign up"}
                                 </button>
                             </div>
 
-                            <button type='button' className="w-full md:w-[60%] py-3 px-4 bg-gray-300 rounded flex items-center justify-center gap-4">
+                            <button type='button' className="auth-button w-full md:w-[60%] bg-primary bg-opacity-25 text-secondary flex items-center justify-center gap-4 font-quicksand">
                                 <img src={google} className='h-6' alt="" />
                                 Sign up with Google
                             </button>

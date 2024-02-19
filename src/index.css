@@ -11,9 +11,29 @@
 }
 
 .auth-formInput {
-    @apply w-full py-3 px-4 bg-gray-200 border border-gray-500 rounded focus:outline-none font-raleway focus:border-primary
+    @apply w-full py-3 px-4  border border-gray-400 rounded focus:outline-none font-raleway focus:border-primary
 }
 
+.auth-button {
+    @apply w-full py-3 px-3 text-lg font-semibold rounded
+}
 .side-bar-item {
     @apply flex gap-2 cursor-pointer hover:translate-x-2 transition duration-200 ease-in-out hover:p-1 hover:bg-primary rounded
 }
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #CBD5E0 transparent;
+  }
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #CBD5E0;
+    border-radius: 3px;
+    border: 1px solid transparent;
+  }

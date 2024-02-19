@@ -66,7 +66,7 @@ export default function EventManagement() {
                 </button>
             </div>
 
-           <EventsTable handleModal={handleModal} />
+           {/* <EventsTable handleModal={handleModal} /> */}
         </div>
     )
 }

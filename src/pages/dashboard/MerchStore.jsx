@@ -1,17 +1,21 @@
 import React from 'react'
+import image1 from '../../assets/merchs/ankara.jpg'
+import image2 from '../../assets/merchs/shirt.jpg'
+import image3 from '../../assets/merchs/hoodie.jpg'
+
 
 export default function MerchStore() {
 
 
     const merchs = [
-        { name: "Aso ebi", event: "Party with Olori ebi", price: "4000" },
-        { name: "T-shirt", event: " Lagos tech Fest", price: "10000" },
-        { name: "Cap", event: "Freshers party", price: "4000" },
-        { name: "Hoodies", event: "Lagos Creators Hangout", price: "4000" },
-        { name: "Bikini's", event: "Jays Pool pary", price: "2500" },
-        { name: "Totes Bag", event: "Quava conference", price: "1000" },
-        { name: "Gele yaya", event: "Party with Olori ebi", price: "4000" },
-        { name: "Hills", event: "Party with Olori ebi", price: "4000" }
+        { name: "Aso ebi", event: "Party with Olori ebi", price: "4000", image: image1 },
+        { name: "T-shirt", event: " Lagos tech Fest", price: "10000", image: image2 },
+        { name: "Cap", event: "Freshers party", price: "4000", image: image3 },
+        { name: "shirt", event: "Lagos Creators Hangout", price: "4000", image: image1 },
+        { name: "Bikini's", event: "Jays Pool pary", price: "2500", image: image2 },
+        { name: "Totes Bag", event: "Quava conference", price: "1000", image: image3 },
+        { name: "Gele yaya", event: "Party with Olori ebi", price: "4000", image: image1 },
+        { name: "Hills", event: "Party with Olori ebi", price: "4000", image: image1 }
 
 
     ]
@@ -32,12 +36,12 @@ export default function MerchStore() {
                 </div>
             </div>
 
-            <section className="mt-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            <section className="mt-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-6">
 
                 {merchs.map((merch, index) => (
                 <div className="card flex flex-col bg-white shadow rounded relative" key={index}>
-                    <div className="card-header h-32 bg-gray-300 rounded-t ">
-
+                    <div className="card-header h-32 max-h-32 overflow-hidden bg-gray-300 rounded-t ">
+                        <img src={merch.image} className='object-cover h-full min-h-full w-full' alt="" />
                     </div>
                     <h4 className='absolute bg-primary bg-opacity-70 text-white backdrop-blur-sm left-0 rounded-ss top-0 p-1  text-sm font-poppins'>{merch.event}</h4>
 
