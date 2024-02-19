@@ -8,13 +8,17 @@ export default {
     extend: {
 
       colors: {
-        primary: '#FC6537'
+        primary: '#0A5C36',
+        secondary: '#0F5132',
+        tertiary: '#14452F'
       },
       fontFamily: {
         monteserat: ['Montserrat', 'sans-serif'],
         raleway: ['Raleway', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
-        quicksand: ['Quicksand', 'sans-serif']
+        quicksand: ['Quicksand', 'sans-serif'],
+        Roboto: ['Roboto', 'sans-serif'],
+
       }
     },
   },

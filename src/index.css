@@ -11,7 +11,7 @@
 }
 
 .auth-formInput {
-    @apply w-full py-3 px-4 border border-gray-700 rounded focus:outline-none font-raleway focus:border-primary
+    @apply w-full py-3 px-4 bg-gray-200 border border-gray-500 rounded focus:outline-none font-raleway focus:border-primary
 }
 
 .side-bar-item {

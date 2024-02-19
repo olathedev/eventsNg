@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import image from '../../assets/asake1.jpg'
+import image from '../../assets/authImage.jpg'
 import google from '../../assets/google.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
@@ -78,7 +78,7 @@ export default function Signup() {
 
                     <div className={`${success ? 'hidden' : 'flex'} px-6 md:px-1 flex-col pt-[2rem] items-center`}>
                         <header className='w-full md:w-[60%] font-raleway mb-3'>
-                            <p className='mt-4 md:text-xl '>Hey, Welcome</p>
+                            <p className='mt-4 md:text-lg font-quicksand'>Hey, Welcome</p>
                             <h2 className='text-2xl md:text-2xl mt-2 font-bold text-primary'>Create a new Account</h2>
                         </header>
 

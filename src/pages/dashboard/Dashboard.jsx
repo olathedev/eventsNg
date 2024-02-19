@@ -54,12 +54,6 @@ export default function Dashboard() {
             <Route path='/payment' element={<PaymentManagement />} />
             <Route path='/merch' element={<MerchStore />} />
             <Route path='*' element={<NotFound />} />
-
-
-
-
-
-
           </Routes>
           {/* <Footer /> */}
 

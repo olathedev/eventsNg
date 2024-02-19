@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import image from '../../assets/asake2.jpg'
+import image from '../../assets/authImage.jpg'
 import google from '../../assets/google.png'
 import * as yup from "yup"
 
@@ -57,11 +57,11 @@ export default function Login() {
 
                     <div className='flex flex-col pt-[4rem] items-center'>
                         <header className='w-full px-6 md:px-1 md:w-[60%] font-raleway mb-3'>
-                            <p className='mt-4 text-lg md:text-xl'>Resume your journey</p>
+                            <p className='mt-4 md:text-lg  font-quicksand'>Resume your journey</p>
                             <h2 className='text-2xl md:text-3xl mt-2 font-bold text-primary'>Sign in to your Account</h2>
                         </header>
 
-                        <form className='mt-4 px-6 md:px-2  w-full flex flex-col gap-4 items-center font-raleway' onSubmit={handleSubmit(onSubmit)}>
+                        <form className='mt-4 px-6 md:px-2  w-full flex flex-col gap-4 items-center font-quicksand' onSubmit={handleSubmit(onSubmit)}>
 
 
 
@@ -117,7 +117,7 @@ export default function Login() {
                                 <button className='w-full py-3 px-4 text-xl font-semibold  text-white bg-primary rounded' disabled={isPending}>{!isPending ? "Sign in" : "Signing in..."}</button>
                             </div>
 
-                            <button className="w-full md:w-[60%] py-3 px-4 bg-gray-300 rounded flex items-center justify-center gap-4">
+                            <button className="w-full md:w-[60%] py-3 px-4 bg-primary bg-opacity-25 rounded flex items-center justify-center gap-4">
                                 <img src={google} className='h-6' alt="" />
 
                                 Sign in with Google

@@ -16,7 +16,7 @@ export default function Sidebar() {
     return (
 
         
-        <section className="h-full w-full bg-[#bc360d] px-8 py-6">
+        <section className="h-full w-full bg-secondary px-8 py-6">
             <div className="navbrand text-xl text-white font-monteserat mb-16 font-bold">
                 Events NG
             </div>
