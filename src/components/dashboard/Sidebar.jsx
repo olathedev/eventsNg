@@ -12,13 +12,14 @@ export default function Sidebar() {
       ]
 
     const {logout} = useLogOut()
+    
 
     return (
 
         
-        <section className="h-full w-full bg-secondary px-8 py-6">
-            <div className="navbrand text-xl text-white font-monteserat mb-16 font-bold">
-                Events NG
+        <aside className="h-full w-full bg-secondary px-8 py-6">
+            <div className="navbrand text-2xl text-white font-quicksand mb-16 font-bold">
+                Events.ng
             </div>
 
             <div className="flex flex-col gap-6 text-white">
@@ -104,7 +105,7 @@ export default function Sidebar() {
 
 
             </div>
-        </section>
+        </aside>
 
 
     )

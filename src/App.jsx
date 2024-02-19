@@ -6,6 +6,7 @@ import Verify from './pages/auth/Verify'
 import axios from 'axios'
 import Dashboard from './pages/dashboard/Dashboard'
 import { useAuthContext } from './hooks/useAuthContext'
+import { SidebarContextProvider } from './context/helperContexts'
 
 
 axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng"
@@ -13,22 +14,25 @@ axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng"
 
 
 function App() {
-  const {user} = useAuthContext()
+  const { user } = useAuthContext()
   return (
     <div className="">
-    
-      <Routes>
+      <SidebarContextProvider>
+
+        <Routes>
 
           <Route index element={<Home />} />
           <Route path='/login' element={!user ? <Login /> : <Navigate to="/dashboard" />} />
           <Route path='/register' element={!user ? <Signup /> : <Navigate to="/dashboard" />} />
           <Route path='/verify' element={<Verify />} />
           {/* <Route path='/dashboard/*' element={user ? <Dashboard /> : <Navigate to="/login" />} /> */}
-          <Route path='/dashboard/*' element={ <Dashboard /> } />
+          <Route path='/dashboard/*' element={
+            <Dashboard />
+          } />
 
+        </Routes>
+      </SidebarContextProvider>
 
-          
-      </Routes>
     </div>
   )
 }

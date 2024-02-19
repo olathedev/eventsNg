@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import AddEventModal from '../../components/dashboard/AddEventModal'
 import event from "../../assets/event.jpg"
 import EventsTable from '../../components/dashboard/EventsTable'
+import Events from '../../components/dashboard/events'
+import event1 from '../../assets/events/event1.png'
 
 export default function EventManagement() {
 
@@ -40,7 +42,7 @@ export default function EventManagement() {
     ];
 
     return (
-        <div className="container mx-auto h-screen px-4 md:px-6 my-8">
+        <div className="container bg-white mx-auto h-screen px-4 md:px-6 py-8">
 
             {modal && (
                 <AddEventModal handleModal={handleModal} />
@@ -56,7 +58,7 @@ export default function EventManagement() {
                     Dashboard/<span className='text-primary'>Event Management</span>
 
                 </div>
-                
+
                 <button className='md:hidden bg-primary py-3 px-3 mt-3 text-white rounded-md flex justify-center items-center gap-2' onClick={handleModal}>
                     Create Event
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -66,7 +68,8 @@ export default function EventManagement() {
                 </button>
             </div>
 
-           {/* <EventsTable handleModal={handleModal} /> */}
+            {/* <EventsTable handleModal={handleModal} /> */}
+            <Events handleModal={handleModal} />
         </div>
     )
 }

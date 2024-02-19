@@ -16,6 +16,7 @@ import NotFound from './NotFound'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { useAuthContext } from '../../hooks/useAuthContext'
+import { SidebarContextProvider, useSidebaarContext } from '../../context/helperContexts'
 
 export default function Dashboard() {
 
@@ -35,15 +36,22 @@ export default function Dashboard() {
     })
 
     console.log(data);
+
+    const {sidebarOpen, setSidebarOpen} = useSidebaarContext()
   return (
-    <div className='w-full h-screen min-h-screen  bg-[#eee] font-poppins'>
+
+    <div className='w-full h-screen min-h-screen  bg-[#F9F6FF] font-poppins'>
       <div className="flex w-full  h-full">
 
-        <div className='hidden md:w-[20%] md:flex h-screen max-h-screen overflow-hidden'>
+
+        <div className={`${sidebarOpen ? 'enabled' : 'hidden'} absolute md:static md:flex left-0 top-0 z-20 w-[75%] md:w-[20%] h-screen max-h-screen overflow-hidden lg:translate-x-0 duration-300 ease-linear`}>
+
           <Sidebar />
 
         </div>
-        <div className='w-full md:w-[80%]  max-h-screen overflow-auto'>
+        <div className=' max-h-screen grow overflow-auto'>
+
+        
           <Nav />
 
           <Routes>
@@ -63,5 +71,6 @@ export default function Dashboard() {
 
 
     </div>
+ 
   )
 }

@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function AddEventModal({ handleModal }) {
     return (
-        <div className={`fixed inset-0 flex justify-center items-center bg-black bg-opacity-40  z-30 px-2`}>
-            <div className="bg-white md:w-[35%] rounded-xl md:-mr-10 border-b-2 border-b-primary transition-all duration-200 ease-in-out">
+        <div className={`fixed inset-0 flex justify-center items-center bg-black bg-opacity-60  z-30 px-2`}>
+            <div className="bg-white md:w-[35%] rounded md:-mr-10 border-b-2 border-b-primary transition-all duration-200 ease-in-out">
                 <div className="modal-header flex gap-5 justify-between items-center px-6 py-6 border-b-2">
 
                     <div>
