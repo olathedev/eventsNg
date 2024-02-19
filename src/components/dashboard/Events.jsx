@@ -7,7 +7,7 @@ import event3 from '../../assets/events/event3.png'
 
 export default function Events({handleModal}) {
     return (
-        <section id='events' className='mx-6 mt-10 '>
+        <section id='events' className='px-3 md:px-6 mt-10 '>
             <div className="grid grid-cols-1 md:grid-cols-4">
                 <div className="h-28 p-4 border border-gray-400 flex flex-col gap-3 items-center justify-center rounded cursor-pointer" onClick={handleModal}>
                     <div className="p-2 bg-secondary bg-opacity-30 text-primary rounded-md">

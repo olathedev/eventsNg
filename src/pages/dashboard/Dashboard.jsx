@@ -49,7 +49,7 @@ export default function Dashboard() {
           <Sidebar />
 
         </div>
-        <div className=' max-h-screen grow overflow-auto'>
+        <div className='grow overflow-auto'>
 
         
           <Nav />
@@ -63,7 +63,7 @@ export default function Dashboard() {
             <Route path='/merch' element={<MerchStore />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
 
         </div>
 
