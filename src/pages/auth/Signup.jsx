@@ -68,7 +68,7 @@ export default function Signup() {
 
     return (
         <div className='w-full h-screen max-h-screen'>
-            <img src={paper} alt="" className='h-[13rem] absolute top-[10rem] left-[37rem] z-10' />
+            <img src={paper} alt="" className='h-[13rem] md:absolute top-[10rem] left-[37rem] z-10' />
 
             <section className='w-full mx-auto md:flex h-screen max-h-screen'>
                 <div className='w-full md:w-1/2 pb-8  overflow-y-auto'>

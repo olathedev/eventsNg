@@ -23,7 +23,7 @@ function App() {
           <Route path='/login' element={!user ? <Login /> : <Navigate to="/dashboard" />} />
           <Route path='/register' element={!user ? <Signup /> : <Navigate to="/dashboard" />} />
           <Route path='/verify' element={<Verify />} />
-          <Route path='/dashboard/*' element={user ? <Dashboard /> : <Navigate to="/login" />} />
+          {/* <Route path='/dashboard/*' element={user ? <Dashboard /> : <Navigate to="/login" />} /> */}
           <Route path='/dashboard/*' element={ <Dashboard /> } />
 
 
