@@ -9,7 +9,7 @@ export default function StatCards({stats}) {
 
 
                     <h4 className='font-poppins'>Total Events</h4>
-                    <h1 className='font-raleway text-2xl font-bold'>{stats?.isActive + stats?.notActive}</h1>
+                    <h1 className='font-raleway text-2xl font-bold'>{21}</h1>
 
                     <div className="flex mt-2 justify-between items-center">
                         <div className='text-primary font-semibold'></div>
