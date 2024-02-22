@@ -19,7 +19,7 @@ export default {
         quicksand: ['Quicksand', 'sans-serif'],
         Roboto: ['Roboto', 'sans-serif'],
 
-      }
+      } 
     },
   },
   plugins: [],

@@ -30,37 +30,81 @@ export default function DashboardDt() {
 
       
     return (
-        <div className='w-full bg-white shadow pt-6 px-4 text-sm'>
+        <div className='w-full bg-white shadow px-4 text-sm'>
 
-            <h3 className='pb-4 px-4'>Recent ticket purchases</h3>
-            <div className="overflow-x-auto mx-auto">
-  <table className="table-auto w-full borderless">
-    <thead>
-      <tr>
-        <th className="px-4 py-2 text-left font-medium text-gray-500 tracking-wider">Name</th>
-        <th className="px-4 py-2 text-left font-medium text-gray-500 tracking-wider">Email</th>
-        <th className="px-4 py-2 text-left font-medium text-gray-500 tracking-wider">Type</th>
-      </tr>
-    </thead>
-    <tbody>
-      {registeredUsers.map((user) => (
-        <tr key={user.id} className="border-b">
-          <td className="px-4 py-4 text-gray-700">
-            {user.name}
-          </td>
-          <td className="px-4 py-4 text-gray-700">
-            {user.email}
-          </td>
-         
-          <td className="px-4 py-4 text-right text-green-500">
-            Regular
-             </td>
-             </tr>
-             ))}
-             </tbody>
-             </table>
+<div className="flex justify-between">
+                
+                
+            </div>
+            <div className="w-full max-w-full overflow-x-auto mx-auto flex flex-col gap-6">
 
-             </div>
+                <table className='mt-10 w-full table-auto font-raleway'>
+                    <thead className=''>
+                        <tr className='text-left bg-[#F9F6FF]'>
+                            <th className='p-4'>
+                                <div className="flex items-center gap-2">
+                                    Event
+                                   
+                                </div>
+
+
+                            </th>
+
+                           
+                            <th className='p-4 '>Tickets</th>
+                        
+
+
+                        </tr>
+                    </thead>
+
+                    <tbody className='font-poppins'>
+                        <tr className='border-b'>
+                            <td className="py-5 px-4 text-sm">Jos tech fest. </td>
+                           
+                            <td className='py-5 px-4 text-sm'>2</td>
+
+                          
+                        </tr>
+
+                        <tr className='border-b'>
+                            <td className="py-5 px-4 text-sm">Tech crunch disrupt. </td>
+                         
+                            <td className='py-5 px-4 text-sm'>1</td>
+
+                        </tr>
+                        <tr className='border-b'>
+                            <td className="py-5 px-4 text-sm">Jos tech fest. </td>
+                           
+                            <td className='py-5 px-4 text-sm'>2</td>
+
+                          
+                        </tr>
+
+                        <tr className='border-b'>
+                            <td className="py-5 px-4 text-sm">Tech crunch disrupt. </td>
+                         
+                            <td className='py-5 px-4 text-sm'>1</td>
+
+                        </tr>
+                        <tr className='border-b'>
+                            <td className="py-5 px-4 text-sm">Jos tech fest. </td>
+                           
+                            <td className='py-5 px-4 text-sm'>2</td>
+
+                          
+                        </tr>
+
+                       
+                        
+                    </tbody>
+
+                   
+
+                </table>
+                    
+               
+            </div>
         </div>
     )
 }
