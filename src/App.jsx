@@ -7,6 +7,8 @@ import axios from 'axios'
 import Dashboard from './pages/dashboard/Dashboard'
 import { useAuthContext } from './hooks/useAuthContext'
 import { SidebarContextProvider } from './context/helperContexts'
+import Discover from './pages/Discover'
+import LandingLayout from './pages/LandingLayout'
 
 
 // axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng"
@@ -21,7 +23,12 @@ function App() {
 
         <Routes>
 
-          <Route index element={<Home />} />
+          <Route path='/' element={<LandingLayout />}>
+          <Route path='/' element={<Home />} />
+          <Route path='/discover' element={<Discover />} />
+          </Route>
+         
+
           <Route path='/login' element={!user ? <Login /> : <Navigate to="/dashboard" />} />
           <Route path='/register' element={!user ? <Signup /> : <Navigate to="/dashboard" />} />
           <Route path='/verify' element={<Verify />} />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Nav() {
 
@@ -10,7 +10,7 @@ export default function Nav() {
     }
     return (
 
-        <nav className='sticky top-0 z-20 bg-opacity-25 backdrop-blur-xl bg-white py-6 md:pt-8 md:pb-4'>
+        <nav className='sticky top-0 z-20 bg-opacity-25 backdrop-blur-xl bg-white py-6 md:pt-4 md:pb-4'>
             <div className="container px-6  mx-auto flex justify-between items-center">
                 <div className="nav-brand font-raleway text-2xl font-semibold">Events<span className='text-primary font-bold'>.ng</span></div>
 
@@ -76,7 +76,7 @@ export default function Nav() {
             <div className={`container mx-auto py-6 px-8 font-pop shadow-md transition-all ease-in-out duration-200 ${navOpen ? 'opacity-100 bg-opacity-25' : 'opacity-0 hidden'} `}>
                     <ul className='flex flex-col gap-4 font-poppins'>
                         <li className=''>Home</li>
-                        <li className=''>Discover</li>
+                        <li className=''> <NavLink to="/discover">Discover</NavLink> </li>
                         <li className=''>Products</li>
                         <li className=''>About</li>
                         <li className=''>Faq</li>

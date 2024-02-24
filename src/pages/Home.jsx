@@ -5,7 +5,6 @@ import Hero from '../components/landingpage/Hero'
 function Home() {
   return (
     <div>
-        <Nav />
         <Hero />
     </div>
   )

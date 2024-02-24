@@ -20,6 +20,9 @@
 .side-bar-item {
     @apply flex gap-2 cursor-pointer hover:translate-x-2 transition duration-200 ease-in-out hover:p-1 hover:bg-primary rounded
 }
+input {
+  @apply focus:outline-none
+}
 
 * {
     scrollbar-width: thin;
@@ -36,4 +39,8 @@
     background-color: #CBD5E0;
     border-radius: 3px;
     border: 1px solid transparent;
+  }
+
+  #discover-header {
+    background-image: url('./assets//discover.jpg');
   }
