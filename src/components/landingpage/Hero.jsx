@@ -24,8 +24,8 @@ export default function Hero() {
                 </div>
 
                 <div className='flex gap-2 md:gap-4 mt-4'>
-                    <button className="bg-primary py-3 px-4 md:py-4 md:px-10 font-poppins text-white md:text-lg rounded-md">Find Event</button>
-                    <Link to='/login'> <button className="bg-primary bg-opacity-25 px-4 py-3 md:py-4 md:px-10 font-poppins text-black md:text-lg rounded-md">Create  event</button></Link>
+                <Link to='/discover'>  <button className="bg-primary py-3 px-4 md:py-4 md:px-10 font-poppins text-white md:text-lg rounded-md">Find Event</button> </Link>
+                <Link to='/login'>  <button className="bg-primary bg-opacity-25 px-4 py-3 md:py-4 md:px-10 font-poppins text-black md:text-lg rounded-md">Create an event</button></Link>
 
                 </div>
 

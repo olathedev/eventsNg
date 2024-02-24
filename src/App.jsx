@@ -9,10 +9,11 @@ import { useAuthContext } from './hooks/useAuthContext'
 import { SidebarContextProvider } from './context/helperContexts'
 import Discover from './pages/Discover'
 import LandingLayout from './pages/LandingLayout'
+import DiscoverSingle from './pages/DiscoverSingle'
 
 
-// axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng"
-axios.defaults.baseURL = "https://eventsng-v1.onrender.com/api/v1/eventsng"
+axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng"
+// axios.defaults.baseURL = "https://eventsng-v1.onrender.com/api/v1/eventsng"
 
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
           <Route path='/' element={<LandingLayout />}>
           <Route path='/' element={<Home />} />
           <Route path='/discover' element={<Discover />} />
+          <Route path='/discover/:id' element={<DiscoverSingle />} />
+
           </Route>
          
 

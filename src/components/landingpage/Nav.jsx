@@ -12,7 +12,7 @@ export default function Nav() {
 
         <nav className='sticky top-0 z-20 bg-opacity-25 backdrop-blur-xl bg-white py-6 md:pt-4 md:pb-4'>
             <div className="container px-6  mx-auto flex justify-between items-center">
-                <div className="nav-brand font-raleway text-2xl font-semibold">Events<span className='text-primary font-bold'>.ng</span></div>
+                <div className="nav-brand font-quicksand text-2xl tracking-wider font-bold text-secondary"> <Link to='/'>  Teekety </Link><span className='text-primary font-bold'></span></div>
 
                 <div className='hidden md:block'>
                     <ul className='flex items-center gap-4 font-poppins'>

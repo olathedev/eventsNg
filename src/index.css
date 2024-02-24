@@ -43,4 +43,6 @@ input {
 
   #discover-header {
     background-image: url('./assets//discover.jpg');
+    background-size: cover;
+    background-position: center;
   }
