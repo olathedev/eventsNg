@@ -17,6 +17,23 @@ export default function Discover() {
 
             <section className=' container mx-auto px-6 md:px-10 mt-10' id='Events'>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-y-8 md:gap-x-6">
+                    {isPending && [1,2,3,4].map((ske, index) => (
+
+                     
+
+                       
+                        <div className="flex flex-col gap-2" key={index}>
+                            <div className="bg-gray-300 animate-pulse rounded-md h-[10rem]"></div>
+
+                            <div className="bg-gray-300 animate-pulse p-2 rounded-full"></div>
+
+                            <div className="bg-gray-300 w-2/3 animate-pulse p-2 rounded-full"></div>
+
+                            <div className="bg-gray-300 w-1/2 animate-pulse p-2 rounded-full"></div>
+
+                        </div>
+                    ))}
+
                     {events && events.map((event) => (
                         <div className="event-card bg-white rounded shadow cursor-pointer hover:translate-y-1 transition-all duration-200 ease-in-out hover:text-primary" key={event._id}>
                             <Link to={`/discover/${event._id}`}>

@@ -7,7 +7,7 @@ export default function () {
             <div className='w-[45%] flex justify-between flex-col gap-3'>
                 <h1 className='text-xl md:text-3xl font-raleway font-bold text-primary tracking-wider'>Teekety</h1>
                 <div className="">
-                    <button className='bg-slate-900 rounded text-white p-2 font-quicksand font-semibold text-sm'>Buy me coffee</button>
+                    <button className='bg-slate-900 rounded text-white p-2 font-quicksand font-semibold text-sm md:text-base'>Buy me coffee</button>
                 </div>
             </div>
 
