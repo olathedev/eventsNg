@@ -42,7 +42,12 @@ input {
   }
 
   #discover-header {
-    background-image: url('./assets//discover.jpg');
+    background-image: url('./assets/events/event4.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  #single-header{
+    background-image: url('./assets/events/event1.png');
     background-size: cover;
     background-position: center;
   }

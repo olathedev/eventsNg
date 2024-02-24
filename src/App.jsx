@@ -12,8 +12,8 @@ import LandingLayout from './pages/LandingLayout'
 import DiscoverSingle from './pages/DiscoverSingle'
 
 
-// axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng"
-axios.defaults.baseURL = "https://eventsng-v1.onrender.com/api/v1/eventsng"
+axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng"
+// axios.defaults.baseURL = "https://eventsng-v1.onrender.com/api/v1/eventsng"
 
 
 function App() {
