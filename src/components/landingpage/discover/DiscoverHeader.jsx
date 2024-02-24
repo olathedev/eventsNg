@@ -9,7 +9,7 @@ export default function DiscoverHeader() {
     return (
         <div className='relative h-[26rem] md:h-[19rem]'>
             <div className='flex flex-col items-center' id='discover-header'>
-                <div className="w-full bg-black bg-opacity-70 px-4  py-20 flex flex-col gap-4 md:items-center justify-center md:text-center">
+                <div className="w-full bg-black bg-opacity-60 px-4  py-20 flex flex-col gap-4 md:items-center justify-center md:text-center">
                     <h2 className='text-white text-2xl md:text-4xl font-poppins font-semibold'>Find your next Events </h2>
                     <p className='font-quicksand md:text-xl text-white md:w-[40%]'>Dont sit bored this weekend, find public events happening around and purchase tickets on the go</p>
 

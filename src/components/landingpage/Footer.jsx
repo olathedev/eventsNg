@@ -2,16 +2,16 @@ import React from 'react'
 
 export default function () {
   return (
-    <section className='w-full bg-green-500 bg-opacity-20 py-16'>
-        <div className="container mx-auto flex justify-between items-center px-8">
+    <section className='w-full bg-green-500 bg-opacity-20 py-10'>
+        <div className="container mx-auto flex flex-col-reverse gap-10 md:flex-row justify-between md:items-center px-8">
             <div className='w-[45%] flex justify-between flex-col gap-3'>
-                <h1 className='text-3xl font-poppins font-bold text-primary tracking-wider'>Teekety</h1>
+                <h1 className='text-xl md:text-3xl font-raleway font-bold text-primary tracking-wider'>Teekety</h1>
                 <div className="">
-                    <button className='bg-slate-900 rounded text-white p-3 font-quicksand font-semibold'>Buy me coffe</button>
+                    <button className='bg-slate-900 rounded text-white p-2 font-quicksand font-semibold text-sm'>Buy me coffee</button>
                 </div>
             </div>
 
-            <div className="w-[55%] flex justify-around">
+            <div className="md:w-[55%] flex gap-6 justify-around">
                <div className=''>
                     <h2 className='font-poppins font-semibold '>Products</h2>
                     <ul className='flex flex-col gap-1 mt-2 text-sm'>
