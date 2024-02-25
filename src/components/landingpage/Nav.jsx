@@ -12,7 +12,7 @@ export default function Nav() {
 
         <nav className='sticky top-0 z-20 bg-opacity-25 backdrop-blur-xl bg-white py-6 md:pt-4 md:pb-4'>
             <div className="container px-6  mx-auto flex justify-between items-center">
-                <div className="nav-brand font-quicksand text-2xl tracking-wider font-bold text-secondary"> <Link to='/'>  Teekety </Link><span className='text-primary font-bold'></span></div>
+                <div className="nav-brand font-quicksand text-xl md:text-2xl tracking-normal font-bold text-secondary"> <Link to='/'>  teekety </Link><span className='text-primary font-bold'></span></div>
 
                 <div className='hidden md:block'>
                     <ul className='flex items-center gap-4 font-poppins'>
@@ -54,14 +54,14 @@ export default function Nav() {
 
                 <div className="md:hidden hover:text-primary transition ease-in-out duration-200">
                     <span className={`${navOpen ? 'hidden' : 'flex'}`} onClick={handlenav}>  
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                     </span>
 
                     <span className={`${navOpen ? 'flex' : 'hidden'}`} onClick={handlenav}>  
 
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                         <path fillRule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
                         </svg>
                     </span>

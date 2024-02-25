@@ -25,12 +25,11 @@ function App() {
         <Routes>
 
           <Route path='/' element={<LandingLayout />}>
-          <Route path='/' element={<Home />} />
-          <Route path='/discover' element={<Discover />} />
-          <Route path='/discover/:id' element={<DiscoverSingle />} />
-
+            <Route path='/' element={<Home />} />
+            <Route path='/discover' element={<Discover />} />
+            <Route path='/discover/:id' element={<DiscoverSingle />} />
           </Route>
-         
+
 
           <Route path='/login' element={!user ? <Login /> : <Navigate to="/dashboard" />} />
           <Route path='/register' element={!user ? <Signup /> : <Navigate to="/dashboard" />} />

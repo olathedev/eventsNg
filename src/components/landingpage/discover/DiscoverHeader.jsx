@@ -9,13 +9,12 @@ export default function DiscoverHeader() {
     return (
         <div className='relative h-[26rem] md:h-[19rem]'>
             <div className='flex flex-col items-center' id='discover-header'>
-                <div className="w-full bg-black bg-opacity-60 px-4  py-20 flex flex-col gap-4 md:items-center justify-center md:text-center">
+                <div className="w-full bg-black bg-opacity-60 px-4 py-10  md:py-20 flex flex-col gap-4 items-center justify-center md:text-center">
                     <h2 className='text-white text-2xl md:text-4xl font-poppins font-semibold'>Find your next Events </h2>
-                    <p className='font-quicksand md:text-xl text-white md:w-[40%]'>Dont sit bored this weekend, find public events happening around and purchase tickets on the go</p>
+                    <p className='hidden md:flex font-quicksand md:text-xl text-white md:w-[40%]'>Dont sit bored this weekend, find public events happening around and purchase tickets on the go</p>
 
-                </div>
 
-                <div className="absolute bottom-0 w-[90%] md:w-[70%] searchbox bg-white rounded-md shadow-lg font-quicksand md:text-lg">
+                <div className="md:absolute mb-4 md:mb-0 bottom-0 w-[80%] md:w-[70%] searchbox bg-white rounded-md shadow-lg font-quicksand md:text-lg">
                     <form className='flex flex-col md:flex-row '>
                         <div className='border-b md:border-r md:grow'>
                             <input type="text" name="" className='rounded-t-md rounded-l-md p-4 w-full' placeholder='Event name' />
@@ -59,6 +58,8 @@ export default function DiscoverHeader() {
 
                         </div>
                     </form>
+                </div>
+                
                 </div>
             </div>
         </div>

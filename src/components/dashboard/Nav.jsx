@@ -27,7 +27,7 @@ function Nav() {
                             </svg>
                         </span>
 
-                        <h2 className='flex md:hidden font-raleway font-semibold text-primary text-xl'>Teekety <span className='text-primary font-semibold'>.ng</span></h2>
+                        <h2 className='flex md:hidden font-raleway font-semibold text-primary text-xl'>teekety <span className='text-primary font-semibold'></span></h2>
 
                     </div>
                     <h1 className='hidden md:flex font-monteserat font-semibold pl-2 text-gray-700'>Welcome back, Olaoluwa Johnson</h1>
