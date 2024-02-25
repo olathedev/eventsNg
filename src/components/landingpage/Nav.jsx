@@ -8,6 +8,7 @@ export default function Nav() {
     const handlenav = () => {
         setNavOpen(!navOpen)
     }
+
     return (
 
         <nav className='sticky top-0 z-20 bg-opacity-25 backdrop-blur-xl bg-white py-6 md:pt-4 md:pb-4'>
