@@ -1,6 +1,12 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import eventimg from '../assets/events/event3.png'
+import map from '../assets/map-placeholder.jpg'
+import merch from '../assets/merchs/hoodie.jpg'
+import merch2 from '../assets/merchs/shirt.jpg'
+
+
+
 import { useFetch } from '../hooks/useFetch'
 
 export default function DiscoverSingle() {
@@ -76,14 +82,14 @@ export default function DiscoverSingle() {
 
      
 
-        <div className="mt-10 container mx-auto px-4 md:px-10">
+        <div className="mt-3 md:mt-10 container mx-auto px-4 md:px-10">
           <div className="flex flex-col-reverse md:flex-row">
               <div className="md:w-2/3">
 
 
                 <div className="md:w-[95%]">
-                <div className="card-one bg-white rounded">
-                <h1 className='text-xl font-poppins py-4 px-4 border-b-2 '>Event Description</h1>
+                <div className="card-one bg-white shadow rounded">
+                <h1 className='text-lg md:text-xl font-poppins py-4 px-4 border-b-2 '>Event Description</h1>
                 <div className="md:hidden text-primary p-4 border-b-2 flex flex-col gap-3 font-poppins mt-4">
                     <div className="flex items-center gap-4">
                   <span>
@@ -125,8 +131,8 @@ export default function DiscoverSingle() {
                 </div>
                 </div>
                 
-                <div className="bg-white mt-6">
-                <h1 className='text-xl font-poppins py-4 px-4 border-b-2 '>Ticket pricing</h1>
+                <div className="bg-white shadow rounded mt-6">
+                <h1 className='text-lg md:text-xl font-poppins py-4 px-4 border-b-2 '>Ticket pricing</h1>
                 <div className='p-5'>
                   <table className='w-full table-auto font-poppins'>
                       <thead className='bg-[#eee] rounded-md'>
@@ -146,20 +152,74 @@ export default function DiscoverSingle() {
                   </table>
                 </div>
                 </div>
+
+                <div className="bg-white shadow rounded mt-6">
+                <h1 className='text-lg md:text-xl font-poppins py-4 px-4 border-b-2 '>Merchs/swags</h1>
+                  <div className="p-6 grid md:grid-cols-3 gap-4">
+                  <div className="card flex flex-col bg-white shadow rounded relative group">
+                    <div className="card-header h-32 max-h-32 overflow-hidden bg-gray-300 rounded-t ">
+                        <img src={merch} className='object-cover h-full min-h-full w-full' alt="" />
+                    </div>
+                    <h4 className='absolute bg-primary bg-opacity-70 text-white backdrop-blur-sm left-0 rounded-ss top-0 p-1  text-sm font-poppins'>Out of stock</h4>
+
+                    <div className="cardbody p-2">
+                        <h4 className=''>Customized Hoodie</h4>
+
+                        <p className='text-sm'>NGN 2000</p>
+                        <p className='text-sm'>Sold - 45</p>
+
+                        <button className='hidden group-hover:flex justify-center transition-all duration-200 ease-in-out mt-2 text-sm py-2 bg-primary w-full font-quicksand text-white rounded'>place order</button>
+                    </div>
+                   
+                </div>
+                <div className="card flex flex-col bg-white shadow rounded relative group">
+                    <div className="card-header h-32 max-h-32 overflow-hidden bg-gray-300 rounded-t ">
+                        <img src={merch2} className='object-cover h-full min-h-full w-full' alt="" />
+                    </div>
+                    <h4 className='absolute bg-primary bg-opacity-70 text-white backdrop-blur-sm left-0 rounded-ss top-0 p-1  text-sm font-poppins'>Shirt</h4>
+
+                    <div className="cardbody p-2">
+                        <h4 className=''>on sale</h4>
+
+                        <p className='text-sm'>NGN 3000</p>
+                        <p className='text-sm'>Sold - 45</p>
+
+                        <button className='hidden group-hover:flex justify-center transition-all duration-200 ease-in-out mt-2 text-sm py-2 bg-primary w-full font-quicksand text-white rounded'>place order</button>
+                    </div>
+                </div>
+                  </div>
+
+                  <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                 
+                  </div>
+                </div>
                 </div>
                 
                 
               </div>
 
-              <div className="md:w-1/3  h-32">
+              <div className="md:w-1/3">
                   <div className="flex flex-col gap-3">
-                      <div className="relative md:static bottom-[6rem] image-wrapper w-full h-[12rem] md:h-[15rem] ">
+                      <div className="relative md:static bottom-[5rem] image-wrapper w-full h-[12rem] md:h-[15rem] ">
                         <img src={eventimg} className='rounded-md w-full h-full object-cover' alt="" />
                       </div>
 
-                  
+                      <div className='hidden bg-white rounded-md shadow'>
+                      <div className="hidden md:flex image-wrapper w-full h-[12rem] md:h-[15rem] ">
+                        <img src={map} className='rounded-md w-full h-full object-cover' alt="" />
+                      </div>
+
+                      <div className='p-4'>
+                        <h2>Contact organisers</h2>
+                        <p>eventorganiser@gmail.com</p>
+                        <p>09067391313</p>
+                      </div>
+                    </div>
+                      
+                      
 
                   </div>
+                  
                   
               </div>  
 
