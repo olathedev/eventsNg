@@ -12,7 +12,7 @@ export const useFetch = (url) => {
             const {data} = await axios.get(url)
             setIsPending(false)
             console.log(data);
-            setData(data.event)
+            setData(data)
         } catch (error) {
             console.log(error);
         }

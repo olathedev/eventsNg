@@ -8,7 +8,7 @@ import { useFetch } from '../hooks/useFetch'
 
 export default function Discover() {
    
-    const {data: events, isPending} = useFetch('/events/discover')
+    const {data, isPending} = useFetch('/events/discover')
 
     return (
         <div className='w-full bg-[#eee] min-h-screen pb-16'>
@@ -34,7 +34,7 @@ export default function Discover() {
                         </div>
                     ))}
 
-                    {events && events.map((event) => (
+                    {data && data?.event?.map((event) => (
                         <div className="event-card bg-white rounded shadow cursor-pointer hover:translate-y-1 transition-all duration-200 ease-in-out hover:text-primary" key={event._id}>
                             <Link to={`/discover/${event._id}`}>
                             <div className="image h-[10rem] border-b border-primary">

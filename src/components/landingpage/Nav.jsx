@@ -11,7 +11,7 @@ export default function Nav() {
 
     return (
 
-        <nav className='sticky top-0 z-20 bg-opacity-25 backdrop-blur-xl bg-white py-6 md:pt-4 md:pb-4'>
+        <nav className='sticky top-0 z-20 bg-opacity-40 backdrop-blur-xl bg-white py-6 md:pt-4 md:pb-4'>
             <div className="container px-6  mx-auto flex justify-between items-center">
                 <div className="nav-brand font-quicksand text-xl md:text-2xl tracking-normal font-bold text-secondary"> <Link to='/'>  teekety </Link><span className='text-primary font-bold'></span></div>
 
