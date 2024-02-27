@@ -83,6 +83,8 @@ export default function Discover() {
                 </div>
             </section>
 
+                            
+
         </div>
     )
 }

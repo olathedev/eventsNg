@@ -74,13 +74,13 @@ export default function Signup() {
                 <div className='w-full md:w-1/2 pb-8  overflow-y-auto'>
 
                     <nav className='pt-6 px-6'>
-                        <Link to="/"> <h1 className='text-xl font-semibold font-raleway text-primary cursor-pointer'>Events.ng</h1></Link>
+                        <Link to="/"> <h1 className='text-xl font-semibold font-quicksand text-primary cursor-pointer'>Teekety</h1></Link>
                     </nav>
 
                     <div className={`${success ? 'hidden' : 'flex'} px-6 md:px-1 flex-col pt-[2rem] items-center`}>
                         <header className='w-full md:w-[60%] font-raleway mb-2'>
                             <p className='mt-4 md:text-lg font-quicksand'>Hey, Welcome</p>
-                            <h2 className='text-2xl md:text-2xl mt-2 font-bold text-primary'>Create a new Account</h2>
+                            <h2 className='text-xl md:text-2xl mt-2 font-bold text-primary'>Create a new Account</h2>
                         </header>
 
                         <form className={` mt-4 w-full flex flex-col gap-3 items-center font-raleway`} onSubmit={handleSubmit(onSubmit)}>

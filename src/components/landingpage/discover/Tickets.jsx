@@ -3,7 +3,7 @@ import React from 'react'
 export default function Tickets({data}) {
   return (
     <div className="bg-white shadow rounded mt-6">
-    <h1 className='text-lg md:text-xl font-poppins py-4 px-4 border-b-2 '>Ticket pricing</h1>
+    <h1 className='md:text-lg font-poppins py-4 px-4 border-b-2 '>Ticket pricing</h1>
     <div className='p-5'>
       <table className='w-full table-auto font-poppins'>
         <thead className='bg-[#eee] rounded-md'>

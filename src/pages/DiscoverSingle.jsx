@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, Route, Routes, useParams } from 'react-router-dom'
 import eventimg from '../assets/events/event3.png'
 import map from '../assets/map-placeholder.jpg'
 import merch from '../assets/merchs/hoodie.jpg'
@@ -7,6 +7,8 @@ import merch2 from '../assets/merchs/shirt.jpg'
 import { useFetch } from '../hooks/useFetch'
 import DiscoverSingleHeader from '../components/landingpage/discover/DiscoverSingleHeader'
 import Tickets from '../components/landingpage/discover/Tickets'
+import Attend from './Attend'
+import Merch from '../components/landingpage/discover/Merch'
 
 export default function DiscoverSingle() {
 
@@ -27,6 +29,10 @@ export default function DiscoverSingle() {
     <div className='min-h-screen bg-[#eee] pb-8'>
           
 
+          <Routes>
+                <Route path='/checkout' element={<Attend />} />
+            </Routes>
+
       <div className="md:hidden bg-white fixed w-full bottom-0 py-6 shadow flex rounded-t-2xl justify-center">
         <Link to={'/checkout'}>
         <button className='bg-primary text-white px-6 py-2 font-poppins rounded'>Buy ticket</button>
@@ -40,7 +46,7 @@ export default function DiscoverSingle() {
 
             <div className="md:w-[95%]">
               <div className="card-one bg-white shadow rounded">
-                <h1 className='text-lg md:text-xl font-poppins py-4 px-4 border-b-2 '>Event Description</h1>
+                <h1 className='md:text-lg font-poppins py-4 px-4 border-b-2 '>Event Description</h1>
                 <div className="md:hidden text-primary p-4 border-b-2 flex flex-col gap-3 font-poppins mt-4">
                   <div className="flex items-center gap-4">
                     <span>
@@ -84,46 +90,7 @@ export default function DiscoverSingle() {
 
              <Tickets data={data} />
 
-              <div className="bg-white shadow rounded mt-6">
-                <h1 className='text-lg md:text-xl font-poppins py-4 px-4 border-b-2 '>Merchs/swags</h1>
-                <div className="p-6 grid md:grid-cols-3 gap-4">
-                  <div className="card flex flex-col bg-white shadow rounded relative group">
-                    <div className="card-header h-32 max-h-32 overflow-hidden bg-gray-300 rounded-t ">
-                      <img src={merch} className='object-cover h-full min-h-full w-full' alt="" />
-                    </div>
-                    <h4 className='absolute bg-primary bg-opacity-70 text-white backdrop-blur-sm left-0 rounded-ss top-0 p-1  text-sm font-poppins'>Out of stock</h4>
-
-                    <div className="cardbody p-2">
-                      <h4 className=''>Customized Hoodie</h4>
-
-                      <p className='text-sm'>NGN 2000</p>
-                      <p className='text-sm'>Sold - 45</p>
-
-                      <button className='hidden group-hover:flex justify-center transition-all duration-200 ease-in-out mt-2 text-sm py-2 bg-primary w-full font-quicksand text-white rounded'>place order</button>
-                    </div>
-
-                  </div>
-                  <div className="card flex flex-col bg-white shadow rounded relative group">
-                    <div className="card-header h-32 max-h-32 overflow-hidden bg-gray-300 rounded-t ">
-                      <img src={merch2} className='object-cover h-full min-h-full w-full' alt="" />
-                    </div>
-                    <h4 className='absolute bg-primary bg-opacity-70 text-white backdrop-blur-sm left-0 rounded-ss top-0 p-1  text-sm font-poppins'>Shirt</h4>
-
-                    <div className="cardbody p-2">
-                      <h4 className=''>on sale</h4>
-
-                      <p className='text-sm'>NGN 3000</p>
-                      <p className='text-sm'>Sold - 45</p>
-
-                      <button className='hidden group-hover:flex justify-center transition-all duration-200 ease-in-out mt-2 text-sm py-2 bg-primary w-full font-quicksand text-white rounded'>place order</button>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-
-                </div>
-              </div>
+              <Merch data={data} />
             </div>
 
 

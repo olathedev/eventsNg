@@ -35,8 +35,8 @@ function App() {
           <Route path='/' element={<LandingLayout />}>
             <Route path='/' element={<Home />} />
             <Route path='/discover' element={<Discover />} />
-            <Route path='/discover/:id' element={<DiscoverSingle />} />
-            <Route path='/checkout' element={<Attend />} />
+            <Route path='/discover/:id/*' element={<DiscoverSingle />} />
+            {/* <Route path='/checkout' element={<Attend />} /> */}
 
           </Route>
 
