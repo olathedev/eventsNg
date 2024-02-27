@@ -62,7 +62,7 @@ export default function Login() {
     return (
         <div className='w-full max-h-screen overflow-hidden'>
 
-            <img src={paper} alt="" className='h-[13rem] absolute top-[10rem] left-[37rem] z-10' />
+            <img src={paper} alt="" className='h-[13rem] hidden md:flex absolute top-[10rem] left-[37rem] z-10' />
             <section className='w-full md:flex relative'>
                 <div className='w-full md:w-1/2 '>
 
