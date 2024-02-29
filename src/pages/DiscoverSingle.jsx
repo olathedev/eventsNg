@@ -7,7 +7,7 @@ import merch2 from '../assets/merchs/shirt.jpg'
 import { useFetch } from '../hooks/useFetch'
 import DiscoverSingleHeader from '../components/landingpage/discover/DiscoverSingleHeader'
 import Tickets from '../components/landingpage/discover/Tickets'
-import Attend from './Attend'
+import Attend from './checkout/Attend'
 import Merch from '../components/landingpage/discover/Merch'
 
 export default function DiscoverSingle() {
@@ -16,29 +16,26 @@ export default function DiscoverSingle() {
 
   const { data, isPending } = useFetch(`/events/discover/${id}`)
 
-  if(isPending) {
+  if (isPending) {
     return (
-          <div className="h-screen w-full flex items-center justify-center">
-            <h1 className="text-lg font-semibold font-poppins">Loading...</h1>
-          </div>
-      
+      <div className="h-screen w-full flex items-center justify-center">
+        <h1 className="text-lg font-semibold font-poppins">Loading...</h1>
+      </div>
+
     )
   }
 
   return (
     <div className='min-h-screen bg-[#eee] pb-8'>
-          
 
-          <Routes>
-                <Route path='/checkout' element={<Attend />} />
-            </Routes>
+
 
       <div className="md:hidden bg-white fixed w-full bottom-0 py-6 shadow flex rounded-t-2xl justify-center">
         <Link to={'/checkout'}>
-        <button className='bg-primary text-white px-6 py-2 font-poppins rounded'>Buy ticket</button>
-        </Link> 
+          <button className='bg-primary text-white px-6 py-2 font-poppins rounded'>Buy ticket</button>
+        </Link>
       </div>
-    <DiscoverSingleHeader data={data} />
+      <DiscoverSingleHeader data={data} />
 
       <div className="mt-3 md:mt-10 container mx-auto px-4 md:px-10">
         <div className="flex flex-col-reverse md:flex-row">
@@ -88,7 +85,7 @@ export default function DiscoverSingle() {
                 </div>
               </div>
 
-             <Tickets data={data} />
+              <Tickets data={data} />
 
               <Merch data={data} />
             </div>
@@ -123,8 +120,6 @@ export default function DiscoverSingle() {
 
         </div>
       </div>
-
-
 
     </div>
   )

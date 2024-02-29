@@ -51,3 +51,7 @@ input {
     background-size: cover;
     background-position: center;
   }
+
+  .hero {
+    background-image: url('./assets/bg.svg');
+  }

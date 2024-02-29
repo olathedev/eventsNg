@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function DiscoverSingleHeader({data}) {
     return (
@@ -49,7 +50,7 @@ export default function DiscoverSingleHeader({data}) {
                             </p>
                         </div>
                         <div>
-                            <button className='bg-primary text-lg text-white px-8 py-3 font-poppins rounded-md font-semibold'>Buy ticket</button>
+                           <Link to={`/purchase/data._id`}> <button className='bg-primary text-lg text-white px-8 py-3 font-poppins rounded-md font-semibold'>Buy ticket</button></Link>
 
                         </div>
 
