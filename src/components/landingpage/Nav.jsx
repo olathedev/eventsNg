@@ -26,7 +26,7 @@ export default function Nav() {
                                     <path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
                                 </svg>
 
-                                <nav className="hidden absolute group-hover:md:flex w-[208px] -left-8 top-full py-4 px-5 flex-col gap-3 bg-white shadow-md">
+                                <nav className="hidden absolute group-hover:md:flex w-[208px] -left-8 top-full py-4 px-5 flex-col gap-3 bg-secondary shadow-md">
                                     <div className='sub-nav'>All Events</div>
                                     <div className='sub-nav'>Events around you</div>
                                     <div className='sub-nav'>Discover events</div>
@@ -73,7 +73,7 @@ export default function Nav() {
                
             </div>
 
-            <section className="absolute bg-white w-full mobile-nav md:hidden" onClick={() => setNavOpen(false)}>
+            <section className="absolute bg-secondary w-full mobile-nav md:hidden" onClick={() => setNavOpen(false)}>
             <div className={`container mx-auto py-6 px-8 font-pop shadow-md transition-all ease-in-out duration-200 ${navOpen ? 'opacity-100 bg-opacity-25' : 'opacity-0 hidden'} `}>
                     <ul className='flex flex-col gap-4 font-poppins'>
                         <li className=''>Home</li>
