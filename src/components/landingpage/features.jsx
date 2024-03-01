@@ -56,6 +56,20 @@ export default function Features() {
         </div>
         </div>
       </section>
+
+    <section className="my-6 bg-secondary rounded h-[20rem] md:my-6 flex flex-col items-center justify-center text-center text-white gap-3 py-10 px-4">
+
+        <h1 className="font-raleway text-xl text-white md:text-4xl font-bold">Teekety for creators is  Sleeker</h1>
+        <p className='md:w-1/2 text-center md:text-lg  font-quicksand'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque minus, voluptatibus sint animi .</p>
+
+        <div className='flex flex-col md:flex-row gap-4 mt-2'>
+        <button className="py-3 px-6 rounded bg-[#D3B3EB] bg-opacity-40 border border-primary  text-white font-poppins md:text-lg">Create account</button>
+        <button className="py-3 px-6 rounded bg-[#D3B3EB] bg-opacity-40 border border-primary  text-white font-poppins md:text-lg">Sign in</button>
+
+        </div>
+        
+
+</section>
     </main>
   )
 }
