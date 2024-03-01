@@ -7,7 +7,7 @@ export const Details = ({data}) => {
 
     <div className="md:w-[50%] bg-white shadow rounded">
 
-        <header className="bg-[#3F3649] py-4 px-6 rounded-t text-white">
+        <header className="bg-secondary py-4 px-6 rounded-t text-white">
            <h2 className="font-raleway">Your Details</h2>
         </header>
 

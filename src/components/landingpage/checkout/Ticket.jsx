@@ -4,7 +4,7 @@ export const Ticket = ({data}) => {
   return (
     <section className='ticket-selection flex justify-center w-full py-10 px-4'>
     <div className="bg-white w-full md:w-[40%] rounded-md shadow-md">
-        <div className="card-header p-4 bg-[#3F3649] rounded-t-md text-white">
+        <div className="card-header p-4 bg-secondary rounded-t-md text-white">
             <h1 className='font-poppins text-lg text-center'>Select ticket</h1>
         </div>
 
