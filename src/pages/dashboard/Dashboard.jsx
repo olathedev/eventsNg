@@ -17,6 +17,7 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import { SidebarContextProvider, useSidebaarContext } from '../../context/helperContexts'
+import { useSelector } from 'react-redux'
 
 export default function Dashboard() {
 
@@ -35,9 +36,11 @@ export default function Dashboard() {
       }
     })
 
-    console.log(data);
+ 
 
-    const {sidebarOpen, setSidebarOpen} = useSidebaarContext()
+    const {sidebarOpen} = useSelector((state) => state.sidebar)
+
+
   return (
 
     <div className='w-full h-screen min-h-screen  bg-[#F9F6FF] font-poppins'>

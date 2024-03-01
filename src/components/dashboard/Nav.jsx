@@ -1,14 +1,13 @@
 import React from 'react'
 import { useSidebaarContext } from '../../context/helperContexts'
 import user from "../../assets/user.jpg"
+import { useDispatch, useSelector } from 'react-redux'
+import { closeSidebar, openSideBar } from '../../features/activeStates/sideBarSlice'
 
 function Nav() {
 
-    const { sidebarOpen, setSidebarOpen } = useSidebaarContext()
-
-    const handleSidebar = () => {
-        setSidebarOpen(!sidebarOpen)
-    }
+    const { sidebarOpen } = useSelector((state) => state.sidebar)
+    const dispatch = useDispatch()
 
     return (
         <nav className='w-full bg-white py-4 px-6 shadow sticky top-0 z-20'>
@@ -16,12 +15,12 @@ function Nav() {
                 <div className="navbrand text-lg font-raleway font-semibold flex w-full gap-5 justify-between items-center">
                     <div className="flex gap-3 items-center md:hidden">
 
-                        <span className={`${sidebarOpen ? 'hidden' : 'flex'}`} onClick={handleSidebar}>
+                        <span className={`${sidebarOpen ? 'hidden' : 'flex'}`} onClick={() => dispatch(openSideBar())}>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                             </svg>
                         </span>
-                        <span className={`${sidebarOpen ? 'flex' : 'hidden'}`} onClick={handleSidebar}>
+                        <span className={`${sidebarOpen ? 'flex' : 'hidden'}`} onClick={() => dispatch(closeSidebar())}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                                 <path fillRule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
                             </svg>
