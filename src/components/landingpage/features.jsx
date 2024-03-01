@@ -79,19 +79,23 @@ export default function Features() {
 
       <section className="my-6 bg-secondary rounded-md md:my-6 flex flex-col items-center justify-center text-center text-white gap-3 py-10 px-4">
 
-        <h1 className="font-raleway text-xl text-white md:text-4xl font-bold">Teekety for creators is  Sleeker</h1>
-        <p className='md:w-1/2 text-center md:text-lg  font-quicksand'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque minus, voluptatibus sint animi .</p>
+        <h1 className="font-poppins text-2xl text-white md:text-4xl font-bold">Teekety for creators is  Sleeker</h1>
+        <p className='md:w-1/2 text-center md:text-lg  font-quicksand'>You have a whole event Managment dashboard to yourself .</p>
 
-        <div className='flex flex-col md:flex-row gap-4 mt-2'>
+        <div className='hidden md:flex flex-col md:flex-row gap-4 mt-2'>
           <button className="py-3 px-6 rounded bg-[#D3B3EB] bg-opacity-40 border border-primary  text-white font-poppins md:text-lg">Create account</button>
           <button className="py-3 px-6 rounded bg-[#D3B3EB] bg-opacity-40 border border-primary  text-white font-poppins md:text-lg">Sign in</button>
 
         </div>
         <div className="w-full flex justify-center mt-6">
-          <img src={dashboard} alt="" className='md:w-2/3 border border-primary flex justify-center' />
+          <img src={dashboard} alt="" className='md:w-2/3 border border-primary rounded flex justify-center' />
         </div>
 
+        <div className='flex md:hidden gap-2 mt-4'>
+          <button className="py-3 px-6 rounded bg-[#D3B3EB] bg-opacity-40 border border-primary  text-white font-poppins md:text-lg">Join teekety</button>
+          <button className="py-3 px-6 rounded bg-[#D3B3EB] bg-opacity-40 border border-primary  text-white font-poppins md:text-lg">Sign in</button>
 
+        </div>
       </section>
 
       <section className="container mx-auto px-4 md:px-12 md:my-16 py-10">
