@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function () {
   return (
-    <section className='w-full bg-green-500 bg-opacity-20 py-10'>
+    <section className='w-full bg-primary bg-opacity-20 py-10'>
         <div className="container mx-auto flex flex-col-reverse gap-10 md:flex-row justify-between md:items-center px-8">
             <div className='w-[45%] flex justify-between flex-col gap-3'>
                 <h1 className='text-xl md:text-3xl font-raleway font-bold text-primary tracking-wider'>Teekety</h1>
