@@ -60,20 +60,20 @@ export default function Login() {
 
 
     return (
-        <div className='w-full max-h-screen overflow-hidden'>
+        <div className='w-full max-h-screen overflow-hidden text-secondary'>
 
             <img src={paper} alt="" className='h-[13rem] hidden md:flex absolute top-[10rem] left-[37rem] z-10' />
             <section className='w-full md:flex relative'>
                 <div className='w-full md:w-1/2 '>
 
                     <nav className='pt-6 px-6'>
-                        <Link to="/"> <h1 className='text-xl font-semibold font-raleway text-primary cursor-pointer'>Events.ng</h1></Link>
+                        <Link to="/"> <h1 className='text-xl font-semibold font-raleway text-primary cursor-pointer'>Teekety</h1></Link>
                     </nav>
 
                     <div className='flex flex-col pt-[4rem] items-center'>
                         <header className='w-full px-6 md:px-1 md:w-[60%] font-raleway mb-3'>
                             <p className='mt-4 font-quicksand'>Resume your journey</p>
-                            <h2 className='text-2xl md:text-2xl mt-2 font-bold text-primary'>Sign in to your Account</h2>
+                            <h2 className='text-xl md:text-2xl mt-2 font-semibold text-secondary'>Sign in to your Account</h2>
                         </header>
 
                         <form className='mt-4 px-6 md:px-2  w-full flex flex-col gap-4 items-center font-quicksand' onSubmit={handleSubmit(onSubmit)}>

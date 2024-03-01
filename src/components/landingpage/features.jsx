@@ -24,7 +24,7 @@ export default function Features() {
         </p>
 
         <div className='pt-2'>
-          <button className="py-3 px-6 rounded bg-primary text-white font-poppins text-lg">See events</button>
+          <button className="py-3 px-6 rounded bg-primary text-white font-poppins md:text-lg">Explore events</button>
 
         </div>
       </div>
@@ -51,7 +51,7 @@ export default function Features() {
           Lorem ipsum  Repellendus minus at maiores laborum nesciunt quas. Animi iusto numquam asperiores ullam. Lorem .
         </p>
         <div className='pt-2'>
-          <button className="py-3 px-6 rounded bg-primary text-white font-poppins text-lg">Explore events</button>
+          <button className="py-3 px-6 rounded bg-primary text-white font-poppins md:text-lg">Explore events</button>
 
         </div>
         </div>

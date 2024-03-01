@@ -67,7 +67,7 @@ export default function Signup() {
     }
 
     return (
-        <div className='w-full h-screen max-h-screen'>
+        <div className='w-full h-screen max-h-screen text-secondary'>
             <img src={paper} alt="" className='h-[13rem] hidden md:flex md:absolute top-[10rem] left-[37rem] z-10' />
 
             <section className='w-full mx-auto md:flex h-screen max-h-screen'>
@@ -80,10 +80,10 @@ export default function Signup() {
                     <div className={`${success ? 'hidden' : 'flex'} px-6 md:px-1 flex-col pt-[2rem] items-center`}>
                         <header className='w-full md:w-[60%] font-raleway mb-2'>
                             <p className='mt-4 md:text-lg font-quicksand'>Hey, Welcome</p>
-                            <h2 className='text-xl md:text-2xl mt-2 font-bold text-primary'>Create a new Account</h2>
+                            <h2 className='text-xl md:text-2xl mt-2 font-semibold'>Create a new Account</h2>
                         </header>
 
-                        <form className={` mt-4 w-full flex flex-col gap-3 items-center font-raleway`} onSubmit={handleSubmit(onSubmit)}>
+                        <form className={` mt-4 w-full flex flex-col gap-3 items-center font-quicksand`} onSubmit={handleSubmit(onSubmit)}>
 
 
 
