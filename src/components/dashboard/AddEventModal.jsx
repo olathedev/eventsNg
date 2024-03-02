@@ -35,7 +35,7 @@ export default function AddEventModal({ handleModal }) {
         console.log(data);
     }
     return (
-        <div className={`fixed inset-0 min-h-screen flex justify-center items-center bg-black bg-opacity-70  z-30 px-2`}>
+        <div className={`fixed inset-0 h-screen max-h-screen flex justify-center items-center bg-black bg-opacity-70  z-30 px-2`}>
             <div className="bg-white md:w-[40%] max-h-screen rounded overflow-auto md:-mr-10 border-b-2 border-b-primary transition duration-200 ease-in-out">
                 <div className="modal-header flex gap-5 justify-between items-center px-6 py-4 border-b-2">
 
