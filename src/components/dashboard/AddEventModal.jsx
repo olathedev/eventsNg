@@ -1,10 +1,43 @@
+import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
+import { useForm } from 'react-hook-form'
+import * as yup from 'yup'
+
+const schema = yup.object({
+    title: yup.string().required("Provide event name"),
+    description: yup.string().required("Provide event name"),
+    location: yup.string().required("Provide event name"),
+    eventDate: yup.string().required("Provide event name"),
+    time: yup.string().required("Provide event name"),
+    seatsAvailable: yup.string().required("Provide event name"),
+
+
+
+}).required()
 
 export default function AddEventModal({ handleModal }) {
+
+    const {register, handleSubmit, formState: {errors} } = useForm({
+        resolver: yupResolver(schema),
+        defaultValues: {
+            title: '',
+            description: '',
+            location: '',
+            eventDate: '',
+            time: '',
+            seatsAvailable: ''
+        }
+    })
+
+    console.log(errors);
+
+    const onSubmit = (data) => {
+        console.log(data);
+    }
     return (
-        <div className={`fixed inset-0 flex justify-center items-center bg-black bg-opacity-60  z-30 px-2`}>
-            <div className="bg-white md:w-[35%] rounded md:-mr-10 border-b-2 border-b-primary transition-all duration-200 ease-in-out">
-                <div className="modal-header flex gap-5 justify-between items-center px-6 py-6 border-b-2">
+        <div className={`fixed inset-0 flex justify-center items-center bg-black bg-opacity-70  z-30 px-2`}>
+            <div className="bg-white md:w-[40%] rounded md:-mr-10 border-b-2 border-b-primary transition duration-200 ease-in-out">
+                <div className="modal-header flex gap-5 justify-between items-center px-6 py-4 border-b-2">
 
                     <div>
                         <h2 className="text-lg font-poppins font-semibold  opacity-80">Add new event</h2>
@@ -19,9 +52,11 @@ export default function AddEventModal({ handleModal }) {
                 </div>
 
                 <div className="modal-body py-4 px-6">
-                    <form action="" className='container flex flex-col gap-6 font-monteserat'>
-                        <div className="relative">
-                            <input type="text" className='w-full border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='event name ' />
+                    <form onSubmit={handleSubmit(onSubmit)} className='container flex flex-col gap-4 font-quicksand'>
+
+                        <div className="flex gap-2">
+                        <div className="relative w-1/2">
+                            <input type="text" className='w-full border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='event name ' {...register('title')} />
 
                             <span className="absolute right-3 top-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -31,8 +66,8 @@ export default function AddEventModal({ handleModal }) {
                             </span>
                         </div>
 
-                        <div className='relative'>
-                            <input type="text" className='w-full  border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='event location ' />
+                        <div className='relative w-1/2'>
+                            <input type="text" className='w-full  border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='event location ' {...register('location')} />
 
                             <span className='absolute right-3 top-3'>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -42,12 +77,14 @@ export default function AddEventModal({ handleModal }) {
                             </span>
 
                         </div>
+                        </div>
+                       
 
 
-                        <div className="flex gap-4 text-sm">
-                            <input type="date" className='w-1/2  border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='date ' />
+                        <div className="flex gap-2 text-sm">
+                            <input type="date" className='w-1/2  border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='date ' {...register('date')} />
 
-                            <input type="time" className='w-1/2 border-b  border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='time ' />
+                            <input type="time" className='w-1/2 border-b  border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='time' {...register('time')} />
 
                         </div>
 
@@ -58,44 +95,53 @@ export default function AddEventModal({ handleModal }) {
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m3.75 9v6m3-3H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
                                     </svg>
 
+                                    <input type="file" className='hidden' />
+
                                 </span>
                                 <span>Upload Image</span>
 
-                                <input type="file" className='hidden' />
                             </div>
                         </div>
 
                         <div>
-                        <div className='flex gap-6 relative'>
+                        <div className='flex gap-2'>
                             
                             <input type="number"  className='w-1/2 border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='available seats' />
 
 
                             
-                                <select className='w-1/2 border border-gray-400 px-3 py-3 rounded appearance-none focus:outline-none' name="">
+                            <div className='w-1/2 border border-gray-400 rounded px-4 flex items-center justify-between'>
+                            <select className='appearance-none py-3 focus:outline-none w-full border-n px-4' name="">
                                     <option value="" >Private event</option>
                                     <option value="">Public event</option>
 
                                    
                                 </select>
                                 
-                                <span className="absolute right-3 top-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                </svg>
+                                <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                                    <path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
+                                </svg>
 
-                                </span>
+                            </div>
+                            </div>
+                               
                         </div>
                         <p className="text-sm mt-2 text-primary">Public events are listed on events.ng and anody can find them</p>
 
                         </div>
+
+                        <div className='w-full'>
+                            <label>Event description</label>
+                            <textarea className="w-full border border-gray-400 rounded focus:outline-none p-3" rows="2"  {...register('description')}></textarea>
+                        </div>
                         
-
-                    </form>
-
-                    <div className="w-full modal-footer mt-4">
+                        <div className="w-full modal-footer mt-4">
                         <button className='w-full py-3 px-4 bg-primary text-white rounded-md'>Submit</button>
                     </div>
+                    </form>
+
+                  
                 </div>
             </div>
         </div>

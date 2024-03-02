@@ -88,7 +88,7 @@ export default function Features() {
 
         </div>
         <div className="w-full flex justify-center mt-6">
-          <img src={dashboard} alt="" className='md:w-2/3 border border-primary rounded flex justify-center' />
+          <img src={dashboard} alt="" className='md:w-2/3 border-2 border-primary rounded flex justify-center' />
         </div>
 
         <div className='flex md:hidden gap-2 mt-4'>
