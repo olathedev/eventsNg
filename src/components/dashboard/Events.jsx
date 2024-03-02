@@ -35,7 +35,7 @@ export default function Events({ handleModal }) {
 
             <div className="flex items-center justify-between mt-8">
                 <div>
-                    <p className='font-semibold'>event count - {events.length}</p>
+                    <p className='font-semibold hidden'>event count - {events.length}</p>
                 </div>
 
                 <form>
@@ -53,13 +53,13 @@ export default function Events({ handleModal }) {
                             <span className='absolute top-2 right-2 bg-primary px-2 py-1 text-sm font-quicksand font-semibold text-white rounded-md'>ended</span>
                         </div>
 
-                        <div className="px-2 py-4 flex justify-between">
+                        <div className="px-2 py-4 flex gap-4 justify-between">
                             <div className='flex flex-col gap-2'>
                                 <h4 className='font-semibold text-secondary'>{event.title}</h4>
                                 <p className='text-sm'>Created 10 days ago</p>
                             </div>
 
-                            <div className='flex flex-col gap-2'>
+                            <div className='flex flex-col items-center justify-center gap-2'>
                                 <span className='flex gap-1 justify-center'>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" />

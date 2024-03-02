@@ -36,7 +36,7 @@ export default function AddEventModal({ handleModal }) {
     }
     return (
         <div className={`fixed inset-0 flex justify-center items-center bg-black bg-opacity-70  z-30 px-2`}>
-            <div className="bg-white md:w-[40%] rounded md:-mr-10 border-b-2 border-b-primary transition duration-200 ease-in-out">
+            <div className="bg-white md:w-[40%] rounded overflow-auto md:-mr-10 border-b-2 border-b-primary transition duration-200 ease-in-out">
                 <div className="modal-header flex gap-5 justify-between items-center px-6 py-4 border-b-2">
 
                     <div>
@@ -54,8 +54,8 @@ export default function AddEventModal({ handleModal }) {
                 <div className="modal-body py-4 px-6">
                     <form onSubmit={handleSubmit(onSubmit)} className='container flex flex-col gap-4 font-quicksand'>
 
-                        <div className="flex gap-2">
-                        <div className="relative w-1/2">
+                        <div className="flex flex-col md:flex-row gap-2">
+                        <div className="relative md:w-1/2">
                             <input type="text" className='w-full border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='event name ' {...register('title')} />
 
                             <span className="absolute right-3 top-3">
@@ -66,7 +66,7 @@ export default function AddEventModal({ handleModal }) {
                             </span>
                         </div>
 
-                        <div className='relative w-1/2'>
+                        <div className='relative md:w-1/2'>
                             <input type="text" className='w-full  border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='event location ' {...register('location')} />
 
                             <span className='absolute right-3 top-3'>
