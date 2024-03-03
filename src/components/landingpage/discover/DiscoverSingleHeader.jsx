@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function DiscoverSingleHeader({data}) {
+export default function DiscoverSingleHeader({data, handleModal}) {
     return (
         <section className="w-full max-w-full relative  bg-opacity-40" id='single-header'>
             <div className=' bg-slate-900 h-full bg-opacity-70 pt-6 pb-20 md:py-10' id=''>
@@ -35,22 +35,22 @@ export default function DiscoverSingleHeader({data}) {
 
                     </div>
 
-                    <div className="hidden w-1/3 text-white md:flex flex-col gap-4">
-                        <div className="flex gap-4">
+                    <div className="hidden w-1/3 text-white md:flex items-center justify-center flex-col gap-4">
+                        <div className="flex items-center gap-3">
                             <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                                 </svg>
 
                             </span>
 
-                            <p className='text-lg font-raleway font-bold'>
+                            <p className='text-lg font-quicksand font-semibold'>
                                 {data?.event?.location}
                             </p>
                         </div>
                         <div>
-                           <Link to={`/purchase/data._id`}> <button className='bg-primary text-lg text-white px-8 py-3 font-poppins rounded-md font-semibold'>Buy ticket</button></Link>
+                           <button className='bg-primary text-white px-8 py-3 font-quicksand rounded-md font-semibold' onClick={handleModal}>Buy ticket</button>
 
                         </div>
 

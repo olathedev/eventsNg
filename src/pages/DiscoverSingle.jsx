@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, Route, Routes, useParams } from 'react-router-dom'
 import eventimg from '../assets/events/event3.png'
 import map from '../assets/map-placeholder.jpg'
@@ -17,26 +17,37 @@ export default function DiscoverSingle() {
 
   const { data, isPending } = useFetch(`/events/discover/${id}`)
 
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const handleModal = () => {
+    setModalOpen(!modalOpen)
+  }
+
   if (isPending) {
     return (
       <div className="h-screen w-full flex items-center justify-center">
         <h1 className="text-lg font-semibold font-poppins">Loading...</h1>
       </div>
 
-    ) 
+    )
   }
+
+
+
 
   return (
     <div className='min-h-screen bg-[#eee] pb-8'>
 
-          <Purchase />
+      {modalOpen && (
+        <Purchase />
+      )}
 
       <div className="md:hidden bg-white fixed w-full bottom-0 py-6 shadow flex rounded-t-2xl justify-center">
         <Link to={'/checkout'}>
-          <button className='bg-primary text-white px-6 py-2 font-poppins rounded'>Buy ticket</button>
+          <button className='bg-primary text-white px-6 py-3 font-poppins rounded'>Buy ticket</button>
         </Link>
       </div>
-      <DiscoverSingleHeader data={data} />
+      <DiscoverSingleHeader data={data} handleModal={handleModal}  />
 
       <div className="mt-3 md:mt-10 container mx-auto px-4 md:px-10">
         <div className="flex flex-col-reverse md:flex-row">
