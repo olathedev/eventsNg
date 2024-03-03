@@ -14,8 +14,8 @@ import { useEffect } from 'react'
 import Attend from './pages/checkout/Attend'
 
 
-axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng" 
-// axios.defaults.baseURL = "https://eventsng-v1.onrender.com/api/v1/eventsng"
+// axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng" 
+axios.defaults.baseURL = "https://eventsng-v1.onrender.com/api/v1/eventsng"
 
 
 function App() {

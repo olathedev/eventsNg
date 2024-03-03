@@ -43,9 +43,9 @@ export default function DiscoverSingle() {
       )}
 
       <div className="md:hidden bg-white fixed w-full bottom-0 py-6 shadow flex rounded-t-2xl justify-center">
-        <Link to={'/checkout'}>
-          <button className='bg-primary text-white px-6 py-3 font-poppins rounded'>Buy ticket</button>
-        </Link>
+       
+          <button className='bg-primary text-white px-6 py-3 font-poppins rounded' onClick={handleModal}>Buy ticket</button>
+
       </div>
       <DiscoverSingleHeader data={data} handleModal={handleModal}  />
 
