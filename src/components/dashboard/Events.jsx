@@ -16,7 +16,7 @@ export default function Events({ handleModal }) {
         )
     }
 
-    
+
 
     return (
         <section id='events' className='px-3 md:px-6 mt-6 '>
@@ -35,17 +35,25 @@ export default function Events({ handleModal }) {
 
             <div className="flex items-center justify-between mt-8">
                 <div>
-                    <p className='font-semibold hidden'>event count - {events.length}</p>
+                    <p className='font-semibold hidden'>event count - {events?.length}</p>
                 </div>
 
+
                 <form>
-                <input type="text" className='w-full py-3 px-4 bg-primary bg-opacity-15 rounded-md focus:outline-none font-light' placeholder='search' />
+                    <input type="text" className='w-full py-3 px-4 bg-primary bg-opacity-15 rounded-md focus:outline-none font-light' placeholder='search' />
 
                 </form>
             </div>
+
+            {!events && (
+                <div className="my-16 flex justify-center">
+                    <h1>You have no event running</h1>
+                </div>
+            )}
+
             <div className='grid grid-cols-1 md:grid-cols-3 gap-y-6 gap-x-6 mt-4'>
 
-                {events.map(event => (
+                {events?.map(event => (
                     <div className='border rounded' key={event._id}>
                         <div className="relative image h-32 max-h32 overfolow-hidden">
                             <img src={event1} className='h-full w-full rounded-t object-cover' alt="" />
@@ -55,7 +63,7 @@ export default function Events({ handleModal }) {
 
                         <div className="px-2 py-4 flex gap-4 justify-between">
                             <div className='flex flex-col gap-2'>
-                                <h4 className='font-semibold text-secondary'>{event.title}</h4>
+                                <h4 className='font-semibold text-secondary'>{event.title.substring(0, 20)}..</h4>
                                 <p className='text-sm'>Created 10 days ago</p>
                             </div>
 

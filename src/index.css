@@ -57,3 +57,9 @@ input {
     background-size: cover;
     background-position: center;
   }
+
+  .purchase-modal-header {
+    background-image: url('./assets/events/event3.png');
+    background-size: contain;
+    background-position: center;
+  }

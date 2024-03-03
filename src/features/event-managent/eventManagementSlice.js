@@ -37,5 +37,6 @@ const eventManagementSlice = createSlice({
     }
 })
 
+export const selectEvents = (state) => state.events
 
 export default eventManagementSlice.reducer

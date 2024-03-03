@@ -9,6 +9,7 @@ import DiscoverSingleHeader from '../components/landingpage/discover/DiscoverSin
 import Tickets from '../components/landingpage/discover/Tickets'
 import Attend from './checkout/Attend'
 import Merch from '../components/landingpage/discover/Merch'
+import Purchase from '../components/landingpage/discover/Purchase'
 
 export default function DiscoverSingle() {
 
@@ -22,13 +23,13 @@ export default function DiscoverSingle() {
         <h1 className="text-lg font-semibold font-poppins">Loading...</h1>
       </div>
 
-    )
+    ) 
   }
 
   return (
     <div className='min-h-screen bg-[#eee] pb-8'>
 
-
+          <Purchase />
 
       <div className="md:hidden bg-white fixed w-full bottom-0 py-6 shadow flex rounded-t-2xl justify-center">
         <Link to={'/checkout'}>
