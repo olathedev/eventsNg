@@ -4,7 +4,7 @@ function Purchase() {
     return (
         <div className="fixed h-screen  w-full bg-black bg-opacity-60 backdrop-blur-sm z-20 flex justify-center items-center">
 
-            <div className="bg-white md:w-[45%] overflow-auto -mt-[10rem] rounded-lg border-b-4 border-primary">
+            <div className="bg-white w-full h-screen min-h-screen md:h-auto md:w-[45%] overflow-auto -mt-[10rem] rounded-lg md:border-b-4 border-primary">
                 <header className='h-[8rem] bg-gray-700 rounded-t-md purchase-modal-header flex justify-end text-primary'>
 
                 </header>
@@ -16,9 +16,9 @@ function Purchase() {
                         <form action="">
                             <div className="px-6 py-2 flex justify-between bg-gray-200 items-center">
                                 <div className=''>
-                                    <h4>Regular</h4>
-                                    <p className='flex gap-2'> <span>ngn - 1500</span> <span>total - 4000</span> </p>
-                                    <p>Quantity 0</p>
+                                    <h4 className='font-semibold'>Regular</h4>
+                                    <p className='flex gap-2 text-sm md:text-base'> <span>ngn - 1500</span> <span>total - 4000</span> </p>
+                                    <p className='text-sm'> Quantity 0</p>
                                 </div>
                                 
                                 <div className="flex flex-col items-center ">
