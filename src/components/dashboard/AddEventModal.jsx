@@ -40,6 +40,7 @@ export default function AddEventModal({ handleModal }) {
     const onSubmit = async (data) => {
 
        dispatch(createEvent(data))
+       handleModal()
        
     }
     return (
