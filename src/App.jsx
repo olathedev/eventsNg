@@ -15,8 +15,8 @@ import Attend from './pages/checkout/Attend'
 import { useSelector } from 'react-redux'
 
 
-axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng" 
-// axios.defaults.baseURL = "https://eventsng-v1.onrender.com/api/v1/eventsng"
+// axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng" 
+axios.defaults.baseURL = "https://eventsng-v1.onrender.com/api/v1/eventsng"
 
 
 function App() {
