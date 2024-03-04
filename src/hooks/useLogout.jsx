@@ -1,15 +1,16 @@
 import { useNavigate } from "react-router-dom"
-import { useAuthContext } from "./useAuthContext"
+import { useDispatch } from "react-redux"
+import { logout } from "../features/auth/userSlice"
 
 export const useLogOut = () => {
-    const {dispatch} = useAuthContext()
+    const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    function logout() {
+    function logoutFunc() {
         localStorage.removeItem('user')
-        dispatch({type: 'LOGOUT'})
+        dispatch(logout())
         navigate('/')
     }
 
-    return {logout}
+    return {logoutFunc}
 }

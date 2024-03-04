@@ -10,6 +10,8 @@ import { useAuthContext } from '../../hooks/useAuthContext'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { login } from '../../features/auth/userSlice'
 
 const schema = yup.object ({
     email: yup.string().email("Provide a valid email").required("please provide an email"),
@@ -18,7 +20,7 @@ const schema = yup.object ({
 
 export default function Login() {
 
-    const {dispatch} = useAuthContext()
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const [isPending, setIsPending] = useState(false)
     const [error, setError] = useState({email: '', password: ''})
@@ -38,7 +40,7 @@ export default function Login() {
         try {
             const {data: response} = await axios.post('/auth/signin', data)
             console.log(response)
-            dispatch({type: 'LOGIN', payload: response})
+            dispatch(login(response))
             localStorage.setItem('user', JSON.stringify(response.token))
             setIsPending(false)
             navigate('/dashboard/')

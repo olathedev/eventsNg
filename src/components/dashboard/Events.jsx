@@ -16,6 +16,7 @@ export default function Events({ handleModal }) {
         )
     }
 
+    
 
 
     return (
@@ -45,7 +46,7 @@ export default function Events({ handleModal }) {
                 </form>
             </div>
 
-            {!events && (
+            {events?.length < 1 && (
                 <div className="my-16 flex justify-center">
                     <h1>You have no event running</h1>
                 </div>

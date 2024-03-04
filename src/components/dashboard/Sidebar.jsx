@@ -11,7 +11,7 @@ export default function Sidebar() {
         { title: "Dashboard", route: "/dasboard", icon: "" }
     ]
 
-    const { logout } = useLogOut()
+    const { logoutFunc } = useLogOut()
 
 
     return (
@@ -94,7 +94,7 @@ export default function Sidebar() {
                 </NavLink>
 
 
-                <button className='mt-4 flex gap-2 py-3 px-2 bg-primary justify-center rounded cursor-pointer hover:translate-x-2 transition duration-200 ease-in-out' onClick={logout}>
+                <button className='mt-4 flex gap-2 py-3 px-2 bg-primary justify-center rounded cursor-pointer hover:translate-x-2 transition duration-200 ease-in-out' onClick={logoutFunc}>
                     Sign out
 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

@@ -4,12 +4,15 @@ import event from "../../assets/event.jpg"
 import EventsTable from '../../components/dashboard/EventsTable'
 import Events from '../../components/dashboard/Events'
 import event1 from '../../assets/events/event1.png'
-import { getEvents } from '../../features/event-managent/eventManagementSlice'
 import { useDispatch } from 'react-redux'
+import { useAuthContext } from '../../hooks/useAuthContext'
+import { getEvents } from '../../features/event-managent/eventManagementSlice'
 
 export default function EventManagement() {
 
     const [modal, setModal] = useState(false)
+
+    const {user} = useAuthContext()
 
     const handleModal = () => {
         setModal(!modal)
@@ -18,8 +21,10 @@ export default function EventManagement() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-      dispatch(getEvents())
+        dispatch(getEvents())
+        console.log('useEffect ran');
     }, [])
+
     
     
     return (

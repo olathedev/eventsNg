@@ -23,18 +23,18 @@ export default function Dashboard() {
 
     const {user} = useAuthContext()
     
-    const {data} = useQuery({
-      queryKey: ['Get Events'],
-      queryFn: async () => {
-        const response = await axios.get('/events/stats', {
-          headers: {
-            'Authorization': `Bearer ${user}`
-          }
-        })
-        return response.data
+    // const {data} = useQuery({
+    //   queryKey: ['Get Events'],
+    //   queryFn: async () => {
+    //     const response = await axios.get('/events/stats', {
+    //       headers: {
+    //         'Authorization': `Bearer ${user}`
+    //       }
+    //     })
+    //     return response.data
         
-      }
-    })
+    //   }
+    // })
 
  
 
@@ -58,7 +58,7 @@ export default function Dashboard() {
           <Nav />
 
           <Routes>
-            <Route path='/' element={<Home stats={data?.defaultStats}  />} />
+            <Route path='/' element={<Home />} />
             <Route path='/events' element={<EventManagement />} />
             <Route path='/ticketing' element={<TicketManagement />} />
             <Route path='/bookings' element={<EventBookings />} />

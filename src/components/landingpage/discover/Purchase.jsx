@@ -40,8 +40,8 @@ function Purchase({ data, handleModal }) {
                                         <div className=''>
 
 
-                                            <h4 className='font-semibold'>Regular</h4>
-                                            <p className='flex gap-2 text-sm md:text-base'> <span>ngn - 1500</span> <span>total - 4000</span> </p>
+                                            <h4 className='font-semibold'>{t.ticketType}</h4>
+                                            <p className='flex gap-2 text-sm '> <span>ngn - {t.price}</span> <span>total - 0</span> </p>
                                             <p className='text-sm'> Quantity 0</p>
                                         </div>
 

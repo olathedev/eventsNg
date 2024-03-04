@@ -12,14 +12,15 @@ import LandingLayout from './pages/LandingLayout'
 import DiscoverSingle from './pages/DiscoverSingle'
 import { useEffect } from 'react'
 import Attend from './pages/checkout/Attend'
+import { useSelector } from 'react-redux'
 
 
-// axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng" 
-axios.defaults.baseURL = "https://eventsng-v1.onrender.com/api/v1/eventsng"
+axios.defaults.baseURL = "http://localhost:4000/api/v1/eventsng" 
+// axios.defaults.baseURL = "https://eventsng-v1.onrender.com/api/v1/eventsng"
 
 
 function App() {
-  const { user } = useAuthContext()
+  const { user } = useSelector((state) => state.user)
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -44,11 +45,7 @@ function App() {
           <Route path='/login' element={!user ? <Login /> : <Navigate to="/dashboard" />} />
           <Route path='/register' element={!user ? <Signup /> : <Navigate to="/dashboard" />} />
           <Route path='/verify' element={<Verify />} />
-          {/* <Route path='/dashboard/*' element={user ? <Dashboard /> : <Navigate to="/login" />} /> */}
-          <Route path='/dashboard/*' element={
-            <Dashboard />
-          } />
-
+          <Route path='/dashboard/*' element={user ? <Dashboard /> : <Navigate to="/login" />} />
         </Routes>
       </SidebarContextProvider>
 

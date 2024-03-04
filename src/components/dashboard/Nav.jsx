@@ -7,6 +7,8 @@ import { closeSidebar, openSideBar } from '../../features/activeStates/sideBarSl
 function Nav() {
 
     const { sidebarOpen } = useSelector((state) => state.sidebar)
+    const {profile} = useSelector((state) => state.user)
+
     const dispatch = useDispatch()
 
     return (
@@ -29,7 +31,7 @@ function Nav() {
                         <h2 className='flex md:hidden font-quicksand font-semibold text-secondary'>teekety</h2>
 
                     </div>
-                    <h1 className='hidden md:flex font-monteserat font-semibold pl-2 text-gray-700'>Welcome back, Olaoluwa Johnson</h1>
+                    <h1 className='hidden md:flex font-monteserat font-semibold pl-2 text-gray-700'>Welcome back, {profile.fullname}</h1>
                 </div>
 
 

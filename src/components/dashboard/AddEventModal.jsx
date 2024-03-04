@@ -1,7 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import { useDispatch } from 'react-redux'
 import * as yup from 'yup'
+import { useAuthContext } from '../../hooks/useAuthContext'
+import axios from 'axios'
+import { createEvent } from '../../features/event-managent/eventManagementSlice'
 
 const schema = yup.object({
     title: yup.string().required("Provide event name"),
@@ -9,13 +13,15 @@ const schema = yup.object({
     location: yup.string().required("Provide event name"),
     eventDate: yup.string().required("Provide event name"),
     time: yup.string().required("Provide event name"),
-    seatsAvailable: yup.string().required("Provide event name"),
+    seatsAvailable: yup.string().required("Provide seats available"),
 
 
 
 }).required()
 
 export default function AddEventModal({ handleModal }) {
+
+    const dispatch = useDispatch()
 
     const {register, handleSubmit, formState: {errors} } = useForm({
         resolver: yupResolver(schema),
@@ -25,14 +31,16 @@ export default function AddEventModal({ handleModal }) {
             location: '',
             eventDate: '',
             time: '',
-            seatsAvailable: ''
+            seatsAvailable: 'unlimited'
         }
     })
 
     console.log(errors);
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit = async (data) => {
+
+       dispatch(createEvent(data))
+       
     }
     return (
         <div className={`fixed inset-0 h-screen max-h-screen flex justify-center items-center bg-black bg-opacity-70  z-30 px-2`}>
@@ -82,7 +90,7 @@ export default function AddEventModal({ handleModal }) {
 
 
                         <div className="flex gap-2 text-sm">
-                            <input type="date" className='w-1/2  border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='date ' {...register('date')} />
+                            <input type="date" className='w-1/2  border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='date ' {...register('eventDate')} />
 
                             <input type="time" className='w-1/2 border-b  border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='time' {...register('time')} />
 
@@ -105,7 +113,7 @@ export default function AddEventModal({ handleModal }) {
                         <div>
                         <div className='flex gap-2'>
                             
-                            <input type="number"  className='w-1/2 border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='available seats' />
+                            <input type="number"  className='w-1/2 border border-gray-400 px-3 py-3 rounded focus:outline-none' placeholder='available seats' {...register('seatsAvailable')} />
 
 
                             
