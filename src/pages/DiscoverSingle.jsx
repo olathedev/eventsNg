@@ -94,7 +94,7 @@ export default function DiscoverSingle() {
                 </div>
                
                 <div>
-                  <p className='font-quicksand p-4 md:font-poppins leading8 md:text-gray-600 md:leading-8 '> {data?.event?.location} </p>
+                  <p className='font-quicksand p-4 md:font-poppins leading8 md:text-gray-600 md:leading-8 '> {data?.event?.description} </p>
                 </div>
               </div>
 
