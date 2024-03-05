@@ -6,9 +6,7 @@ import { useSelector } from 'react-redux'
 
 
 
-export default function Events({ handleModal }) {
-
-    const { events, isLoading } = useSelector((state) => state.userEvents)
+export default function Events({ handleModal, events, isLoading }) {
 
     if (isLoading) {
         return (
@@ -16,6 +14,7 @@ export default function Events({ handleModal }) {
         )
     }
 
+    
     
 
 
@@ -46,7 +45,7 @@ export default function Events({ handleModal }) {
                 </form>
             </div>
 
-            {events?.length < 1 && (
+            {events?.events?.length < 1 && (
                 <div className="my-16 flex justify-center">
                     <h1>You have no event running</h1>
                 </div>
@@ -54,7 +53,7 @@ export default function Events({ handleModal }) {
 
             <div className='grid grid-cols-1 md:grid-cols-3 gap-y-6 gap-x-6 mt-4'>
 
-                {events?.map(event => (
+                {events?.events?.map(event => (
                     <div className='border rounded' key={event._id}>
                         <div className="relative image h-32 max-h32 overfolow-hidden">
                             <img src={event1} className='h-full w-full rounded-t object-cover' alt="" />

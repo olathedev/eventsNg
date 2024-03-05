@@ -1,31 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import AddEventModal from '../../components/dashboard/AddEventModal'
-import event from "../../assets/event.jpg"
-import EventsTable from '../../components/dashboard/EventsTable'
 import Events from '../../components/dashboard/Events'
-import event1 from '../../assets/events/event1.png'
-import { useDispatch } from 'react-redux'
-import { useAuthContext } from '../../hooks/useAuthContext'
-import { getEvents } from '../../features/event-managent/eventManagementSlice'
+import { useGetUserEventsQuery } from '../../features/api/apiSlice'
 
 export default function EventManagement() {
 
     const [modal, setModal] = useState(false)
 
-    const {user} = useAuthContext()
-
     const handleModal = () => {
         setModal(!modal)
     }
 
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(getEvents())
-        console.log('useEffect ran');
-    }, [])
-
-    
+    const {data: events, isLoading} = useGetUserEventsQuery()
     
     return (
         <div className="container bg-white mx-auto min-h-screen px-4 md:px-6 py-8">
@@ -55,7 +41,9 @@ export default function EventManagement() {
             </div>
 
             {/* <EventsTable handleModal={handleModal} /> */}
-            <Events handleModal={handleModal} />
+
+        
+            <Events handleModal={handleModal} events={events} isLoading={isLoading} />
         </div>
     )
 }

@@ -5,10 +5,12 @@ import DiscoverHeader from '../components/landingpage/discover/DiscoverHeader'
 import eventImage from '../assets/events/event1.png'
 import { Link } from 'react-router-dom'
 import { useFetch } from '../hooks/useFetch'
+import { useGetAllEventsQuery } from '../features/api/apiSlice'
 
 export default function Discover() {
    
-    const {data, isPending} = useFetch('/events/discover')
+    // const {data, isPending} = useFetch('/events/discover')
+    const {data, isLoading, error} = useGetAllEventsQuery()
 
     return (
         <div className='w-full bg-[#eee] min-h-screen pb-16'>
@@ -17,7 +19,7 @@ export default function Discover() {
 
             <section className=' container mx-auto px-6 md:px-10 mt-10' id='Events'>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-y-8 md:gap-x-6">
-                    {isPending && [1,2,3,4].map((ske, index) => (
+                    {isLoading && [1,2,3,4].map((ske, index) => (
 
                      
 

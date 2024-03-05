@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useLogOut } from '../../hooks/useLogout'
+import { useDispatch, useSelector } from 'react-redux'
+import { closeSidebar } from '../../features/activeStates/sideBarSlice'
 
 export default function Sidebar() {
     const sideBarItems = [
@@ -13,6 +15,11 @@ export default function Sidebar() {
 
     const { logoutFunc } = useLogOut()
 
+    const dispatch = useDispatch()
+
+    const { sidebarOpen } = useSelector((state) => state.sidebar)
+    
+
 
     return (
 
@@ -22,7 +29,7 @@ export default function Sidebar() {
                Teekety
             </div>
 
-            <div className="flex flex-col gap-6 text-white">
+            <div className="flex flex-col gap-6 text-white" onClick={() => dispatch(closeSidebar())}>
                 <h2 className='text-xll font-semibold font-raleway'>MENU</h2>
 
                 <NavLink to="/dashboard" className='mt-2 text-lg flex gap-2 py-2 bg-primary rounded px-2 cursor-pointer hover:translate-x-2 transition duration-200 ease-in-out'>

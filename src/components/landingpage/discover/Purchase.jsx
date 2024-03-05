@@ -1,6 +1,30 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { qauntityState } from '../../../features/ticket/ticketSlice'
+import { PaystackButton } from 'react-paystack'
 
 function Purchase({ data, handleModal }) {
+
+    const {total, qauntity} = useSelector((state) => state.ticket)
+
+    const dispatch = useDispatch()
+    const publicKey = "pk_test_159c4bef5e90aece54e68bdd886503525e911112"
+    const amount = 1000000 // Remember, set in kobo!
+
+    const componentProps = {
+        email: "michealojedeji2@gmail.com",
+        amount,
+        metadata: {
+          name: 'oladev',
+          phone: '08126325584',
+        },
+        publicKey,
+        text: "Proceed to payment",
+        onSuccess: () =>
+          alert("Thanks for doing business with us! Come back soon!!"),
+        onClose: () => alert("Wait! You need this oil, don't go!!!!"),
+      }
+
     return (
         <div className="fixed h-screen w-full bg-black bg-opacity-60 md:py-6 backdrop-blur-sm z-40 flex justify-center items-center">
 
@@ -21,7 +45,7 @@ function Purchase({ data, handleModal }) {
                     </div>
                 </div>
                 <div className="body  py-3 font-quicksand">
-                    <h4 className='px-6 text-primary font-semibold text-lg'>Select a ticket, ticket to proceed</h4>
+                    <h4 className='px-6 text-secondary font-semibold text-lg'>Ticket Selection</h4>
 
                     <div className='py-4'>
                         <form action="">
@@ -33,42 +57,54 @@ function Purchase({ data, handleModal }) {
                             )}
 
                             <div className="flex flex-col gap-3">
-                                {data?.ticket.map(t => (
-
-                                    <div className="px-6 py-2 flex justify-between bg-gray-200 items-center">
-
-                                        <div className=''>
 
 
-                                            <h4 className='font-semibold'>{t.ticketType}</h4>
-                                            <p className='flex gap-2 text-sm '> <span>ngn - {t.price}</span> <span>total - 0</span> </p>
-                                            <p className='text-sm'> Quantity 0</p>
-                                        </div>
+                                <form className="px-6 py-2 flex justify-between  items-center">
+                                    <div>
+                                        <select className='py-2 px-8 appearance-none rounded border border-primary focus:outline-none '>
+                                            {data?.ticket?.map(t => (
+                                                <option value="">{t.ticketType}</option>
 
-                                        <div className="flex flex-col items-center ">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                                                    <path fillRule="evenodd" d="M9.47 6.47a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 1 1-1.06 1.06L10 8.06l-3.72 3.72a.75.75 0 0 1-1.06-1.06l4.25-4.25Z" clipRule="evenodd" />
-                                                </svg>
+                                            ))}
 
-                                            </span>
-                                            <p>0</p>
                                             <span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                                                     <path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
                                                 </svg>
 
                                             </span>
-                                        </div>
+
+
+                                        </select>
+                                    </div>
+                                    <div className="py-2 px-3 border border-primary rounded text-primary flex items-center gap-2 cursor-pointer">
+
+                                        <span onClick={() => dispatch(qauntityState("DECREMENT"))}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                                                <path fillRule="evenodd" d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clipRule="evenodd" />
+                                            </svg>
+
+                                        </span>
+                                        <span className='font-poppins'>{qauntity}</span>
+                                        <span onClick={() => dispatch(qauntityState("INCREMENT"))}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                                                <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
+                                            </svg>
+
+                                        </span>
+
+
                                     </div>
 
-                                ))}
+                                </form>
+
+
 
                             </div>
 
 
 
-                            <div className="mt-8 px-6">
+                            <div className="mt-8 px-6 hidden">
 
                                 <label className='py-2'>Email Adress</label>
                                 <input type="text" className='p-2 border border-gray-400 rounded w-full' placeholder='e.g johndoe@gmail.com' />
@@ -81,22 +117,17 @@ function Purchase({ data, handleModal }) {
 
                 </div>
 
-                <footer className='font-quicksand'>
+                <footer className='font-quicksand mt-20 md:mt-6'>
                     <div className='flex justify-between border-y p-4 bg-gray-200'>
                         <h1 className='font-quicksand font-semibold'>TOTAL</h1>
-                        <h1 className='font-quicksand font-semibold'>NGN - 4000</h1>
+                        <h1 className='font-quicksand font-semibold'>NGN - {total}</h1>
 
                     </div>
 
-                    <div className='py-4 flex gap-4 justify-center'>
+                    <div className='py-4 flex gap-4 justify-center mt-4 md:mt-1'>
                         <button className="py-3 px-6 text-center bg-gray-300 font-semibold rounded hover:bg-red-400 transition duration-300" onClick={handleModal}>Cancel</button>
-
-                        <button className="p-3 text-center bg-secondary text-white rounded transition duration-300 flex gap-3">
-                            Proceed to payment
-                            <span>
-
-                            </span>
-                        </button>
+                        <PaystackButton {...componentProps} className='p-3 text-center bg-primary text-white rounded transition duration-300 flex gap-3' />
+                       
                     </div>
                 </footer>
             </div>

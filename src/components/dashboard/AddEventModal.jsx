@@ -6,6 +6,7 @@ import * as yup from 'yup'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import axios from 'axios'
 import { createEvent } from '../../features/event-managent/eventManagementSlice'
+import { useAddEventMutation } from '../../features/api/apiSlice'
 
 const schema = yup.object({
     title: yup.string().required("Provide event name"),
@@ -23,6 +24,8 @@ export default function AddEventModal({ handleModal }) {
 
     const dispatch = useDispatch()
 
+    const [addEvent] = useAddEventMutation()
+
     const {register, handleSubmit, formState: {errors} } = useForm({
         resolver: yupResolver(schema),
         defaultValues: {
@@ -35,12 +38,9 @@ export default function AddEventModal({ handleModal }) {
         }
     })
 
-    console.log(errors);
-
     const onSubmit = async (data) => {
-
-       dispatch(createEvent(data))
-       handleModal()
+       await addEvent(data)
+       
        
     }
     return (
