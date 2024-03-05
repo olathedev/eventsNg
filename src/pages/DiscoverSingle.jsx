@@ -42,7 +42,7 @@ export default function DiscoverSingle() {
         <Purchase data={data} handleModal={handleModal} />
       )}
 
-      <div className="md:hidden bg-white fixed w-full bottom-0 py-6 shadow-lg z-20 flex rounded-t-2xl justify-center">
+      <div className="md:hidden bg-white fixed w-full bottom-0 py-6 shadow-lg z-10 flex rounded-t-2xl justify-center">
        
           <button className='bg-primary text-white px-6 py-3 font-poppins rounded' onClick={handleModal}>Buy ticket</button>
 
