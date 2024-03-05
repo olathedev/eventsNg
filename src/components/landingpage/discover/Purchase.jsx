@@ -104,11 +104,11 @@ function Purchase({ data, handleModal }) {
 
 
 
-                            <div className="mt-8 px-6 hidden">
+                            <div className="mt-8 px-6">
 
                                 <label className='py-2'>Email Adress</label>
                                 <input type="text" className='p-2 border border-gray-400 rounded w-full' placeholder='e.g johndoe@gmail.com' />
-                                <p className='text-sm'>Provide your email, ticket will be delivered to provided mail box</p>
+                                <p className='text-sm'>Ticket will be delivered here</p>
 
                             </div>
                         </form>
