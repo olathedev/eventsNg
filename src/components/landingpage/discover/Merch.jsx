@@ -29,7 +29,7 @@ export default function Merch() {
                     <h4 className='absolute bg-primary bg-opacity-70 text-white backdrop-blur-sm left-0 rounded-ss top-0 p-1  text-sm font-poppins'>Shirt</h4>
 
                     <div className="cardbody p-2">
-                      <h4 className=''>on sale</h4>
+                      <h4 className=''>Event Tees</h4>
 
                       <p className='text-sm'>NGN 3000</p>
                       <p className='text-sm'>Sold - 45</p>
