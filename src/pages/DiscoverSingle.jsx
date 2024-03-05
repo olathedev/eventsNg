@@ -42,21 +42,21 @@ export default function DiscoverSingle() {
         <Purchase data={data} handleModal={handleModal} />
       )}
 
-      <div className="md:hidden bg-white fixed w-full bottom-0 py-6 shadow flex rounded-t-2xl justify-center">
+      <div className="md:hidden bg-white fixed w-full bottom-0 py-6 shadow-lg z-20 flex rounded-t-2xl justify-center">
        
           <button className='bg-primary text-white px-6 py-3 font-poppins rounded' onClick={handleModal}>Buy ticket</button>
 
       </div>
       <DiscoverSingleHeader data={data} handleModal={handleModal}  />
 
-      <div className="mt-3 md:mt-10 container mx-auto px-4 md:px-10">
+      <div className="md:mt-10 container mx-auto px-4 md:px-10">
         <div className="flex flex-col-reverse md:flex-row">
           <div className="md:w-2/3">
 
             <div className="md:w-[95%]">
-              <div className="card-one bg-white shadow rounded">
-                <h1 className='md:text-lg font-poppins py-4 px-4 border-b-2 '>Event Description</h1>
-                <div className="md:hidden text-primary p-4 border-b-2 flex flex-col gap-3 font-poppins mt-4">
+              <div className="card-one  rounded">
+                <h1 className='md:text-lg font-poppins py-2 px-4 border-b-2 text-lg bg-primary bg-opacity-30 '>Event Description</h1>
+                <div className="md:hidden text-primary px-4 py-2 border-b-2 flex flex-col gap-3 font-quicksand mt-4">
                   <div className="flex items-center gap-4">
                     <span>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -93,7 +93,7 @@ export default function DiscoverSingle() {
                   </div>
                 </div>
                 <div>
-                  <p className='font-quicksand p-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae odio ipsam exercitationem eos illo tenetur laudantium, molestiae perferendis dolore corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus in labore facilis accusantium velit asperiores nam, impedit nesciunt alias et?</p>
+                  <p className='font-quicksand p-4 md:font-poppins leading8 md:text-gray-600 md:leading-8 '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae odio ipsam exercitationem eos illo tenetur laudantium, molestiae perferendis dolore corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus in labore facilis accusantium velit asperiores nam, impedit nesciunt alias et?</p>
                 </div>
               </div>
 
@@ -105,9 +105,9 @@ export default function DiscoverSingle() {
 
           </div>
 
-          <div className="md:w-1/3">
+          <div className="md:w-1/3 -mb-8">
             <div className="flex flex-col gap-3">
-              <div className="relative md:static bottom-[5rem] image-wrapper w-full h-[12rem] md:h-[15rem] ">
+              <div className="relative md:static bottom-[4rem] image-wrapper w-full h-[12rem] md:h-[15rem] ">
                 <img src={eventimg} className='rounded-md w-full h-full object-cover' alt="" />
               </div>
 
