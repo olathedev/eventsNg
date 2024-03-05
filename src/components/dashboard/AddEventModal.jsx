@@ -24,7 +24,7 @@ export default function AddEventModal({ handleModal }) {
 
     const dispatch = useDispatch()
 
-    const [addEvent] = useAddEventMutation()
+    const [addEvent, { isLoading, error }] = useAddEventMutation()
 
     const {register, handleSubmit, formState: {errors} } = useForm({
         resolver: yupResolver(schema),
@@ -40,7 +40,7 @@ export default function AddEventModal({ handleModal }) {
 
     const onSubmit = async (data) => {
        await addEvent(data)
-       
+       handleModal()
        
     }
     return (
@@ -145,7 +145,7 @@ export default function AddEventModal({ handleModal }) {
                         </div>
                         
                         <div className="w-full modal-footer mt-4">
-                        <button className='w-full py-3 px-4 bg-primary text-white rounded-md'>Submit</button>
+                        <button className='w-full py-3 px-4 bg-primary text-white rounded-md' disabled={isLoading}>{isLoading ? 'Submiting...' : 'submit'}</button>
                     </div>
                     </form>
 
