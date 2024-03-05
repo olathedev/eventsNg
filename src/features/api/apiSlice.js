@@ -5,7 +5,7 @@ export const apiSlice = createApi({
     tagTypes: ['events'],
     baseQuery: fetchBaseQuery(
         {
-            baseUrl: 'http://localhost:4000/api/v1/eventsng',
+            baseUrl: 'https://eventsng-v1.onrender.com/api/v1/eventsng' || 'http://localhost:4000/api/v1/eventsng' ,
             prepareHeaders: (headers, { getState }) => {
                 const token = getState().user.user
 
