@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, Route, Routes, useParams } from 'react-router-dom'
-import eventimg from '../assets/events/event3.png'
+import eventimg from '../assets/events/event2.jpg'
 import map from '../assets/map-placeholder.jpg'
 import merch from '../assets/merchs/hoodie.jpg'
 import merch2 from '../assets/merchs/shirt.jpg'
