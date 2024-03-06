@@ -5,7 +5,9 @@ export const apiSlice = createApi({
     tagTypes: ['events'],
     baseQuery: fetchBaseQuery(
         {
-            baseUrl: 'https://eventsng-v1.onrender.com/api/v1/eventsng' || 'http://localhost:4000/api/v1/eventsng' ,
+            // baseUrl: 'https://eventsng-v1.onrender.com/api/v1/eventsng' || 'http://localhost:4000/api/v1/eventsng' ,
+            baseUrl: 'http://localhost:4000/api/v1/eventsng' ,
+
             prepareHeaders: (headers, { getState }) => {
                 const token = getState().user.user
 
@@ -44,8 +46,17 @@ export const apiSlice = createApi({
             invalidatesTags: ['events'],
 
         }),
+
+        uploadImage: builder.mutation({
+            query: (data) => ({
+                url: 'events/uploadImage',
+                method: 'POST',
+                body: data
+            })
+           
+        })
     })
 })
 
 
-export const { useGetAllEventsQuery, useGetUserEventsQuery, useAddEventMutation } = apiSlice
+export const { useGetAllEventsQuery, useGetUserEventsQuery, useAddEventMutation, useUploadImageMutation } = apiSlice

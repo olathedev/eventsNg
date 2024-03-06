@@ -29,8 +29,8 @@ function Purchase({ data, handleModal }) {
     return (
         <div className="fixed h-screen w-full bg-black bg-opacity-60 md:py-6 backdrop-blur-sm z-20 flex justify-center items-center">
 
-            <div className="bg-white w-full h-screen pb-6 md:max-h-screen md:h-auto md:w-[45%] overflow-auto -mt-[10rem] z-40 md:rounded-lg border-y-4 border-primary">
-                <header className='h-[8rem] bg-gray-700 rounded-t-md purchase-modal-header flex justify-end text-primary'>
+            <div className="bg-white w-full h-screen pb-2 md:max-h-screen md:h-auto md:w-[40%] overflow-auto -mt-[8rem] z-40 md:rounded-lg border-primary">
+                <header className='h-[8rem] bg-gray-700 rounded-t-md purchase-modal-header flex justify-end text-primary '>
 
                 </header>
 
@@ -121,7 +121,7 @@ function Purchase({ data, handleModal }) {
 
                 </div>
 
-                <footer className='font-quicksand mt-10 relative top-10 md:top-2 md:mt-6'>
+                <footer className='font-quicksand mt-10 md:mt-1 relative'>
                     <div className='flex justify-between border-y p-4 bg-[#6645D5] text-white'>
                         <h1 className='font-quicksand md:font-semibold'>Total</h1>
                         <h1 className='font-quicksand md:font-semibold'>NGN - {total}</h1>

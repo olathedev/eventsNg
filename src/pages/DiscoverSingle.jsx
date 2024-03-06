@@ -36,7 +36,7 @@ export default function DiscoverSingle() {
 
 
   return (
-    <div className='min-h-screen bg-[#eee] pb-8'>
+    <div className='min-h-screen pb-8'>
 
       {modalOpen && (
         <Purchase data={data} handleModal={handleModal} />

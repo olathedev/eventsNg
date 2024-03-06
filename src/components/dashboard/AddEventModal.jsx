@@ -1,20 +1,19 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import * as yup from 'yup'
-import { useAuthContext } from '../../hooks/useAuthContext'
-import axios from 'axios'
-import { createEvent } from '../../features/event-managent/eventManagementSlice'
-import { useAddEventMutation } from '../../features/api/apiSlice'
+import { useAddEventMutation, useUploadImageMutation } from '../../features/api/apiSlice'
+import loadingIcon from "../../assets/loading.gif"
 
 const schema = yup.object({
     title: yup.string().required("Provide event name"),
-    description: yup.string().required("Provide event name"),
-    location: yup.string().required("Provide event name"),
-    eventDate: yup.string().required("Provide event name"),
-    time: yup.string().required("Provide event name"),
+    description: yup.string().required("Provide event description"),
+    location: yup.string().required("Provide event location"),
+    eventDate: yup.string().required("provie event date"),
+    time: yup.string().required("Provide event natimeme"),
     seatsAvailable: yup.string().required("Provide seats available"),
+ 
 
 
 
@@ -25,6 +24,11 @@ export default function AddEventModal({ handleModal }) {
     const dispatch = useDispatch()
 
     const [addEvent, { isLoading, error }] = useAddEventMutation()
+    const [uploadImage, {data, isLoading: loadingImg, error: imgErr}] = useUploadImageMutation()
+
+    const {user} = useSelector((state) => state.user)
+
+    const [image, setImage] = useState('')
 
     const {register, handleSubmit, formState: {errors} } = useForm({
         resolver: yupResolver(schema),
@@ -34,15 +38,36 @@ export default function AddEventModal({ handleModal }) {
             location: '',
             eventDate: '',
             time: '',
-            seatsAvailable: 'unlimited'
+            seatsAvailable: 'unlimited',
+            
         }
     })
 
+    console.log(errors);
+
+
+    const imageUpload = async (e) => {
+        const file = e.target.files[0];
+        const data = new FormData()
+        data.append('image', file)
+        console.log(file);
+        console.log(image);
+        const res = await uploadImage(data)
+        setImage(res.data.image);
+               
+
+        
+       
+    }
+
     const onSubmit = async (data) => {
-       await addEvent(data)
+       const res = await addEvent({...data, image})
+       console.log(res);
        handleModal()
        
     }
+
+   
     return (
         <div className={`fixed inset-0 h-screen max-h-screen flex justify-center items-center bg-black bg-opacity-70  z-30 px-2`}>
             <div className="bg-white md:w-[40%] max-h-screen rounded overflow-auto md:-mr-10 border-b-2 border-b-primary transition duration-200 ease-in-out">
@@ -97,18 +122,29 @@ export default function AddEventModal({ handleModal }) {
 
                         </div>
 
-                        <div className="relative flex">
+                        <div className="relative flex gap-3">
 
-                            <label className="bg-gray-200 h-20 p-6 rounded flex gap-1 cursor-pointer items-center text-sm font-poppins">
-                            <input type="file" className='hidden' accept='image/*' />
+                            <div className='grow'>
+                            <label className="bg-gray-200 h-20 md:h-28 px-4 w-full rounded flex gap-1 cursor-pointer items-center justify-center text-sm font-poppins">
+                            <input type="file" className='hidden' accept='image/*' onChange={imageUpload} multiple />
                                 
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m3.75 9v6m3-3H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
                                     </svg>
                                 </span>
-                                <span>Upload poto</span>
+                                <span>{loadingImg ? 'uploading...' : 'upload image'}</span>
                             </label>
+                                <img src={loadingIcon}className={ `${loadingImg ? 'flex' : 'hidden' } h-6 my-2` }alt="" />
+                            </div>
+
+                            <div className="w-1/2 h-20 md:h-28 flex gap-1 cursor-pointer items-center text-sm font-poppins">
+
+                                {data?.image && (
+                                <img src={data?.image} className='h-full w-full object-cover' alt="" />
+
+                                )}
+                            </div>
                         </div>
 
                         <div>
