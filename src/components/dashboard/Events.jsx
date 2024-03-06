@@ -56,7 +56,7 @@ export default function Events({ handleModal, events, isLoading }) {
                 {events?.events?.map(event => (
                     <div className='border rounded' key={event._id}>
                         <div className="relative image h-32 max-h32 overfolow-hidden">
-                            <img src={event1} className='h-full w-full rounded-t object-cover' alt="" />
+                            <img src={event.image} className='h-full w-full rounded-t object-cover' alt="" />
 
                             <span className='absolute top-2 right-2 bg-primary px-2 py-1 text-sm font-quicksand font-semibold text-white rounded-md'>ended</span>
                         </div>
