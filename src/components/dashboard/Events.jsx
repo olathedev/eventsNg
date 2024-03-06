@@ -58,7 +58,7 @@ export default function Events({ handleModal, events, isLoading }) {
                         <div className="relative image h-32 max-h32 overfolow-hidden">
                             <img src={event.image} className='h-full w-full rounded-t object-cover' alt="" />
 
-                            <span className='absolute top-2 right-2 bg-primary px-2 py-1 text-sm font-quicksand font-semibold text-white rounded-md'>ended</span>
+                            <span className={`absolute ${event.isActive ? "bg-green-800" : "bg-red-700"} top-2 right-2  px-2 py-1 text-sm font-quicksand font-semibold text-white rounded-md`}>{event.isActive ? "Active" : "ended"}</span>
                         </div>
 
                         <div className="px-2 py-4 flex gap-4 justify-between">

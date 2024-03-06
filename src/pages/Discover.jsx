@@ -45,7 +45,7 @@ export default function Discover() {
 
 
                             <div className=' flex flex-col gap-2 py-3 px-1'>
-                                <h2 className="text-lg font-quicksand uppercase font-semibold">{event.title}</h2>
+                                <h2 className="md:text-lg font-quicksand uppercase font-semibold">{event.title}</h2>
                                 <div className="flex gap-2 items-center font-quicksand text-sm">
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">

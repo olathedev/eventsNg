@@ -81,6 +81,9 @@ function Purchase({ data, handleModal }) {
 
                                                 </select>
                                             </div>
+
+
+                                            
                                             <div className="py-2 px-3 border border-primary rounded text-primary flex items-center gap-2 cursor-pointer">
 
                                                 <span onClick={() => dispatch(qauntityState("DECREMENT"))}>
@@ -106,13 +109,16 @@ function Purchase({ data, handleModal }) {
 
                                     </div>
 
-                                    <div className="mt-8 px-6">
+                                    {qauntity > 0 && (
+                                     <div className="mt-8 px-6">
 
                                         <label className='py-2'>Email Adress</label>
                                         <input type="text" className='p-2 border border-gray-400 rounded w-full' placeholder='e.g johndoe@gmail.com' value={email} onChange={(e) => setEmail(e.target.value)} />
                                         <p className='text-sm'>Ticket will be delivered here</p>
 
                                     </div>
+                                    )}
+                                   
                                 </div>
                             )}
                         </form>
@@ -130,6 +136,8 @@ function Purchase({ data, handleModal }) {
 
                     <div className='py-4 flex gap-4 justify-center mt-4 md:mt-1'>
                         <button className="py-3 px-6 text-center bg-gray-300 rounded hover:bg-red-400 transition duration-300" onClick={handleModal}>Cancel</button>
+
+                        {/* <div className="p-3 text-center bg-primary text-white rounded transition duration-300" disabled={true}>Next</div> */}
                         <PaystackButton {...componentProps} className='p-3 text-center bg-primary text-white rounded transition duration-300 flex gap-3' />
 
                     </div>
