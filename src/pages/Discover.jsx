@@ -37,7 +37,7 @@ export default function Discover() {
                     ))}
 
                     {data && data?.event?.map((event) => (
-                        <div className="event-card cursor-pointer hover:translate-y-1 transition-all duration-200 ease-in-out p-3 hover:bg-white hover:shadow-md rounded-md" key={event._id}>
+                        <div className="event-card cursor-pointer hover:translate-y-1 transition-all duration-200 ease-in-out p-3 bg-white shadow hover:bg-white hover:shadow-md rounded-md" key={event._id}>
                             <Link to={`/discover/${event._id}`}>
                             <div className="image h-[10rem]">
                                 <img src={event.image || eventImage} className='h-full w-full rounded-md rounded-t object-cover' alt="" />

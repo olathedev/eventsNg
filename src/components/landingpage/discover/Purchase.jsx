@@ -27,11 +27,11 @@ function Purchase({ data, handleModal }) {
     }
 
     return (
-        <div className="fixed h-screen w-full bg-black bg-opacity-60 md:py-6 backdrop-blur-sm z-20 flex justify-center items-center">
+        <div className="fixed h-screen w-full bg-black bg-opacity-80 md:py-6 z-20 flex justify-center items-center">
 
             <div className="bg-white w-full h-screen pb-2 md:max-h-screen md:h-auto md:w-[40%] overflow-auto -mt-[8rem] z-40 md:rounded-lg border-primary">
-                <header className='h-[8rem] bg-gray-700 rounded-t-md purchase-modal-header flex justify-end text-primary '>
-
+                <header className='h-[8rem] bg-gray-700 rounded-t-md flex justify-end text-primary '>
+                    <img src={data?.event?.image} className='w-full h-full object-cover' alt="" srcset="" />
                 </header>
 
                 <div className="p-4 flex">

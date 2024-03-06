@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 export default function DiscoverSingleHeader({data, handleModal}) {
     return (
         <section className="w-full max-w-full relative  bg-opacity-40" id='single-header'>
-            <div className=' bg-slate-900 h-full bg-opacity-70 pt-6 pb-20 md:py-10' id=''>
+            <div className=' bg-black h-full bg-opacity-90 pt-6 pb-20 md:py-10' id=''>
                 <div className='container mx-auto px-6 flex justify-between'>
-                    <div className="text-white font-bold font-raleway flex flex-col gap-6 justify-center">
-                        <h2 className='text-xl md:text-3xl font-poppins font-bold tracking-wide'>{data?.event?.title}</h2>
+                    <div className="text-white font-quicksand flex flex-col gap-6 justify-center">
+                        <h2 className='text-xl md:text-3xl font-poppins font-semibold md:font-normal uppercase tracking-wide'>{data?.event?.title}</h2>
 
                         <div className="hidden md:flex gap-6 text-lg">
                             <div className="flex gap-4 ">
@@ -35,7 +35,7 @@ export default function DiscoverSingleHeader({data, handleModal}) {
 
                     </div>
 
-                    <div className="hidden w-1/3 text-white md:flex items-center justify-center flex-col gap-4">
+                    <div className="hidden w-1/3 text-white md:flex items-center  flex-col gap-4">
                         <div className="flex items-center gap-3">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -50,7 +50,7 @@ export default function DiscoverSingleHeader({data, handleModal}) {
                             </p>
                         </div>
                         <div>
-                           <button className='bg-primary text-white px-8 py-3 font-quicksand rounded-md font-semibold' onClick={handleModal}>Buy ticket</button>
+                           <button className='bg-primary text-white px-8 py-3 font-quicksand rounded-md' onClick={handleModal}>Buy ticket</button>
 
                         </div>
 
