@@ -23,8 +23,14 @@ export const apiSlice = createApi({
         },
 
     ),
+    
+
 
     endpoints: (builder) => ({
+
+        getStats: builder.query({
+            query: () => 'events/stats'
+        }),
         getAllEvents: builder.query({
             query: () => 'events/discover/',
 
@@ -59,4 +65,4 @@ export const apiSlice = createApi({
 })
 
 
-export const { useGetAllEventsQuery, useGetUserEventsQuery, useAddEventMutation, useUploadImageMutation } = apiSlice
+export const { useGetAllEventsQuery, useGetUserEventsQuery, useAddEventMutation, useUploadImageMutation, useGetStatsQuery } = apiSlice
