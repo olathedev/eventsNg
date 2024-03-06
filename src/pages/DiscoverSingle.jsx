@@ -42,7 +42,7 @@ export default function DiscoverSingle() {
         <Purchase data={data} handleModal={handleModal} />
       )}
 
-      <div className="md:hidden bg-white fixed w-full bottom-0 py-6 shadow-lg z-10 flex rounded-t-2xl justify-center">
+      <div className="md:hidden bg-white fixed w-full bottom-0 py-6 shadow-xl z-10 flex rounded-t-2xl justify-center">
        
           <button className='bg-primary text-white px-6 py-3 font-poppins rounded' onClick={handleModal}>Buy ticket</button>
 
@@ -55,8 +55,8 @@ export default function DiscoverSingle() {
 
             <div className="md:w-[95%]">
               <div className="card-one  rounded">
-                <h1 className='md:text-lg font-poppins py-2 px-4 border-b-2 text-lg bg-primary bg-opacity-30 '>Event Description</h1>
-                <div className="md:hidden text-primary px-4 py-2 border-b-2 flex flex-col gap-3 font-quicksand mt-4">
+                <h1 className='md:text-lg font-quicksand py-2 px-4 border-b-2 text-lg bg-opacity-30 font-semibold text-[#6645D5]'>Event Description</h1>
+                <div className="md:hidden text-[#6645D5] px-4 py-2 border-b-2 flex flex-col gap-3 font-quicksand mt-4">
                   <div className="flex items-center gap-4">
                     <span>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -65,7 +65,7 @@ export default function DiscoverSingle() {
 
                     </span>
 
-                    <p>Sunday, February 25 2024</p>
+                    <p className='text-black font-semibold'>Sunday, February 25 2024</p>
                   </div>
 
                   <div className="flex gap-4">
@@ -76,7 +76,7 @@ export default function DiscoverSingle() {
 
                     </span>
 
-                    <p>Sunday, February 25 2024</p>
+                    <p className='text-black font-semibold'>Sunday, February 25 2024</p>
                   </div>
                   <div className="flex gap-4">
                     <span>
@@ -87,7 +87,7 @@ export default function DiscoverSingle() {
 
                     </span>
 
-                    <p className=''>
+                    <p className='text-black font-semibold'>
                       {data?.event?.location}
                     </p>
                   </div>

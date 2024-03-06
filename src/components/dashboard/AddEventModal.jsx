@@ -135,7 +135,7 @@ export default function AddEventModal({ handleModal }) {
                                 </span>
                                 <span>{loadingImg ? 'uploading...' : 'upload image'}</span>
                             </label>
-                                <img src={loadingIcon}className={ `${loadingImg ? 'flex' : 'hidden' } h-6 my-2` }alt="" />
+                                <img src={loadingIcon}className={ `${loadingImg ? 'flex' : 'hidden' } h-6 my-2 rounded` }alt="" />
                             </div>
 
                             <div className="w-1/2 h-20 md:h-28 flex gap-1 cursor-pointer items-center text-sm font-poppins">
