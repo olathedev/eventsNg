@@ -39,13 +39,13 @@ export default function Discover() {
                     {data && data?.event?.map((event) => (
                         <div className="event-card cursor-pointer hover:translate-y-1 transition-all duration-200 ease-in-out p-3 bg-white shadow hover:bg-white hover:shadow-md rounded-md" key={event._id}>
                             <Link to={`/discover/${event._id}`}>
-                            <div className="image h-[10rem]">
+                            <div className="image h-[10rem] overflow-hidden">
                                 <img src={event.image || eventImage} className='h-full w-full rounded-md rounded-t object-cover' alt="" />
                             </div>
 
 
                             <div className=' flex flex-col gap-2 py-3 px-1'>
-                                <h2 className="text-lg font-quicksand uppercase">{event.title}</h2>
+                                <h2 className="text-lg font-quicksand uppercase font-semibold">{event.title}</h2>
                                 <div className="flex gap-2 items-center font-quicksand text-sm">
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">

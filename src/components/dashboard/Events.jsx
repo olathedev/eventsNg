@@ -3,7 +3,7 @@ import event1 from '../../assets/events/event1.png'
 import event2 from '../../assets/events/event2.jpg'
 import event3 from '../../assets/events/event3.png'
 import { useSelector } from 'react-redux'
-
+import { formatDistanceToNow, formatRelative, subDays } from 'date-fns'
 
 
 export default function Events({ handleModal, events, isLoading }) {
@@ -64,7 +64,7 @@ export default function Events({ handleModal, events, isLoading }) {
                         <div className="px-2 py-4 flex gap-4 justify-between">
                             <div className='flex flex-col gap-2'>
                                 <h4 className='font-semibold text-secondary'>{event.title.substring(0, 20)}..</h4>
-                                <p className='text-sm'>Created 10 days ago</p>
+                                <p className='text-sm'>{formatRelative(new Date(event.createdAt), new Date())}</p>
                             </div>
 
                             <div className='flex flex-col items-center justify-center gap-2'>
