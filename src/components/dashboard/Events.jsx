@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 import { formatDistanceToNow, formatRelative, subDays } from 'date-fns'
 
 
-export default function Events({ handleModal, events, isLoading }) {
+export default function Events({ handleModal, events, isLoading, error }) {
 
     if (isLoading) {
         return (
@@ -14,14 +14,14 @@ export default function Events({ handleModal, events, isLoading }) {
         )
     }
 
-    
+  
     
 
 
     return (
-        <section id='events' className='px-3 md:px-6 mt-6 '>
+        <section id='events' className='md:px-6 mt-4 '>
 
-            <div className="grid grid-cols-1 md:grid-cols-4">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-6">
                 <div className="p-4 border border-gray-300 flex flex-col gap-3 items-center justify-center rounded cursor-pointer" onClick={handleModal}>
                     <div className="p-1 bg-gray-300 text-primary rounded-md">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -31,27 +31,55 @@ export default function Events({ handleModal, events, isLoading }) {
 
                     <p className='text-sm'>Create event</p>
                 </div>
+
+                <div className="bg-secondary text-white border border-gray-300 rounded p-4 flex flex-col gap-2">
+                    <h1 className="text-lg font-semibold px-2">{events?.events?.length}</h1>
+                    <p className="text-sm">Total event</p>
+
+                </div>
             </div>
 
-            <div className="flex items-center justify-between mt-8">
-                <div>
-                    <p className='font-semibold hidden'>event count - {events?.length}</p>
+            <div className="flex  items-center justify-between mt-8 w-full max-w-full overflow-auto">
+                <div className='overflow-items flex gap-3'>
+                    <div className="px-4 py-1 text-white text-sm bg-primary bg-opacity-85 rounded-full">
+                        newest
+                    </div>
+                    <div className="px-4 py-1 text-secondary text-sm border border-secondary bg-opacity-85 rounded-full">
+                        older
+                    </div>
+
+                    <div className="px-4 py-1 text-secondary text-sm border border-secondary bg-opacity-85 rounded-full">
+                        active
+                    </div>
+                    <div className="px-4 py-1 text-secondary text-sm border border-secondary bg-opacity-85 rounded-full">
+                        ended
+                    </div>
+                    <div className="px-4 py-1 text-secondary text-sm border border-secondary bg-opacity-85 rounded-full">
+                        ended
+                    </div>
+                    <div className="px-4 py-1 text-secondary text-sm border border-secondary bg-opacity-85 rounded-full">
+                        ended
+                    </div>
                 </div>
 
 
-                <form>
+                <form className='hidden md:flex '>
                     <input type="text" className='w-full py-3 px-4 bg-primary bg-opacity-15 rounded-md focus:outline-none font-light' placeholder='search' />
 
                 </form>
             </div>
 
             {events?.events?.length < 1 && (
-                <div className="my-16 flex justify-center">
+                <div className=" flex justify-center">
                     <h1>You have no event running</h1>
                 </div>
             )}
 
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-y-6 gap-x-6 mt-4'>
+            {error && (
+                  <div className="flex my-16 justify-center font-poppins">Something went wrong, try again</div>
+            )}
+
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-y-6 gap-x-6 mt-4 px-3'>
 
                 {events?.events?.map(event => (
                     <div className='border rounded' key={event._id}>

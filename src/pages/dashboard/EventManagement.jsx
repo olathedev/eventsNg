@@ -11,10 +11,10 @@ export default function EventManagement() {
         setModal(!modal)
     }
 
-    const {data: events, isLoading} = useGetUserEventsQuery()
+    const {data: events, isLoading, error} = useGetUserEventsQuery()
     
     return (
-        <div className="container bg-white mx-auto min-h-screen px-4 md:px-6 py-8">
+        <div className="container bg-white mx-auto min-h-screen px-4 md:px-6 py-6">
 
             {modal && (
                 <AddEventModal handleModal={handleModal} />
@@ -43,7 +43,7 @@ export default function EventManagement() {
             {/* <EventsTable handleModal={handleModal} /> */}
 
         
-            <Events handleModal={handleModal} events={events} isLoading={isLoading} />
+            <Events handleModal={handleModal} events={events} isLoading={isLoading} error={error} />
         </div>
     )
 }
