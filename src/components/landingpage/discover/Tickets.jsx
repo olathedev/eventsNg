@@ -15,7 +15,11 @@ export default function Tickets({data}) {
         </thead>
 
         <tbody>
+          { data?.ticket?.length < 1 && (
+            <div className='flex justify-center py-6'>No ticket has been created for this event.</div>
+          )
 
+          }
 
           {
             data?.ticket.map(t => (

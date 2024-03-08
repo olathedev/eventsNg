@@ -1,7 +1,7 @@
 import merch from '../../../assets/merchs/hoodie.jpg'
 import merch2 from '../../../assets/merchs/shirt.jpg'
 
-export default function Merch() {
+export default function Merch({merch}) {
   return (
     <div className="bg-white shadow rounded mt-6">
                 <h1 className='md:text-lg font-poppins py-4 px-4 border-b-2 '>Merchandise</h1>

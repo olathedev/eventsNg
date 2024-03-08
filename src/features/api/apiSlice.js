@@ -5,7 +5,7 @@ export const apiSlice = createApi({
     tagTypes: ['events'],
     baseQuery: fetchBaseQuery(
         {
-            baseUrl: 'https://eventsng-v1.onrender.com/api/v1/eventsng' || 'http://localhost:4000/api/v1/eventsng' ,
+            baseUrl: 'https://eventsng-v1.onrender.com/api/v1/eventsng' || 'http://localhost:4000/api/v1/eventsng',
             // baseUrl: 'http://localhost:4000/api/v1/eventsng' ,
 
             prepareHeaders: (headers, { getState }) => {
@@ -23,7 +23,7 @@ export const apiSlice = createApi({
         },
 
     ),
-    
+
 
 
     endpoints: (builder) => ({
@@ -34,6 +34,10 @@ export const apiSlice = createApi({
         getAllEvents: builder.query({
             query: () => 'events/discover/',
 
+        }),
+
+        getMerch: builder.query({
+            query: (id) => `merch/${id}`
         }),
 
         getUserEvents: builder.query({
@@ -47,7 +51,7 @@ export const apiSlice = createApi({
                 url: 'events/',
                 method: 'POST',
                 body: data
-            }), 
+            }),
 
             invalidatesTags: ['events'],
 
@@ -59,10 +63,10 @@ export const apiSlice = createApi({
                 method: 'POST',
                 body: data
             })
-           
+
         })
     })
 })
 
 
-export const { useGetAllEventsQuery, useGetUserEventsQuery, useAddEventMutation, useUploadImageMutation, useGetStatsQuery } = apiSlice
+export const { useGetAllEventsQuery, useGetUserEventsQuery, useAddEventMutation, useUploadImageMutation, useGetStatsQuery, useGetMerchQuery } = apiSlice

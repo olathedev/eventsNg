@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function DiscoverSingleHeader({data, handleModal}) {
+
     return (
         <section className="w-full max-w-full relative  bg-opacity-40" id='single-header'>
             <div className=' bg-black h-full bg-opacity-80 pt-6 pb-20 md:py-10' id=''>

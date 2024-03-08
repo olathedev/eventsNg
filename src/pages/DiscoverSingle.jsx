@@ -10,12 +10,15 @@ import Tickets from '../components/landingpage/discover/Tickets'
 import Attend from './checkout/Attend'
 import Merch from '../components/landingpage/discover/Merch'
 import Purchase from '../components/landingpage/discover/Purchase'
+import { useGetMerchQuery } from '../features/api/apiSlice'
 
 export default function DiscoverSingle() {
 
   const { id } = useParams()
 
   const { data, isPending } = useFetch(`/events/discover/${id}`)
+  
+  const {data: merch, isLoading} = useGetMerchQuery(id)
 
   const [modalOpen, setModalOpen] = useState(false)
 
@@ -100,7 +103,7 @@ export default function DiscoverSingle() {
 
               <Tickets data={data} />
 
-              <Merch data={data} />
+              <Merch data={data} merch={merch} />
             </div>
 
 

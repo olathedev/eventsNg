@@ -30,7 +30,7 @@ input {
   }
   /* Works on Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 1px;
+    width: 0;
   }
   *::-webkit-scrollbar-track {
     background: transparent;
@@ -38,7 +38,7 @@ input {
   *::-webkit-scrollbar-thumb {
     background-color: #CBD5E0;
     border-radius: 1px;
-    border: 1px solid transparent;
+    border: none;
   }
 
   #discover-header {
