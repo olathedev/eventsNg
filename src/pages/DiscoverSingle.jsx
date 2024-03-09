@@ -111,7 +111,7 @@ export default function DiscoverSingle() {
 
           <div className="md:w-1/3 -mb-8">
             <div className="flex flex-col gap-3">
-              <div className="relative md:static bottom-[4rem] image-wrapper w-full h-[12rem] md:h-[15rem] ">
+              <div className="relative md:static bottom-[4rem] image-wrapper w-full h-[12rem] md:h-[20rem] ">
                 <img src={data?.event?.image || eventimg} className='rounded-md w-full h-full object-cover' alt="" />
               </div>
 

@@ -4,6 +4,7 @@ import event2 from '../../assets/events/event2.jpg'
 import event3 from '../../assets/events/event3.png'
 import { useSelector } from 'react-redux'
 import { formatDistanceToNow, formatRelative, subDays } from 'date-fns'
+import { Link } from 'react-router-dom'
 
 
 export default function Events({ handleModal, events, isLoading, error }) {
@@ -54,12 +55,7 @@ export default function Events({ handleModal, events, isLoading, error }) {
                     <div className="px-4 py-1 text-secondary text-sm border border-secondary bg-opacity-85 rounded-full">
                         ended
                     </div>
-                    <div className="px-4 py-1 text-secondary text-sm border border-secondary bg-opacity-85 rounded-full">
-                        ended
-                    </div>
-                    <div className="px-4 py-1 text-secondary text-sm border border-secondary bg-opacity-85 rounded-full">
-                        ended
-                    </div>
+
                 </div>
 
 
@@ -82,6 +78,8 @@ export default function Events({ handleModal, events, isLoading, error }) {
             <div className='grid grid-cols-1 md:grid-cols-3 gap-y-6 gap-x-6 mt-4 px-3'>
 
                 {events?.events?.map(event => (
+
+                    <Link to={`${event._id}`}>
                     <div className='border rounded' key={event._id}>
                         <div className="relative image h-32 max-h32 overfolow-hidden">
                             <img src={event.image} className='h-full w-full rounded-t object-cover' alt="" />
@@ -106,6 +104,7 @@ export default function Events({ handleModal, events, isLoading, error }) {
                             </div>
                         </div>
                     </div>
+                    </Link>
 
                 ))}
 

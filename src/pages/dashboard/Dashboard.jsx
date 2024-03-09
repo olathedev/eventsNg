@@ -18,6 +18,7 @@ import axios from 'axios'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import { SidebarContextProvider, useSidebaarContext } from '../../context/helperContexts'
 import { useSelector } from 'react-redux'
+import EventDetails from './EventDetails'
 
 export default function Dashboard() {
 
@@ -60,10 +61,11 @@ export default function Dashboard() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/events' element={<EventManagement />} />
+            <Route path='/events/:id' element={<EventDetails />} />
             <Route path='/ticketing' element={<TicketManagement />} />
             <Route path='/bookings' element={<EventBookings />} />
             <Route path='/payment' element={<PaymentManagement />} />
-            <Route path='/merch' element={<MerchStore />} />
+            <Route path='/merch' element={<MerchStore />} />c
             <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />

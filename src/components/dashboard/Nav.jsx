@@ -3,6 +3,7 @@ import { useSidebaarContext } from '../../context/helperContexts'
 import user from "../../assets/user.jpg"
 import { useDispatch, useSelector } from 'react-redux'
 import { closeSidebar, openSideBar } from '../../features/activeStates/sideBarSlice'
+import { logout } from '../../features/auth/userSlice'
 
 function Nav() {
 
@@ -63,7 +64,7 @@ function Nav() {
                      
                                     <div className='text-sm hover:text-primary'>Account</div>
                                     <div className='text-sm hover:text-primary'>Settings</div>
-                                    <div className='text-sm hover:text-primary'>Logout</div>
+                                    <div className='text-sm hover:text-primary' onClick={() => dispatch(logout())}>Logout</div>
                             </nav>
 
                         {/* <div className="relative whitespace-nowrap">
