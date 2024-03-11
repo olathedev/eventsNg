@@ -29,7 +29,7 @@ export default function DiscoverSingle() {
   if (isPending) {
     return (
       <div className="h-screen w-full flex items-center justify-center">
-        <h1 className="text-lg font-semibold font-poppins">Loading...</h1>
+        <h1 className="text-sm font-poppins">Loading...</h1>
       </div>
 
     )
