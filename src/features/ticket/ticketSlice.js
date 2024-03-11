@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 
 const initialState = {
-    ticketType: null,
+    ticketType: '',
     ticketPrice: 0,
     qauntity: 0,
     total: 0
@@ -19,11 +19,17 @@ const ticketSLice = createSlice({
             if(action.payload === "DECREMENT") {
                 state.qauntity -= 1
             }
+        },
+        setPrice: (state, action) => {
+            state.ticketPrice = action.payload
+        },
+        setTicket: (state, action) => {
+            state.ticketType = action.payload
         }
     }
 })
 
 
-export const {qauntityState} = ticketSLice.actions
+export const {qauntityState, setTicket, setPrice} = ticketSLice.actions
 
 export default ticketSLice.reducer

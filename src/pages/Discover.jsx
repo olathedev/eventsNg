@@ -17,9 +17,9 @@ export default function Discover() {
 
             <DiscoverHeader />
 
-            <section className=' container mx-auto px-6 md:px-6 mt-10' id='Events'>
+            <section className=' container mx-auto px-6 md:px-6 mt-3 md:mt-10' id='Events'>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-y-8 md:gap-x-6">
-                    {isLoading && [1,2,3,4].map((ske, index) => (
+                    {isLoading && [1,2,3,4,5,6].map((ske, index) => (
 
                      
 
