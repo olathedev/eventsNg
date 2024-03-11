@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { qauntityState } from '../../../features/ticket/ticketSlice'
+import { qauntityState, setPrice, setTicket } from '../../../features/ticket/ticketSlice'
 import { PaystackButton } from 'react-paystack'
 
 function Purchase({ data, handleModal }) {
 
-    const { qauntity, ticketType, ticketPrice } = useSelector((state) => state.ticket)
+    const { qauntity, ticketType: ticket, ticketPrice:price } = useSelector((state) => state.ticket)
     const [step, setStep] = useState(1)
 
     const [email, setEmail] = useState('')
@@ -13,24 +13,22 @@ function Purchase({ data, handleModal }) {
     const [lastname, setLastname] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
 
-
-    const [ticket, setTicket] = useState('t')
-
     const [total, setTotal] = useState(0)
-    const [price, setPrice] = useState(0)
+
 
 
     const handleTicket = (e) => {
-        setTicket('starting')
         const selectedId = e.target.value
         const selectedTicket = data.ticket.find((ticket) => ticket._id === selectedId)
         console.log(selectedId);
         console.log(selectedTicket);
         if(selectedTicket) {
-            setTicket(selectedTicket.ticketType)
-            setPrice(selectedTicket.price)
+            dispatch(setTicket(selectedTicket.ticketType))
+            dispatch(setPrice(selectedTicket.price))
         }else{
-            setTicket('')
+            dispatch(setTicket(""))
+            dispatch(setPrice(0))
+
         }
     }
 
@@ -59,23 +57,20 @@ function Purchase({ data, handleModal }) {
         <div className="fixed h-screen w-full bg-black bg-opacity-80 md:py-6 z-20 flex justify-center items-center">
 
             <div className="bg-white w-full h-screen pb-2 md:max-h-screen md:h-auto md:w-[40%] overflow-auto -mt-[9rem] z-40 md:rounded-lg border-primary">
-                <header className='h-[8rem] bg-gray-700 rounded-t-md flex justify-end text-primary '>
+                <header className='relative  h-[8rem] bg-gray-700 rounded-t-md flex justify-end text-primary '>
                     <img src={data?.event?.image} className='w-full h-full object-cover border-b-2 border-primary' alt="" />
+
+                    <div className="bg-primary absolute h-9 w-9 text-white rounded-full right-4 top-3 flex items-center justify-center cursor-pointer" onClick={handleModal}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+
+                    </div>
                 </header>
 
-                <div className="p-4 flex">
-                    <div className="md:hidden bg-primary bg-opacity-30 py-1 px-4 rounded flex gap-1 items-center" onClick={handleModal}>
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                                <path fillRule="evenodd" d="M18 10a.75.75 0 0 1-.75.75H4.66l2.1 1.95a.75.75 0 1 1-1.02 1.1l-3.5-3.25a.75.75 0 0 1 0-1.1l3.5-3.25a.75.75 0 1 1 1.02 1.1l-2.1 1.95h12.59A.75.75 0 0 1 18 10Z" clipRule="evenodd" />
-                            </svg>
-
-                        </span>
-                        Back
-                    </div>
-                </div>
-                <div className="body pt-3 font-quicksand">
-                    <h4 className='px-6 text-secondary font-semibold text-lg text-center border-b pb-2'>Ticket Selection</h4>
+              
+                <div className="body pt-10 font-quicksand md:pt-3 ">
+                    <h4 className='px-6 text-secondary font-semibold text-lg text-center border-b pb-4'>Ticket Selection</h4>
 
                     <div className='pt-4 my-4'>
                         <form action="">
@@ -101,17 +96,16 @@ function Purchase({ data, handleModal }) {
                                             <div>
                                             <div className="flex justify-between  items-center text-sm">
                                                 <div>
-                                                    <select className='py-2 px-6 rounded border border-primary focus:outline-none' value={ticket} onChange={handleTicket}>
+                                                    <select className='py-2 px-6 rounded border border-primary focus:outline-none' onChange={handleTicket}>
                                                         
-                                                        <option value="">select</option>
+                                                        <option value="">--select ticket---</option>
 
                                                         {data?.ticket?.map(t => (
+                                                            
                                                             <option value={t._id} key={t._id}>{t.ticketType}</option>
 
                                                         ))}
-                                                            <option value="vip">Vip</option>
-                                                            <option value="gold">Gold</option>
-
+                                                            
                                                             
 
 
@@ -132,7 +126,7 @@ function Purchase({ data, handleModal }) {
                                                         </svg>
 
                                                     </span>
-                                                    <span className='font-poppins'>{qauntity}</span>
+                                                    <span className='font-poppins'>{qauntity} </span>
                                                     <span onClick={() => dispatch(qauntityState("INCREMENT"))}>
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                                                             <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
@@ -163,18 +157,18 @@ function Purchase({ data, handleModal }) {
 
 
                                         {step == 2 && (
-                                            <div className="">
+                                            <div className="text-sm">
 
                                                 <div className='w-full flex gap-4 mb-4'>
-                                                    <input type="text " className='p-2 border border-gray-300 rounded w-1/2' placeholder='Firstname' />
-                                                    <input type="text " className='p-2 border border-gray-300 rounded w-1/2' placeholder='lastname' />
+                                                    <input type="text " className='p-3 border border-gray-300 rounded w-1/2' placeholder='Firstname' />
+                                                    <input type="text " className='p-3 border border-gray-300 rounded w-1/2' placeholder='lastname' />
                                                 </div>
 
 
-                                                <input type="tel" className='p-2 mb-3 border border-gray-300 rounded w-full' placeholder='Phone number' value={email} onChange={(e) => setEmail(e.target.value)} />
+                                                <input type="tel" className='p-3 mb-3 border border-gray-300 rounded w-full' placeholder='Phone number' value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
 
-                                                <input type="text" className='p-2 border border-gray-300 rounded w-full' placeholder='Email adress' value={email} onChange={(e) => setEmail(e.target.value)} />
-                                                <p className='text-sm py-1'>Ticket will be delivered here</p>
+                                                <input type="text" className='p-3 border border-gray-300 rounded w-full' placeholder='Email adress' value={email} onChange={(e) => setEmail(e.target.value)} />
+                                                <p className='text-sm py-1 text-primary'>Ticket will be delivered here</p>
 
                                             </div>
                                         )}
@@ -200,9 +194,9 @@ function Purchase({ data, handleModal }) {
 
                     {step === 1 && (
 
-                        <div className='py-4 px-6 flex gap-6 justify-center mt-4 md:mt-1'>
+                        <div className='py-4 px-4 flex gap-6 justify-center mt-4 md:mt-1'>
 
-                            <button className="w-full p-3 text-center bg-primary text-white rounded transition duration-300" disabled={qauntity < 1 || ticketType === ""} onClick={() => setStep(2)}>Proceed</button>
+                            <button className="w-full p-3 text-center bg-primary text-white rounded transition duration-300" disabled={qauntity < 1 || ticket === ""} onClick={() => setStep(2)}>Proceed</button>
                             {/* <PaystackButton {...componentProps} className='p-3 text-center bg-primary text-white rounded transition duration-300 flex gap-3' /> */}
 
                         </div>
