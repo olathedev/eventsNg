@@ -54,9 +54,9 @@ function Purchase({ data, handleModal }) {
     }
 
     return (
-        <div className="fixed h-screen w-full bg-black bg-opacity-80 md:py-6 z-20 flex justify-center items-center">
+        <div className="fixed min-h-screen w-full bg-black bg-opacity-80 md:py-6 z-30 flex justify-center items-center">
 
-            <div className="bg-white w-full h-screen pb-2 md:max-h-screen md:h-auto md:w-[40%] overflow-auto -mt-[9rem] z-40 md:rounded-lg border-primary">
+            <div className="bg-white w-full h-screen pb-2 md:max-h-screen md:h-auto md:w-[40%] overflow-auto md:-mt-[6rem] z-20 md:rounded-lg border-primary">
                 <header className='relative  h-[8rem] bg-gray-700 rounded-t-md flex justify-end text-primary '>
                     <img src={data?.event?.image} className='w-full h-full object-cover border-b-2 border-primary' alt="" />
 
@@ -94,7 +94,7 @@ function Purchase({ data, handleModal }) {
                                         {step === 1 && (
 
                                             <div>
-                                            <div className="flex justify-between  items-center text-sm">
+                                            <div className="flex justify-between  items-center">
                                                 <div>
                                                     <select className='py-2 px-6 rounded border border-primary focus:outline-none' onChange={handleTicket}>
                                                         

@@ -40,8 +40,8 @@ export default function Events({ handleModal, events, isLoading, error }) {
                 </div>
             </div>
 
-            <div className="flex  items-center justify-between mt-8 w-full max-w-full overflow-auto">
-                <div className='overflow-items flex gap-3'>
+            <div className="md:flex items-center justify-between mt-8 w-full max-w-full overflow-hidden">
+                <div className='overflow-items hidden md:flex gap-3'>
                     <div className="px-4 py-1 text-white text-sm bg-primary bg-opacity-85 rounded-full">
                         newest
                     </div>
@@ -59,14 +59,14 @@ export default function Events({ handleModal, events, isLoading, error }) {
                 </div>
 
 
-                <form className='hidden md:flex '>
+                <form className='flex'>
                     <input type="text" className='w-full py-3 px-4 bg-primary bg-opacity-15 rounded-md focus:outline-none font-light' placeholder='search' />
 
                 </form>
             </div>
 
             {events?.events?.length < 1 && (
-                <div className=" flex justify-center">
+                <div className=" flex justify-center my-16">
                     <h1>You have no event running</h1>
                 </div>
             )}
@@ -79,8 +79,8 @@ export default function Events({ handleModal, events, isLoading, error }) {
 
                 {events?.events?.map(event => (
 
-                    <Link to={`${event._id}`}>
-                    <div className='border rounded' key={event._id}>
+                    <Link to={`${event._id}`} key={event._id}>
+                    <div className='border rounded'>
                         <div className="relative image h-32 max-h32 overfolow-hidden">
                             <img src={event.image} className='h-full w-full rounded-t object-cover' alt="" />
 

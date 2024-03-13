@@ -5,12 +5,12 @@ export default function DiscoverSingleHeader({data, handleModal}) {
 
     return (
         <section className="w-full max-w-full relative  bg-opacity-40" id='single-header'>
-            <div className=' bg-black h-full bg-opacity-80 pt-6 pb-20 md:py-10' id=''>
+            <div className=' bg-black h-full bg-opacity-85 pt-6 pb-20 md:py-10' id=''>
                 <div className='container mx-auto px-6 flex justify-between'>
                     <div className="text-white font-quicksand flex flex-col gap-6 justify-center">
-                        <h2 className='text-xl md:text-3xl font-poppins font-semibold md:font-normal uppercase tracking-wide'>{data?.event?.title}</h2>
+                        <h2 className='text-lg md:text-2xl font-semibold uppercase tracking-wide'>{data?.event?.title}</h2>
 
-                        <div className="hidden md:flex gap-6 text-lg">
+                        <div className="hidden md:flex gap-6 text-gray-300 font-semibold">
                             <div className="flex gap-4 ">
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -32,12 +32,10 @@ export default function DiscoverSingleHeader({data, handleModal}) {
 
                                 <p>Sunday, February 25 2024</p>
                             </div>
+
+                            
                         </div>
-
-                    </div>
-
-                    <div className="hidden w-1/3 text-white md:flex items-center  flex-col gap-4">
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3 text-gray-300 font-semibold">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -46,12 +44,16 @@ export default function DiscoverSingleHeader({data, handleModal}) {
 
                             </span>
 
-                            <p className='text-lg font-quicksand font-semibold'>
+                            <p className='font-quicksand'>
                                 {data?.event?.location}
                             </p>
                         </div>
+                    </div>
+
+                    <div className="hidden w-1/3 text-white md:flex items-center justify-center gap-5">
+                        
                         <div>
-                           <button className='bg-primary text-white px-8 py-3 font-quicksand rounded-md' onClick={handleModal}>Buy ticket</button>
+                           <button className='bg-primary text-white px-10 py-3 font-quicksand rounded-md' onClick={handleModal}>Buy ticket</button>
 
                         </div>
 

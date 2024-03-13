@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import * as yup from 'yup'
 import { useAddEventMutation, useUploadImageMutation } from '../../features/api/apiSlice'
 import loadingIcon from "../../assets/loading.gif"
+import { openModal } from '../../features/activeStates/successModalSlice'
 
 const schema = yup.object({
     title: yup.string().required("Provide event name"),
@@ -53,6 +54,7 @@ export default function AddEventModal({ handleModal }) {
         console.log(file);
         console.log(image);
         const res = await uploadImage(data)
+        console.log(res);
         setImage(res.data.image);
                
 
@@ -64,13 +66,14 @@ export default function AddEventModal({ handleModal }) {
        const res = await addEvent({...data, image})
        console.log(res);
        handleModal()
+       dispatch(openModal())
        
     }
 
    
     return (
         <div className={`fixed inset-0 h-screen max-h-screen flex justify-center items-center bg-black bg-opacity-70  z-30`}>
-            <div className="bg-white w-full h-screen md:h-auto md:w-[40%] max-h-screen rounded overflow-auto md:-mr-10 border-b-2 border-b-primary transition duration-200 ease-in-out">
+            <div className="bg-white w-full h-screen md:h-auto md:w-[45%] max-h-screen rounded overflow-auto md:-mr-10 border-b-2 border-b-primary transition duration-200 ease-in-out">
                 <div className="modal-header flex gap-5 justify-between items-center px-6 py-4 border-b-2">
 
                     <div>

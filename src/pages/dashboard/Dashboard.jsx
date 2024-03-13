@@ -19,10 +19,9 @@ import { useAuthContext } from '../../hooks/useAuthContext'
 import { SidebarContextProvider, useSidebaarContext } from '../../context/helperContexts'
 import { useSelector } from 'react-redux'
 import EventDetails from './EventDetails'
+import { SuccessModal } from '../../components/dashboard/SuccessModal'
 
 export default function Dashboard() {
-
-    const {user} = useAuthContext()
     
     // const {data} = useQuery({
     //   queryKey: ['Get Events'],
@@ -38,7 +37,7 @@ export default function Dashboard() {
     // })
 
  
-
+    const { modalOpen } = useSelector((state) => state.successModal)
     const {sidebarOpen} = useSelector((state) => state.sidebar)
 
 
@@ -57,6 +56,13 @@ export default function Dashboard() {
 
         
           <Nav />
+
+          {
+            modalOpen && (
+              <SuccessModal />
+
+            )
+          }
 
           <Routes>
             <Route path='/' element={<Home />} />
