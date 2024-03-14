@@ -4,6 +4,7 @@ import { useGetUserEventsSingleQuery } from '../../features/api/apiSlice'
 import { useParams, useSearchParams } from 'react-router-dom'
 import { Deatils } from '../../components/dashboard/eventDetails/Details'
 import { Tickets } from '../../components/dashboard/eventDetails/Tickets'
+import { AddticketModal } from '../../components/dashboard/eventDetails/AddticketModal'
 
 function EventDetails() {
 
@@ -21,6 +22,7 @@ function EventDetails() {
 
   return (
     <div className='min-h-screen bg-white'>
+        <AddticketModal />
        <Header data={data} handleSp={handleSp} page={page} />
 
         <section className="px-10 py-8">

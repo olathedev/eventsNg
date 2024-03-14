@@ -20,7 +20,7 @@ export const Tickets = ({page, data}) => {
                 </header> */}
 
                 <div className="flex justify-center">
-                    <div className="bg-primary bg-opacity-40 p-10 flex flex-col items-center w-full rounded">
+                    <div className="bg-primary bg-opacity-30 p-10 flex flex-col items-center w-full rounded">
                         <h3 className='text-lg md:text-xl  py-2 font-semibold font-quicksand'>Let create tickets</h3>
                         <p className='font-quicksand text-gray-700'>You don't have any tickets created yet, create your first ticket - it will only take 30-seconds</p>
                         <button className="my-6 py-3 px-6 bg-gray-100 rounded flex gap-1 items-center">

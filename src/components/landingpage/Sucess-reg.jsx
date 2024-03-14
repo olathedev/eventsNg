@@ -7,7 +7,7 @@ function SucessReg({ success }) {
             <h3 className='text-xl font-semibold'>Email Verification</h3>
             {/* <img src={mail} className='h-20' alt="" /> */}
             <p className=''>Please check your emial for the verificatin link sent to you, click the link to verify your email</p>
-            <button className='bg-primary py-3 px-6 font-poppins font-semibold text-white rounded mt-3'>Proceed to Sign in</button>
+           <Link to="/login"> <button className='bg-primary py-3 px-6 font-poppins font-semibold text-white rounded mt-3'>Proceed to Sign in</button></Link>
         </section>
     )
 }

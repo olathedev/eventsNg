@@ -63,3 +63,9 @@ input {
     background-size: cover;
     background-position: center;
   }
+
+  .details-header {
+    background-image: url('./assets/bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
