@@ -16,7 +16,7 @@ export const Header = ({data, handleSp, page}) => {
   return (
 
     <header className='details-header'>
-    <div className='bg-primary bg-opacity-40 py-6 px-10 flex justify-between'>
+    <div className='bg-primary bg-opacity-80 py-6 px-10 flex justify-between'>
         <div>
           <h1 className='text-xl'>{data?.event?.title}</h1>
 

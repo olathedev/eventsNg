@@ -2,12 +2,12 @@ import React from 'react'
 
 export const Deatils = ({page, data}) => {
   return (
-    <div className={`${page === 'Details' ? 'flex' : 'hidden'} gap-8 container`}>
-       <div className="w-1/3">
+    <div className={`${page === 'Details' ? 'flex flex-col md:flex-row' : 'hidden'} gap-8 container`}>
+       <div className="md:w-1/3">
         <img src={data?.event?.image} className='rounded w-full max-w-full' alt="" />
        </div>
 
-       <div className="w-2/3 ">
+       <div className="md:w-2/3 ">
             <h2 className='text-lg'>Event details</h2>
             <form  className='py-4 font-quicksand'>
               <div className="flex items-center gap-3">

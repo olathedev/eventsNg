@@ -3,6 +3,7 @@ import React from 'react'
 export const Tickets = ({page, data}) => {
   return (
     <section className={`${page === 'Tickets' ? 'container mx-auto' : 'hidden'} gap-8`}>
+     
         <div className="flex justify-center">
             <div className="bg-gray-400 py-1 px-3 text-sm font-quicksand rounded bg-opacity-30 border border-primary">
                 teekety is free for free events, if you're charging guests a fee we'll charge a percenatage value as transaction fee
