@@ -46,6 +46,11 @@ export const apiSlice = createApi({
 
         }),
 
+        getUserEventsSingle: builder.query({
+            query: (id) => `events/${id}`,
+            providesTags: ['singleEvent']
+        }),
+
         addEvent: builder.mutation({
             query: (data) => ({
                 url: 'events/',
@@ -69,4 +74,12 @@ export const apiSlice = createApi({
 })
 
 
-export const { useGetAllEventsQuery, useGetUserEventsQuery, useAddEventMutation, useUploadImageMutation, useGetStatsQuery, useGetMerchQuery } = apiSlice
+export const {
+    useGetAllEventsQuery,
+    useGetUserEventsQuery,
+    useAddEventMutation,
+    useUploadImageMutation,
+    useGetStatsQuery,
+    useGetMerchQuery,
+    useGetUserEventsSingleQuery 
+} = apiSlice

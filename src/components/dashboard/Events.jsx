@@ -79,7 +79,7 @@ export default function Events({ handleModal, events, isLoading, error }) {
 
                 {events?.events?.map(event => (
 
-                    <Link to={`${event._id}`} key={event._id}>
+                    <Link to={`${event._id}?page=Details`} key={event._id}>
                     <div className='border rounded'>
                         <div className="relative image h-32 max-h32 overfolow-hidden">
                             <img src={event.image} className='h-full w-full rounded-t object-cover' alt="" />

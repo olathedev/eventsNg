@@ -13,7 +13,7 @@ function Nav() {
     const dispatch = useDispatch()
 
     return (
-        <nav className='w-full bg-white py-4 px-6 shadow sticky top-0 z-20'>
+        <nav className='w-full bg-white py-2 px-6 shadow sticky top-0 z-20'>
             <div className="container mx-auto flex justify-between py-2">
                 <div className="navbrand text-lg font-raleway font-semibold flex w-full gap-5 justify-between items-center">
                     <div className="flex gap-3 items-center md:hidden">

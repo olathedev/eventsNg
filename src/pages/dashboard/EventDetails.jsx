@@ -1,25 +1,31 @@
 import React from 'react'
+import { Header } from '../../components/dashboard/eventDetails/Header'
+import { useGetUserEventsSingleQuery } from '../../features/api/apiSlice'
+import { useParams, useSearchParams } from 'react-router-dom'
+import { Deatils } from '../../components/dashboard/eventDetails/Details'
+import { Tickets } from '../../components/dashboard/eventDetails/Tickets'
 
 function EventDetails() {
+
+  const {id} = useParams()
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const page = searchParams.get('page') || "Details"
+
+  console.log(page);
+  const handleSp = (value) => {
+    setSearchParams({page: value})
+  }
+
+  const {data} = useGetUserEventsSingleQuery(id)
+
   return (
-    <div className='min-h-screen px-4 md:px-10'>
-        <header className='py-4 flex justify-between'>
-        <h1 className="text-lg md:text-xl font-poppins  font-semibold">Event Details</h1>
+    <div className='min-h-screen bg-white'>
+       <Header data={data} handleSp={handleSp} page={page} />
 
-<div className=' opacity-60'>
-
-
-    Dashboard/Event<span className='text-primary'>/Event Details</span>
-
-</div>
-        </header>
-
-        <section className='mt-6'>
-            <div className="flex justify-end gap-6">
-                <button className='py-2 px-6 text-white bg-secondary rounded'>Edit</button>
-                <button className='py-2 px-6 text-[#f70000] border border-[#f70000] rounded'>Take offline</button>
-    
-            </div>
+        <section className="px-10 py-8">
+       <Deatils page={page} data={data} />
+          <Tickets page={page} data={data} />
         </section>
     </div>
   )
