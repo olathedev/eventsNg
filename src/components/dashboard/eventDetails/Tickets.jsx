@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Tickets = ({page, data}) => {
+export const Tickets = ({page, data, handleModal}) => {
   return (
     <section className={`${page === 'Tickets' ? 'container mx-auto' : 'hidden'} gap-8`}>
      
@@ -23,7 +23,7 @@ export const Tickets = ({page, data}) => {
                     <div className="bg-primary bg-opacity-30 p-10 flex flex-col items-center w-full rounded">
                         <h3 className='text-lg md:text-xl  py-2 font-semibold font-quicksand'>Let create tickets</h3>
                         <p className='font-quicksand text-gray-700'>You don't have any tickets created yet, create your first ticket - it will only take 30-seconds</p>
-                        <button className="my-6 py-3 px-6 bg-gray-100 rounded flex gap-1 items-center">
+                        <button className="my-6 py-3 px-6 bg-gray-100 rounded flex gap-1 items-center" onClick={handleModal}>
                             Add ticket
                             <span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
