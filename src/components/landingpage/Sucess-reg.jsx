@@ -1,5 +1,6 @@
 import React from 'react'
 import mail from '../../assets/envelope.svg'
+import { Link } from 'react-router-dom'
 
 function SucessReg({ success }) {
     return (
